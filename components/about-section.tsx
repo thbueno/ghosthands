@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function AboutSection() {
   return (
@@ -23,11 +23,13 @@ export function AboutSection() {
           {/* Content Column */}
           <div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-              Design that sparks engagement and inspires action
+              Design with engagement and inspiression
             </h2>
             <p className="text-lg text-gray-700 mb-10">
-              Concentrate on your primary objective which is expanding your business, and leave it to me to ensure that
-              your business is efficiently portrayed in the digital realm and distinguishes itself from the rivals.
+              Concentrate on your primary objective which is expanding your
+              business, and leave it to me to ensure that your business is
+              efficiently portrayed in the digital realm and distinguishes
+              itself from the rivals.
             </p>
             <Link
               href="/about"
@@ -39,5 +41,5 @@ export function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
