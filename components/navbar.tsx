@@ -14,7 +14,7 @@ export function NavBar() {
 
   return (
     <>
-      <header className="sticky top-0 left-0 right-0 bg-white z-50 border-b border-gray-100">
+      <header className="sticky top-0 left-0 right-0 bg-stone-200 z-50">
         <div className="container mx-auto px-4 md:px-8 lg:px-24 py-8">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-stone-800 text-2xl font-bold">
