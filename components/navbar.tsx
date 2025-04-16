@@ -1,7 +1,7 @@
 "use client";
 
 import { DropdownMenu } from "@/components/dropdown-menu";
-import { ArrowRight } from "lucide-react";
+import { LetsTalkButton } from "@/components/lets-talk-button";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -21,12 +21,9 @@ export function NavBar() {
               <span className="text-stone-600 font-normal">Thiago</span>Bueno
             </Link>
             <div className="flex items-center gap-4">
-              <Link
-                href="#contact"
-                className="hidden md:flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
-              >
-                Let&apos;s Talk <ArrowRight size={16} />
-              </Link>
+              <div className="hidden md:block">
+                <LetsTalkButton />
+              </div>
               <button
                 onClick={toggleMenu}
                 className="p-3 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"

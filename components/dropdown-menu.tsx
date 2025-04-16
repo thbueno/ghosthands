@@ -1,25 +1,26 @@
-"use client"
+"use client";
 
-import { ArrowRight, X } from "lucide-react"
-import Link from "next/link"
-import { type FormEvent, useState } from "react"
+import { LetsTalkButton } from "@/components/lets-talk-button";
+import { ArrowRight, X } from "lucide-react";
+import Link from "next/link";
+import { type FormEvent, useState } from "react";
 
 interface DropdownMenuProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle email subscription logic here
-    console.log("Email submitted:", email)
-    setEmail("")
-  }
+    console.log("Email submitted:", email);
+    setEmail("");
+  };
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-[#050A13] text-white z-50 overflow-auto">
@@ -30,12 +31,10 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
             <span className="font-normal">show</span>casy.
           </div>
           <div className="flex items-center gap-4">
-            <Link
-              href="#contact"
-              className="flex items-center gap-2 px-6 py-3 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors"
-            >
-              Let&apos;s Talk <ArrowRight size={16} />
-            </Link>
+            <LetsTalkButton
+              variant="light"
+              className="border-gray-700 hover:bg-gray-900"
+            />
             <button
               onClick={onClose}
               className="p-3 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors"
@@ -51,8 +50,14 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
             <ul className="space-y-8">
               <li>
                 <div className="flex justify-between items-center">
-                  <Link href="/" className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors">
-                    Home <span className="text-gray-500 text-2xl md:text-3xl">(01)</span>
+                  <Link
+                    href="/"
+                    className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
+                  >
+                    Home{" "}
+                    <span className="text-gray-500 text-2xl md:text-3xl">
+                      (01)
+                    </span>
                   </Link>
                   <Link
                     href="/"
@@ -64,8 +69,14 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
               </li>
               <li>
                 <div className="flex justify-between items-center">
-                  <Link href="/about" className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors">
-                    About Me <span className="text-gray-500 text-2xl md:text-3xl">(02)</span>
+                  <Link
+                    href="/about"
+                    className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
+                  >
+                    About Me{" "}
+                    <span className="text-gray-500 text-2xl md:text-3xl">
+                      (02)
+                    </span>
                   </Link>
                   <Link
                     href="/about"
@@ -77,8 +88,14 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
               </li>
               <li>
                 <div className="flex justify-between items-center">
-                  <Link href="/works" className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors">
-                    Works <span className="text-gray-500 text-2xl md:text-3xl">(03)</span>
+                  <Link
+                    href="/works"
+                    className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
+                  >
+                    Works{" "}
+                    <span className="text-gray-500 text-2xl md:text-3xl">
+                      (03)
+                    </span>
                   </Link>
                   <Link
                     href="/works"
@@ -94,7 +111,10 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/insights"
                     className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
                   >
-                    Insights <span className="text-gray-500 text-2xl md:text-3xl">(04)</span>
+                    Insights{" "}
+                    <span className="text-gray-500 text-2xl md:text-3xl">
+                      (04)
+                    </span>
                   </Link>
                   <Link
                     href="/insights"
@@ -118,30 +138,36 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   href="#"
                   className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
                 >
-                  INSTAGRAM <ArrowRight size={14} className="transform -rotate-45" />
+                  INSTAGRAM{" "}
+                  <ArrowRight size={14} className="transform -rotate-45" />
                 </Link>
                 <Link
                   href="#"
                   className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
                 >
-                  BEHANCE <ArrowRight size={14} className="transform -rotate-45" />
+                  BEHANCE{" "}
+                  <ArrowRight size={14} className="transform -rotate-45" />
                 </Link>
                 <Link
                   href="#"
                   className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
                 >
-                  TWITTER <ArrowRight size={14} className="transform -rotate-45" />
+                  TWITTER{" "}
+                  <ArrowRight size={14} className="transform -rotate-45" />
                 </Link>
                 <Link
                   href="#"
                   className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
                 >
-                  DRIBBBLE <ArrowRight size={14} className="transform -rotate-45" />
+                  DRIBBBLE{" "}
+                  <ArrowRight size={14} className="transform -rotate-45" />
                 </Link>
               </div>
             </div>
             <div>
-              <h3 className="text-xl text-gray-400 mb-6">Stay connected w/ me.</h3>
+              <h3 className="text-xl text-gray-400 mb-6">
+                Stay connected w/ me.
+              </h3>
               <form onSubmit={handleSubmit} className="relative">
                 <input
                   type="email"
@@ -151,7 +177,11 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   className="w-full bg-transparent border-b border-gray-700 py-2 pr-12 focus:outline-none focus:border-white transition-colors"
                   required
                 />
-                <button type="submit" className="absolute right-0 top-1/2 -translate-y-1/2" aria-label="Subscribe">
+                <button
+                  type="submit"
+                  className="absolute right-0 top-1/2 -translate-y-1/2"
+                  aria-label="Subscribe"
+                >
                   <ArrowRight size={20} />
                 </button>
               </form>
@@ -160,5 +190,5 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

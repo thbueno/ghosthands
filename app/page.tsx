@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/about-section";
 import { AwardsSection } from "@/components/awards-section";
 import { CTASection } from "@/components/cta-section";
 import { FooterSection } from "@/components/footer-section";
+import { LetsTalkButton } from "@/components/lets-talk-button";
 import { NavBar } from "@/components/navbar";
 import { PartnersSection } from "@/components/partners-section";
 import { WorksSection } from "@/components/works-section";
@@ -64,12 +65,7 @@ export default function Home() {
               DRIBBBLE <ArrowRight size={14} className="transform -rotate-45" />
             </Link>
           </div>
-          <Link
-            href="#contact"
-            className="flex items-center gap-2 px-8 py-4 bg-black text-white rounded-full hover:bg-gray-900 transition-colors"
-          >
-            Let&apos;s Talk <ArrowRight size={16} />
-          </Link>
+          <LetsTalkButton variant="dark" />
         </div>
       </div>
 
