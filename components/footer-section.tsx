@@ -1,29 +1,31 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ArrowUpRight, Twitter, Youtube, Instagram } from "lucide-react"
-import { type FormEvent, useState } from "react"
+import { ArrowUpRight, Instagram, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
+import { type FormEvent, useState } from "react";
 
 export function FooterSection() {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle email subscription logic here
-    console.log("Email submitted:", email)
-    setEmail("")
-  }
+    console.log("Email submitted:", email);
+    setEmail("");
+  };
 
   return (
     <footer className="py-12 px-4 md:px-8 lg:px-24">
-      <div className="bg-[#050A13] text-white rounded-3xl overflow-hidden">
+      <div className="bg-stone-800 text-white rounded-3xl overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 pt-16 pb-12">
           <div className="mb-16">
-            <p className="text-lg mb-6">HAVE A NICE WORKS? LET&apos;S TALK WITH ME</p>
+            <p className="text-lg mb-6">
+              HAVE A NICE WORKS? LET&apos;S TALK WITH ME
+            </p>
             <div className="flex items-center">
               <Link
                 href="mailto:hello@kazarov.com"
-                className="text-4xl md:text-5xl lg:text-6xl text-gray-300 hover:text-white transition-colors"
+                className="text-4xl md:text-5xl lg:text-6xl text-stone-200 font-bold hover:text-white transition-colors"
               >
                 hello@kazarov.com
               </Link>
@@ -39,30 +41,51 @@ export function FooterSection() {
           <div className="border-t border-gray-800 py-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
               <nav className="flex flex-wrap gap-8 mb-6 md:mb-0">
-                <Link href="/" className="text-sm font-medium hover:text-gray-300 transition-colors">
+                <Link
+                  href="/"
+                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                >
                   HOME
                 </Link>
-                <Link href="/about" className="text-sm font-medium hover:text-gray-300 transition-colors">
+                <Link
+                  href="/about"
+                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                >
                   ABOUT ME
                 </Link>
-                <Link href="/works" className="text-sm font-medium hover:text-gray-300 transition-colors">
+                <Link
+                  href="/works"
+                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                >
                   WORKS
                 </Link>
-                <Link href="/insights" className="text-sm font-medium hover:text-gray-300 transition-colors">
+                <Link
+                  href="/insights"
+                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                >
                   INSIGHTS
                 </Link>
               </nav>
 
               <div className="flex gap-6">
-                <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
                   <Twitter size={20} />
                   <span className="sr-only">Twitter</span>
                 </Link>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
                   <Youtube size={20} />
                   <span className="sr-only">YouTube</span>
                 </Link>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
                   <svg
                     width="20"
                     height="20"
@@ -75,7 +98,10 @@ export function FooterSection() {
                   </svg>
                   <span className="sr-only">TikTok</span>
                 </Link>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
                   <Instagram size={20} />
                   <span className="sr-only">Instagram</span>
                 </Link>
@@ -93,7 +119,11 @@ export function FooterSection() {
                   className="w-full bg-transparent border-b border-gray-700 py-2 pr-12 focus:outline-none focus:border-white transition-colors text-white"
                   required
                 />
-                <button type="submit" className="absolute right-0 top-1/2 -translate-y-1/2" aria-label="Subscribe">
+                <button
+                  type="submit"
+                  className="absolute right-0 top-1/2 -translate-y-1/2"
+                  aria-label="Subscribe"
+                >
                   <ArrowUpRight size={20} />
                 </button>
               </form>
@@ -102,5 +132,5 @@ export function FooterSection() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
