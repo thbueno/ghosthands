@@ -23,7 +23,7 @@ export default function Home() {
           <div className="col-span-1">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">
               I&apos;m a visual designer with passion to create{" "}
-              <span className="text-gray-300">a great experiences</span>
+              <span>a great experiences</span>
             </h1>
           </div>
           <div className="col-span-1 lg:col-span-2">

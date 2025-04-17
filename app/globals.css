@@ -5,6 +5,11 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+  --title: #0f0f0f;
+  --background: #d4e4d4;
+  --primary: #44ff00;
+  --secondary: #ff1200;
+  --text: #5b645b;
 }
 
 body {
@@ -91,6 +96,11 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --title: #ffffff;
+    --background: #0a0a0a;
+    --primary: #33cc00;
+    --secondary: #cc0f00;
+    --text: #a4afa4;
   }
 }
 
@@ -100,6 +110,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    @apply bg-[length:var(--background)] text-[length:var(--text)];
+    font-family: "Inter", sans-serif;
   }
 
   h1,
@@ -109,5 +121,25 @@ body {
   h5,
   h6 {
     @apply tracking-tight;
+  }
+
+  h1 {
+    @apply text-[length:var(--title)] font-bold text-5xl md:text-6xl lg:text-7xl;
+    font-family: "Inter", sans-serif;
+  }
+
+  h2 {
+    @apply text-[length:var(--title)] font-semibold text-2xl;
+    font-family: "Inter", sans-serif;
+  }
+
+  p {
+    @apply text-[length:var(--text)] text-base;
+    font-family: "Inter", sans-serif;
+  }
+
+  span {
+    @apply text-[color:var(--primary)] text-5xl md:text-6xl lg:text-7xl;
+    font-family: "Inter", sans-serif;
   }
 }

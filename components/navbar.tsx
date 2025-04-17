@@ -18,7 +18,7 @@ export function NavBar() {
         <div className="container mx-auto px-4 md:px-8 lg:px-24 py-8">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-stone-800 text-2xl font-bold">
-              <span className="text-stone-600 font-normal">Thiago</span>Bueno
+              <span className="text-2xl font-normal">Thiago</span>Bueno
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
