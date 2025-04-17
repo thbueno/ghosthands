@@ -15,7 +15,7 @@ export function LetsTalkButton({
   const variantClasses =
     variant === "dark"
       ? "bg-black text-white hover:bg-gray-900"
-      : "border border-gray-300 hover:bg-gray-50";
+      : "border border-title hover:border-secondary hover:text-secondary transition";
 
   return (
     <Link
