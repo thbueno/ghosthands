@@ -26,7 +26,7 @@ export function NavBar() {
               </div>
               <button
                 onClick={toggleMenu}
-                className="p-3 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
+                className="p-3 border border-title rounded-full hover:border-secondary hover:text-secondary transition-colors"
               >
                 <svg
                   width="24"

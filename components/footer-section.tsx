@@ -16,7 +16,7 @@ export function FooterSection() {
 
   return (
     <footer className="py-12 px-4 md:px-8 lg:px-24">
-      <div className="bg-stone-800 text-white rounded-3xl overflow-hidden">
+      <div className="bg-title text-background rounded-3xl overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 pt-16 pb-12">
           <div className="mb-16">
             <p className="text-lg mb-6">
@@ -31,7 +31,7 @@ export function FooterSection() {
               </Link>
               <Link
                 href="mailto:hello@kazarov.com"
-                className="ml-4 p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors"
+                className="ml-4 p-3 border border-background rounded-full hover:border-secondary hover:text-secondary transition-colors"
               >
                 <ArrowUpRight size={24} />
               </Link>
