@@ -124,17 +124,17 @@ body {
   }
 
   h1 {
-    @apply text-[length:var(--title)] font-bold text-5xl md:text-6xl lg:text-7xl;
+    @apply text-[color:var(--title)] font-bold text-5xl md:text-6xl lg:text-7xl;
     font-family: "Inter", sans-serif;
   }
 
   h2 {
-    @apply text-[length:var(--title)] font-semibold text-2xl;
+    @apply text-[color:var(--title)] font-semibold text-2xl;
     font-family: "Inter", sans-serif;
   }
 
   p {
-    @apply text-[length:var(--text)] text-base;
+    @apply text-[color:var(--text)] text-base;
     font-family: "Inter", sans-serif;
   }
 
