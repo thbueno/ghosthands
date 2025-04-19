@@ -21,7 +21,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-24 mt-12">
           <div className="col-span-1">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">
+            <h1 className=" leading-[1.1] mb-8">
               I&apos;m a visual designer with passion to create{" "}
               <span>a great experiences</span>
             </h1>
@@ -29,10 +29,10 @@ export default function Home() {
           <div className="col-span-1 lg:col-span-2">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="flex items-center">
-                <div className="w-full h-[1px] bg-gray-400"></div>
+                <div className="w-full h-[1px] bg-text"></div>
               </div>
               <div className="lg:col-start-2 flex items-center">
-                <p className="text-lg md:text-xl text-gray-700">
+                <p className="text-lg md:text-xl">
                   I&apos;m Ivan, a Visual Designer living in Munich, and I focus
                   on making digital experiences that are easy to use, enjoyable,
                   and get the job done.
