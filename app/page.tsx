@@ -29,7 +29,7 @@ export default function Home() {
           <div className="col-span-1 lg:col-span-2">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="flex items-center">
-                <div className="w-full h-[1px] bg-text"></div>
+                <div className="w-full h-[1px] bg-text bg-opacity-50"></div>
               </div>
               <div className="lg:col-start-2 flex items-center">
                 <p className="text-lg md:text-xl">
