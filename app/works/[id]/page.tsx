@@ -105,7 +105,7 @@ export default function ProjectDetail() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
             {project.headline}
           </h1>
-          <div className="bg-gray-100 rounded-3xl overflow-hidden mb-12">
+          <div className="bg-background rounded-3xl overflow-hidden mb-12">
             <Image
               src={project.image || "/placeholder.svg"}
               alt={project.title}
@@ -122,12 +122,12 @@ export default function ProjectDetail() {
           <div className="md:col-span-1 space-y-8">
             <div>
               <h3 className="text-lg font-medium mb-2">Date</h3>
-              <p className="text-gray-600">{project.date}</p>
+              <p className="">{project.date}</p>
             </div>
 
             <div>
               <h3 className="text-lg font-medium mb-2">Client Name</h3>
-              <p className="text-gray-600">{project.client}</p>
+              <p className="">{project.client}</p>
             </div>
 
             <div>
@@ -155,22 +155,22 @@ export default function ProjectDetail() {
           <div className="md:col-span-2 space-y-12">
             <div>
               <h2 className="text-3xl font-bold mb-6">About</h2>
-              <p className="text-gray-700">{project.about}</p>
+              <p className="">{project.about}</p>
             </div>
 
             <div>
               <h2 className="text-3xl font-bold mb-6">Our Clients</h2>
-              <p className="text-gray-700">{project.clients}</p>
+              <p className="">{project.clients}</p>
             </div>
 
             <div>
               <h2 className="text-3xl font-bold mb-6">Challenge</h2>
-              <p className="text-gray-700">{project.challenge}</p>
+              <p className="">{project.challenge}</p>
             </div>
 
             <div>
               <h2 className="text-3xl font-bold mb-6">Results</h2>
-              <p className="text-gray-700 mb-12">{project.results}</p>
+              <p className=" mb-12">{project.results}</p>
 
               {/* Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -178,23 +178,19 @@ export default function ProjectDetail() {
                   <h3 className="text-3xl font-bold mb-2">
                     {project.metrics.funding}
                   </h3>
-                  <p className="text-gray-600">
-                    {project.metrics.fundingLabel}
-                  </p>
+                  <p className="">{project.metrics.fundingLabel}</p>
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold mb-2">
                     {project.metrics.conversion}
                   </h3>
-                  <p className="text-gray-600">
-                    {project.metrics.conversionLabel}
-                  </p>
+                  <p className="">{project.metrics.conversionLabel}</p>
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold mb-2">
                     {project.metrics.users}
                   </h3>
-                  <p className="text-gray-600">{project.metrics.usersLabel}</p>
+                  <p className="">{project.metrics.usersLabel}</p>
                 </div>
               </div>
             </div>
