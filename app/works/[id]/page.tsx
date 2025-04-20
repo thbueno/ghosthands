@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { ArrowUpRight } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { useParams } from "next/navigation"
-import { useEffect } from "react"
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect } from "react";
 
 // Define project data type
 interface ProjectData {
-  id: string
-  title: string
-  headline: string
-  image: string
-  date: string
-  client: string
-  services: string[]
-  websiteUrl: string
-  about: string
-  clients: string
-  challenge: string
-  results: string
+  id: string;
+  title: string;
+  headline: string;
+  image: string;
+  date: string;
+  client: string;
+  services: string[];
+  websiteUrl: string;
+  about: string;
+  clients: string;
+  challenge: string;
+  results: string;
   metrics: {
-    funding: string
-    fundingLabel: string
-    conversion: string
-    conversionLabel: string
-    users: string
-    usersLabel: string
-  }
+    funding: string;
+    fundingLabel: string;
+    conversion: string;
+    conversionLabel: string;
+    users: string;
+    usersLabel: string;
+  };
 }
 
 // Sample project data
@@ -84,25 +84,27 @@ const projects: Record<string, ProjectData> = {
       usersLabel: "Active monthly users",
     },
   },
-}
+};
 
 export default function ProjectDetail() {
-  const params = useParams()
-  const projectId = params.id as string
-  const project = projects[projectId] || projects["estatery-1"] // Fallback to estatery if project not found
+  const params = useParams();
+  const projectId = params.id as string;
+  const project = projects[projectId] || projects["estatery-1"]; // Fallback to estatery if project not found
 
   // Scroll to top when the component mounts
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [projectId])
+    window.scrollTo(0, 0);
+  }, [projectId]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 md:px-8 lg:px-24 py-12">
         {/* Project Header */}
         <div className="mb-12">
           <h4 className="text-lg mb-4">{project.title}</h4>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">{project.headline}</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+            {project.headline}
+          </h1>
           <div className="bg-gray-100 rounded-3xl overflow-hidden mb-12">
             <Image
               src={project.image || "/placeholder.svg"}
@@ -173,15 +175,25 @@ export default function ProjectDetail() {
               {/* Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                  <h3 className="text-3xl font-bold mb-2">{project.metrics.funding}</h3>
-                  <p className="text-gray-600">{project.metrics.fundingLabel}</p>
+                  <h3 className="text-3xl font-bold mb-2">
+                    {project.metrics.funding}
+                  </h3>
+                  <p className="text-gray-600">
+                    {project.metrics.fundingLabel}
+                  </p>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold mb-2">{project.metrics.conversion}</h3>
-                  <p className="text-gray-600">{project.metrics.conversionLabel}</p>
+                  <h3 className="text-3xl font-bold mb-2">
+                    {project.metrics.conversion}
+                  </h3>
+                  <p className="text-gray-600">
+                    {project.metrics.conversionLabel}
+                  </p>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold mb-2">{project.metrics.users}</h3>
+                  <h3 className="text-3xl font-bold mb-2">
+                    {project.metrics.users}
+                  </h3>
                   <p className="text-gray-600">{project.metrics.usersLabel}</p>
                 </div>
               </div>
@@ -190,5 +202,5 @@ export default function ProjectDetail() {
         </div>
       </div>
     </div>
-  )
+  );
 }
