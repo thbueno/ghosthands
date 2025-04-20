@@ -38,30 +38,30 @@ export function FooterSection() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 py-8">
+          <div className="border-t border-text py-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
               <nav className="flex flex-wrap gap-8 mb-6 md:mb-0">
                 <Link
                   href="/"
-                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
                   HOME
                 </Link>
                 <Link
                   href="/about"
-                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
                   ABOUT ME
                 </Link>
                 <Link
                   href="/works"
-                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
                   WORKS
                 </Link>
                 <Link
                   href="/insights"
-                  className="text-sm font-medium hover:text-gray-300 transition-colors"
+                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
                   INSIGHTS
                 </Link>
@@ -109,14 +109,14 @@ export function FooterSection() {
             </div>
 
             <div className="max-w-md">
-              <p className="text-gray-400 mb-6">Keep up with me if you can.</p>
+              <p className="text-text mb-6">Keep up with me if you can.</p>
               <form onSubmit={handleSubmit} className="relative">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full bg-transparent border-b border-gray-700 py-2 pr-12 focus:outline-none focus:border-white transition-colors text-white"
+                  className="w-full bg-transparent border-b border-background py-2 pr-12 focus:outline-none focus:border-white transition-colors text-background placeholder:text-text"
                   required
                 />
                 <button
