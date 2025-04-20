@@ -134,7 +134,7 @@ export default function ProjectDetail() {
               <h3 className="text-lg font-medium mb-2">Services</h3>
               <div className="space-y-1">
                 {project.services.map((service, index) => (
-                  <p key={index} className="text-gray-600">
+                  <p key={index} className="">
                     {service}
                   </p>
                 ))}
@@ -144,7 +144,7 @@ export default function ProjectDetail() {
             <div>
               <Link
                 href={project.websiteUrl}
-                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-title hover:border-secondary hover:text-secondary transition"
               >
                 Visit Website <ArrowUpRight size={16} />
               </Link>

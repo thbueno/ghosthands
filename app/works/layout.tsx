@@ -1,10 +1,14 @@
-import type React from "react"
-import { FooterSection } from "@/components/footer-section"
-import { NavBar } from "@/components/navbar"
+import { FooterSection } from "@/components/footer-section";
+import { NavBar } from "@/components/navbar";
+import type React from "react";
 
-export default function WorksLayout({ children }: { children: React.ReactNode }) {
+export default function WorksLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
       <NavBar />
 
@@ -14,5 +18,5 @@ export default function WorksLayout({ children }: { children: React.ReactNode })
       {/* Footer */}
       <FooterSection />
     </div>
-  )
+  );
 }
