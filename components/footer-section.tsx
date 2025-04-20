@@ -70,21 +70,21 @@ export function FooterSection() {
               <div className="flex gap-6">
                 <Link
                   href="#"
-                  className="hover:text-gray-300 transition-colors"
+                  className="text-background hover:text-secondary transition-colors"
                 >
                   <Twitter size={20} />
                   <span className="sr-only">Twitter</span>
                 </Link>
                 <Link
                   href="#"
-                  className="hover:text-gray-300 transition-colors"
+                  className="text-background hover:text-secondary transition-colors"
                 >
                   <Youtube size={20} />
                   <span className="sr-only">YouTube</span>
                 </Link>
                 <Link
                   href="#"
-                  className="hover:text-gray-300 transition-colors"
+                  className="text-background hover:text-secondary transition-colors"
                 >
                   <svg
                     width="20"
@@ -100,7 +100,7 @@ export function FooterSection() {
                 </Link>
                 <Link
                   href="#"
-                  className="hover:text-gray-300 transition-colors"
+                  className="text-background hover:text-secondary transition-colors"
                 >
                   <Instagram size={20} />
                   <span className="sr-only">Instagram</span>
