@@ -22,11 +22,11 @@ export function SocialLinks({
   className = "",
 }: SocialLinksProps) {
   const baseClasses =
-    "flex items-center gap-1 text-sm font-medium transition-colors";
+    "flex items-center gap-1 text-md font-medium transition-colors";
   const variantClasses =
     variant === "dark"
-      ? "text-[color:var(--title)] hover:text-[color:var(--secondary)]"
-      : "text-[color:var(--text)] hover:text-[color:var(--secondary)]";
+      ? "text-[color:var(--background)] hover:text-[color:var(--secondary)]"
+      : "text-[color:var(--title)] hover:text-[color:var(--secondary)]";
 
   return (
     <div className="flex gap-8 mb-8 md:mb-0">

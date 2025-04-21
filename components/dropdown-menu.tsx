@@ -4,6 +4,7 @@ import { LetsTalkButton } from "@/components/lets-talk-button";
 import { ArrowRight, X } from "lucide-react";
 import Link from "next/link";
 import { type FormEvent, useState } from "react";
+import { SocialLinks } from "./social-links";
 
 interface DropdownMenuProps {
   isOpen: boolean;
@@ -133,36 +134,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl text-gray-400 mb-6">Follow me.</h3>
-              <div className="flex flex-wrap gap-8">
-                <Link
-                  href="#"
-                  className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
-                >
-                  INSTAGRAM{" "}
-                  <ArrowRight size={14} className="transform -rotate-45" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
-                >
-                  BEHANCE{" "}
-                  <ArrowRight size={14} className="transform -rotate-45" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
-                >
-                  TWITTER{" "}
-                  <ArrowRight size={14} className="transform -rotate-45" />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-1 text-sm font-medium hover:text-gray-300 transition-colors"
-                >
-                  DRIBBBLE{" "}
-                  <ArrowRight size={14} className="transform -rotate-45" />
-                </Link>
-              </div>
+              <SocialLinks variant="dark" />
             </div>
             <div>
               <h3 className="text-xl text-gray-400 mb-6">
