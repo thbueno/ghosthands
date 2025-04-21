@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import { useEffect } from "react"
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
 
 // Define the project type
 interface Project {
-  id: string
-  title: string
-  category: string
-  image: string
+  id: string;
+  title: string;
+  category: string;
+  image: string;
 }
 
 // Sample project data
@@ -45,16 +45,16 @@ const projects: Project[] = [
     category: "Branding",
     image: "/images/wepay-mobile.png",
   },
-]
+];
 
 export default function WorksPage() {
   // Scroll to top when the component mounts
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 md:px-8 lg:px-24 py-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-12">My Works</h1>
 
@@ -89,5 +89,5 @@ export default function WorksPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
