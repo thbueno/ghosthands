@@ -133,7 +133,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
         <div className="border-t border-gray-800 pt-8 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl text-gray-400 mb-6">Follow me.</h3>
+              <h3 className="text-xl text-gray-400 mb-6">/Follow me.</h3>
               <SocialLinks variant="dark" />
             </div>
             <div>
