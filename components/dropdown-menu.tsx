@@ -25,11 +25,11 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-title text-white z-50 overflow-auto">
+    <div className="fixed inset-0 bg-title text-background z-50 overflow-auto">
       <div className="container mx-auto px-4 md:px-8 lg:px-24 py-8 flex flex-col min-h-screen">
         {/* Header */}
         <header className="flex justify-between items-center mb-8">
-          <div className="text-title text-2xl font-extrabold">
+          <div className="text-background text-2xl font-extrabold">
             <span className="text-2xl font-extrabold">Thiago</span>Bueno
           </div>
           <div className="flex items-center gap-4">
