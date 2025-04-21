@@ -33,10 +33,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
             <span className="text-2xl font-extrabold">Thiago</span>Bueno
           </div>
           <div className="flex items-center gap-4">
-            <LetsTalkButton
-              variant="light"
-              className="border-stone-700 hover:bg-stone-900"
-            />
+            <LetsTalkButton variant="light" className="border-stone-700" />
             <button
               onClick={onClose}
               className="p-3 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
