@@ -47,20 +47,20 @@ export default function Home() {
           <div className="flex gap-8 mb-8 md:mb-0">
             <Link
               href="#"
-              className="flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity"
+              className="flex items-center gap-1 text-sm font-medium hover:text-secondary transition-opacity"
             >
               INSTAGRAM{" "}
               <ArrowRight size={14} className="transform -rotate-45" />
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity"
+              className="flex items-center gap-1 text-sm font-medium hover:text-secondary transition-opacity"
             >
               BEHANCE <ArrowRight size={14} className="transform -rotate-45" />
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity"
+              className="flex items-center gap-1 text-sm font-medium hover:text-secondary transition-opacity"
             >
               DRIBBBLE <ArrowRight size={14} className="transform -rotate-45" />
             </Link>
