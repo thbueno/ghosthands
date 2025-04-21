@@ -4,6 +4,7 @@ import { LetsTalkButton } from "@/components/lets-talk-button";
 import { ArrowRight, X } from "lucide-react";
 import Link from "next/link";
 import { type FormEvent, useState } from "react";
+import { NewsletterForm } from "./newsletter-form";
 import { SocialLinks } from "./social-links";
 
 interface DropdownMenuProps {
@@ -136,7 +137,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
               <h3 className="text-xl text-gray-400 mb-6">/Follow me.</h3>
               <SocialLinks variant="dark" />
             </div>
-            <div>
+            {/* <div>
               <h3 className="text-xl text-gray-400 mb-6">
                 Stay connected w/ me.
               </h3>
@@ -157,7 +158,8 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   <ArrowRight size={20} />
                 </button>
               </form>
-            </div>
+            </div> */}
+            <NewsletterForm />
           </div>
         </div>
       </div>
