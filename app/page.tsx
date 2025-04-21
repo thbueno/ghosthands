@@ -7,9 +7,8 @@ import { FooterSection } from "@/components/footer-section";
 import { LetsTalkButton } from "@/components/lets-talk-button";
 import { NavBar } from "@/components/navbar";
 import { PartnersSection } from "@/components/partners-section";
+import { SocialLinks } from "@/components/social-links";
 import { WorksSection } from "@/components/works-section";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -44,27 +43,7 @@ export default function Home() {
 
         {/* Footer */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <div className="flex gap-8 mb-8 md:mb-0">
-            <Link
-              href="#"
-              className="flex items-center gap-1 text-sm font-medium hover:text-secondary transition-opacity"
-            >
-              INSTAGRAM{" "}
-              <ArrowRight size={14} className="transform -rotate-45" />
-            </Link>
-            <Link
-              href="#"
-              className="flex items-center gap-1 text-sm font-medium hover:text-secondary transition-opacity"
-            >
-              BEHANCE <ArrowRight size={14} className="transform -rotate-45" />
-            </Link>
-            <Link
-              href="#"
-              className="flex items-center gap-1 text-sm font-medium hover:text-secondary transition-opacity"
-            >
-              DRIBBBLE <ArrowRight size={14} className="transform -rotate-45" />
-            </Link>
-          </div>
+          <SocialLinks />
           <LetsTalkButton variant="dark" />
         </div>
       </div>
