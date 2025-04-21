@@ -25,21 +25,21 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#050A13] text-white z-50 overflow-auto">
+    <div className="fixed inset-0 bg-title text-white z-50 overflow-auto">
       <div className="container mx-auto px-4 md:px-8 lg:px-24 py-8 flex flex-col min-h-screen">
         {/* Header */}
         <header className="flex justify-between items-center mb-8">
-          <div className="text-white text-2xl font-light">
-            <span className="font-normal">show</span>casy.
+          <div className="text-title text-2xl font-extrabold">
+            <span className="text-2xl font-extrabold">Thiago</span>Bueno
           </div>
           <div className="flex items-center gap-4">
             <LetsTalkButton
               variant="light"
-              className="border-gray-700 hover:bg-gray-900"
+              className="border-stone-700 hover:bg-stone-900"
             />
             <button
               onClick={onClose}
-              className="p-3 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors"
+              className="p-3 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
             >
               <X size={24} />
             </button>
@@ -54,16 +54,16 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex justify-between items-center">
                   <Link
                     href="/"
-                    className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
+                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
                   >
                     Home{" "}
-                    <span className="text-gray-500 text-2xl md:text-3xl">
+                    <span className="text-stone-500 text-2xl md:text-3xl">
                       (01)
                     </span>
                   </Link>
                   <Link
                     href="/"
-                    className="p-4 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors"
+                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
                   >
                     <ArrowRight size={20} />
                   </Link>
@@ -73,16 +73,16 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex justify-between items-center">
                   <Link
                     href="/about"
-                    className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
+                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
                   >
                     About Me{" "}
-                    <span className="text-gray-500 text-2xl md:text-3xl">
+                    <span className="text-stone-500 text-2xl md:text-3xl">
                       (02)
                     </span>
                   </Link>
                   <Link
                     href="/about"
-                    className="p-4 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors"
+                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
                   >
                     <ArrowRight size={20} />
                   </Link>
@@ -92,16 +92,16 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex justify-between items-center">
                   <Link
                     href="/works"
-                    className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
+                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
                   >
                     Works{" "}
-                    <span className="text-gray-500 text-2xl md:text-3xl">
+                    <span className="text-stone-500 text-2xl md:text-3xl">
                       (03)
                     </span>
                   </Link>
                   <Link
                     href="/works"
-                    className="p-4 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors"
+                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
                   >
                     <ArrowRight size={20} />
                   </Link>
@@ -111,16 +111,16 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex justify-between items-center">
                   <Link
                     href="/insights"
-                    className="text-5xl md:text-6xl font-bold hover:text-gray-300 transition-colors"
+                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
                   >
                     Insights{" "}
-                    <span className="text-gray-500 text-2xl md:text-3xl">
+                    <span className="text-stone-500 text-2xl md:text-3xl">
                       (04)
                     </span>
                   </Link>
                   <Link
                     href="/insights"
-                    className="p-4 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors"
+                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
                   >
                     <ArrowRight size={20} />
                   </Link>
@@ -131,14 +131,14 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
+        <div className="border-t border-stone-800 pt-8 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl text-gray-400 mb-6">/Follow me.</h3>
+              <h3 className="text-xl text-stone-400 mb-6">/Follow me.</h3>
               <SocialLinks variant="dark" />
             </div>
             {/* <div>
-              <h3 className="text-xl text-gray-400 mb-6">
+              <h3 className="text-xl text-stone-400 mb-6">
                 Stay connected w/ me.
               </h3>
               <form onSubmit={handleSubmit} className="relative">
@@ -147,7 +147,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full bg-transparent border-b border-gray-700 py-2 pr-12 focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-transparent border-b border-stone-700 py-2 pr-12 focus:outline-none focus:border-white transition-colors"
                   required
                 />
                 <button
