@@ -14,7 +14,7 @@ export function LetsTalkButton({
     "flex items-center gap-2 px-8 py-4 rounded-full transition-colors";
   const variantClasses =
     variant === "dark"
-      ? "bg-secondary text-background hover:bg-primary"
+      ? "bg-secondary text-background border border-background hover:bg-primary"
       : "border border-title hover:border-secondary hover:text-secondary transition";
 
   return (
