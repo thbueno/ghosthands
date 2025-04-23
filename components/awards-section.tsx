@@ -14,7 +14,7 @@ interface Award {
 const awards: Award[] = [
   {
     id: "esthalo",
-    title: "Estahlo - Comunicação",
+    title: "Esthalo - Advertising",
     year: "2022 to 2025",
     organization: "Software Engineer",
     url: "#",
