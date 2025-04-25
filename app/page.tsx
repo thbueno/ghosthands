@@ -44,7 +44,7 @@ export default function Home() {
         {/* Footer */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           <SocialLinks />
-          <LetsTalkButton variant="dark" />
+          <LetsTalkButton variant="red" />
         </div>
       </div>
 
