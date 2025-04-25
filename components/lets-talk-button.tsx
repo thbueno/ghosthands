@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface LetsTalkButtonProps {
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "red";
   className?: string;
 }
 
@@ -13,8 +13,10 @@ export function LetsTalkButton({
   const baseClasses = "flex items-center gap-2 px-8 py-4 rounded-full transition-all";
   const variantClasses =
     variant === "dark"
-      ? "bg-secondary hover:bg-primary text-background border border-background"
-      : "text-title border border-title hover:border-secondary hover:text-secondary";
+      ? "border border-background text-background hover:border-secondary hover:text-secondary"
+      : variant === "red"
+      ? "bg-secondary hover:bg-primary text-background"
+      : "border border-title text-title hover:border-secondary hover:text-secondary";
 
   return (
     <Link
