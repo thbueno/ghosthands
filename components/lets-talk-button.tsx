@@ -10,12 +10,11 @@ export function LetsTalkButton({
   variant = "light",
   className = "",
 }: LetsTalkButtonProps) {
-  const baseClasses =
-    "flex items-center gap-2 px-8 py-4 rounded-full transition-colors";
+  const baseClasses = "flex items-center gap-2 px-8 py-4 rounded-full transition-all";
   const variantClasses =
     variant === "dark"
-      ? "bg-secondary text-background border border-background hover:bg-primary"
-      : "border border-title hover:border-secondary hover:text-secondary transition";
+      ? "bg-secondary hover:bg-primary text-background border border-background"
+      : "text-title border border-title hover:border-secondary hover:text-secondary";
 
   return (
     <Link
