@@ -10,7 +10,10 @@ export function CTASection() {
             <span className="text-background">awesome?</span>
           </h1>
           <div className="flex justify-center">
-            <LetsTalkButton className="hover:border-background hover:text-background" />
+            <LetsTalkButton 
+              variant="light"
+              className="hover:border-background hover:text-background" 
+            />
           </div>
         </div>
       </div>
