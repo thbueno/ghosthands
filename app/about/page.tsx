@@ -16,7 +16,7 @@ export default function AboutPage() {
         {/* About Header */}
         <div className="mb-16 text-center md:text-left">
           <h1 className="mb-8">
-            <span className="text-secondary">About me,</span> a Visual Designer living in Munich
+            <span className="text-secondary">About me,</span> a Software Engineer
           </h1>
           <p className="text-lg md:text-xl max-w-4xl mx-auto md:mx-0">
             As a Senior Designer with over 10 years of experience, I specialize in creating intuitive and user-centered
@@ -61,19 +61,19 @@ export default function AboutPage() {
         {/* Experience Timeline */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
           <div>
-            <p className="text-gray-500 mb-2">2013-2015</p>
+            <p className="text-stone-400 mb-2">2013-2015</p>
             <h3 className="text-4xl font-bold mb-2">2 years</h3>
-            <p className="text-gray-700">as a Product Designer at Uber</p>
+            <p>as a Product Designer at Uber</p>
           </div>
           <div>
-            <p className="text-gray-500 mb-2">2015-2018</p>
+            <p className="text-stone-400 mb-2">2015-2018</p>
             <h3 className="text-4xl font-bold mb-2">3 years</h3>
-            <p className="text-gray-700">as a Lead of Product Designer at Spotify</p>
+            <p>as a Lead of Product Designer at Spotify</p>
           </div>
           <div>
-            <p className="text-gray-500 mb-2">2018-Now</p>
+            <p className="text-stone-400 mb-2">2018-Now</p>
             <h3 className="text-4xl font-bold mb-2">5+ years</h3>
-            <p className="text-gray-700">as a Head of Product Designer at Rovio</p>
+            <p>as a Head of Product Designer at Rovio</p>
           </div>
         </div>
 
