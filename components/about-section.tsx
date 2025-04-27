@@ -23,7 +23,7 @@ export function AboutSection() {
           {/* Content Column */}
           <div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-              About me and my work
+              About me
             </h2>
             <p className="text-lg text-gray-700 mb-10">
               Concentrate on your primary objective which is expanding your
@@ -35,7 +35,7 @@ export function AboutSection() {
               href="/about"
               className="inline-flex items-center text-lg font-medium hover:opacity-80 transition-opacity"
             >
-              About Me <ArrowRight className="ml-2" size={20} />
+              Learn More <ArrowRight className="ml-2" size={20} />
             </Link>
           </div>
         </div>
