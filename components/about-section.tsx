@@ -23,7 +23,7 @@ export function AboutSection() {
           {/* Content Column */}
           <div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-              Design with engagement and inspiression
+              About me and my work
             </h2>
             <p className="text-lg text-gray-700 mb-10">
               Concentrate on your primary objective which is expanding your
