@@ -14,12 +14,12 @@ interface Partner {
 const partners: Partner[] = [
   {
     id: "rackspace",
-    name: "Rackspace",
+    name: "Bueno",
     logo: "/images/rackspace-logo.svg",
   },
   {
     id: "pipefy",
-    name: "Pipefy",
+    name: "Thiago",
     logo: "/images/pipefy-logo.svg",
   },
   {
