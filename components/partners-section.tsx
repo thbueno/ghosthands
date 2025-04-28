@@ -47,7 +47,7 @@ interface CarouselProps {
 }
 
 export function PartnersSection({
-  baseSpeed = 50,
+  baseSpeed = 80,
   decelerationFactor = 0.1,
   transitionDuration = 400,
   hideTitle = false,
@@ -143,9 +143,9 @@ export function PartnersSection({
                 <Image
                   src={partner.logo || "/placeholder.svg"}
                   alt={partner.name}
-                  width={180}
-                  height={60}
-                  className="h-12 w-auto opacity-30 grayscale"
+                  width={540}
+                  height={180}
+                  className="h-48 w-auto opacity-30 grayscale"
                 />
               </div>
             ))}
