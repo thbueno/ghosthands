@@ -47,9 +47,9 @@ interface CarouselProps {
 }
 
 export function PartnersSection({
-  baseSpeed = 80,
-  decelerationFactor = 0.1,
-  transitionDuration = 400,
+  baseSpeed = 340,
+  decelerationFactor = 0.2,
+  transitionDuration = 200,
   hideTitle = false,
 }: CarouselProps) {
   const [isHovering, setIsHovering] = useState(false)
@@ -145,7 +145,7 @@ export function PartnersSection({
                   alt={partner.name}
                   width={540}
                   height={180}
-                  className="h-48 w-auto opacity-30 grayscale"
+                  className="h-40 w-auto opacity-60"
                 />
               </div>
             ))}
