@@ -34,7 +34,7 @@ interface ProjectData {
 const projects: Record<string, ProjectData> = {
   "estatery-1": {
     id: "estatery-1",
-    title: "Estatery",
+    title: "GOV BR governaça Brasil",
     headline: "Unleash Your Potential and Push Beyond Limits",
     image: "/images/estatery-laptop.png",
     date: "May 5, 2023",
