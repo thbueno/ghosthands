@@ -26,7 +26,7 @@ export function AboutSection() {
               About me
             </h2>
             <p className="text-lg text-gray-700 mb-10">
-            Over the years I have spent time creating and converting designs into pixel-perfect, performant, accessible and responsive applications/websites. I have always been excited about the entire development stack, so I frequently engage in backend too.
+            Over the years I have spent time creating and converting ideas into pixel-perfect, performant, accessible and responsive applications/websites. I have always been excited about the entire development stack, so I frequently engage in backend too.
             </p>
             <Link
               href="/about"
