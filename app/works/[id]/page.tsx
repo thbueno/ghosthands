@@ -60,7 +60,7 @@ const projects: Record<string, ProjectData> = {
   },
   "wepay-1": {
     id: "wepay-1",
-    title: "Wepay",
+    title: "Travel Friends",
     headline: "Revolutionizing Digital Payments for Everyone",
     image: "/images/wepay-mobile.png",
     date: "April 12, 2023",
