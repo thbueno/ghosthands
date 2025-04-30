@@ -63,7 +63,7 @@ const projects: Record<string, ProjectData> = {
     title: "Travel Friends",
     headline: "Revolutionizing Digital Payments for Everyone",
     image: "/images/wepay-mobile.png",
-    date: "April 12, 2023",
+    date: "April 12, 2020",
     client: "FinTech Solutions Inc.",
     services: ["Mobile App", "Branding", "UI/UX"],
     websiteUrl: "#",
