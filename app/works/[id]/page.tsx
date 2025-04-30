@@ -50,7 +50,7 @@ const projects: Record<string, ProjectData> = {
     results:
       "Let's understand that motivation plays a crucial role in maintaining an active lifestyle. That's why we've incorporated exciting features like badges, rewards, and challenges within Sportly. Achieve your goals and unlock various milestones to earn recognition and stay motivated on your fitness journey. So, whether you're a beginner looking to kickstart your fitness routine or a seasoned athlete striving for new personal bests, Sportly is your ideal companion. Download the app today and experience the joy of tracking your sport activity like never before!",
     metrics: {
-      funding: "$22.8M",
+      funding: "$25.8M",
       fundingLabel: "Total raised in funding so far",
       conversion: "+24%",
       conversionLabel: "Conversion rate with new design",
