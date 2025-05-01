@@ -1,6 +1,7 @@
 "use client";
 
 import { LetsTalkButton } from "@/components/lets-talk-button";
+import { MenuButton } from "@/components/menu-button";
 import { ArrowRight, X } from "lucide-react";
 import Link from "next/link";
 import { type FormEvent, useState } from "react";
@@ -34,12 +35,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
           </div>
           <div className="flex items-center gap-4">
             <LetsTalkButton variant="dark" />
-            <button
-              onClick={onClose}
-              className="p-3 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
-            >
-              <X size={24} />
-            </button>
+            <MenuButton isOpen={isOpen} onClick={onClose} />
           </div>
         </header>
 
