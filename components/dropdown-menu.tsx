@@ -34,12 +34,6 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
           </div>
           <div className="flex items-center gap-4">
             <LetsTalkButton variant="dark" />
-            <button
-              onClick={onClose}
-              className="p-3 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
-            >
-              <X size={24} />
-            </button>
           </div>
         </header>
 

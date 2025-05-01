@@ -4,6 +4,7 @@ import { DropdownMenu } from "@/components/dropdown-menu";
 import { LetsTalkButton } from "@/components/lets-talk-button";
 import Link from "next/link";
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,23 +35,30 @@ export function NavBar() {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="relative"
                 >
-                  <path
-                    d="M4 6H20"
-                    stroke="currentColor"
-                    strokeWidth="2"
+                  <line
+                    x1="4" y1="6" x2="20" y2="6"
+                    className={twMerge(
+                      "stroke-current stroke-2 origin-center transition-all duration-300",
+                      menuOpen && "rotate-45 translate-y-[6px]"
+                    )}
                     strokeLinecap="round"
                   />
-                  <path
-                    d="M4 12H20"
-                    stroke="currentColor"
-                    strokeWidth="2"
+                  <line
+                    x1="4" y1="12" x2="20" y2="12"
+                    className={twMerge(
+                      "stroke-current stroke-2 transition-all duration-300",
+                      menuOpen && "opacity-0"
+                    )}
                     strokeLinecap="round"
                   />
-                  <path
-                    d="M4 18H20"
-                    stroke="currentColor"
-                    strokeWidth="2"
+                  <line
+                    x1="4" y1="18" x2="20" y2="18"
+                    className={twMerge(
+                      "stroke-current stroke-2 origin-center transition-all duration-300",
+                      menuOpen && "-rotate-45 -translate-y-[6px]"
+                    )}
                     strokeLinecap="round"
                   />
                 </svg>
