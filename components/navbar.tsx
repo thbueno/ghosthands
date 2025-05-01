@@ -27,7 +27,12 @@ export function NavBar() {
               </div>
               <button
                 onClick={toggleMenu}
-                className="p-3 border border-title rounded-full hover:border-secondary hover:text-secondary transition-colors"
+                className={twMerge(
+                  "p-3 border rounded-full transition-all duration-300",
+                  !menuOpen
+                    ? "border-title hover:border-secondary hover:text-secondary"
+                    : "opacity-0 pointer-events-none"
+                )}
               >
                 <svg
                   width="24"
