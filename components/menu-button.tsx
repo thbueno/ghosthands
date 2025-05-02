@@ -19,8 +19,8 @@ export function MenuButton({ isOpen, onClick }: MenuButtonProps) {
       >
         <line
           x1="4" y1="6" x2="20" y2="6"
-          className={`stroke-current stroke-2 origin-center transition-transform duration-300 ${
-            isOpen ? "rotate-45 translate-y-1" : ""
+          className={`stroke-current stroke-2 origin-left transition-transform duration-300 ${
+            isOpen ? "rotate-45 -translate-y-1" : ""
           }`}
           strokeLinecap="round"
         />
@@ -33,8 +33,8 @@ export function MenuButton({ isOpen, onClick }: MenuButtonProps) {
         />
         <line
           x1="4" y1="18" x2="20" y2="18"
-          className={`stroke-current stroke-2 origin-center transition-transform duration-300 ${
-            isOpen ? "-rotate-45 -translate-y-1" : ""
+          className={`stroke-current stroke-2 origin-left transition-transform duration-300 ${
+            isOpen ? "-rotate-45 translate-y-1" : ""
           }`}
           strokeLinecap="round"
         />
