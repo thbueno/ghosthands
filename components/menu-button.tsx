@@ -7,7 +7,7 @@ export function MenuButton({ isOpen, onClick }: MenuButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="p-3 border border-background rounded-full hover:border-secondary hover:text-secondary transition-colors"
+      className="p-3 border border-title rounded-full hover:border-secondary hover:text-secondary transition-colors"
     >
       <svg
         width="24"
