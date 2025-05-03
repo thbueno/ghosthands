@@ -42,7 +42,7 @@ const projects: Record<string, ProjectData> = {
     services: ["Mobile App", "Website Design", "UI/UX"],
     websiteUrl: "#",
     about:
-      "At Sportly, we believe in making fitness fun and evolution. That's why we've developed a cutting-edge mobile app and dashboard that allows you to effortlessly track and manage your sport activities. Whether you're an avid runner, a devoted cyclist, or a fitness enthusiast, Sportly has got you covered! With Sportly, you'll enjoy a user-friendly interface that empowers you to log your workouts, set personal goals, and monitor your achievements. Whether you prefer running, cycling, or engaging in various sports, our app provides detailed insights into your performance, distance covered, calories burned, and much more.",
+      "At Sportly, we believe in making fitness fun and evolution. That's why we've developed a cutting-edge mobile app and dashboard that allows you to effortlessly track and manage your sport activities. Whether you're an avid runner, a devoted cyclist, or a fitness enthusiast, Sportly has got you covered! With Sportly, you'll enjoy a user-friendly interface that empowers you to log your workouts, set personal goals, and monitor your achievements. Whether you prefer running, Cycling, or engaging in various sports, our app provides detailed insights into your performance, distance covered, calories burned, and much more.",
     clients:
       "Our esteemed clients, who are passionate about maintaining an active lifestyle, inspired us to create Sportly. They sought an all-in-one solution that could seamlessly monitor their progress, provide insightful data, and keep them motivated throughout their fitness journey. We listened, and we delivered.",
     challenge:
