@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
   --title: #0f0f0f;
-  --background: #e7e6e4;
+  --background: #e6e6e6;
   --primary: #d80e00;
   --secondary: #ff1200;
   --text: #5b645b;
@@ -123,11 +123,11 @@ body {
   }
 
   h1 {
-    @apply text-[color:var(--title)] font-extrabold text-5xl md:text-6xl lg:text-7xl;
+    @apply text-[color:var(--title)] font-extrabold text-5xl md:text-6xl lg:text-7xl tracking-tight;
   }
 
   h2 {
-    @apply text-[color:var(--title)] font-semibold text-2xl;
+    @apply text-[color:var(--title)] font-semibold text-2xl tracking-tight;
   }
 
   p {
@@ -135,6 +135,6 @@ body {
   }
 
   span {
-    @apply text-[color:var(--secondary)] font-extrabold text-5xl md:text-6xl lg:text-7xl;
+    @apply text-[color:var(--secondary)] font-extrabold text-5xl md:text-6xl lg:text-7xl tracking-tight;
   }
 }
