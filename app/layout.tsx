@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: "Thiago Bueno - Visual Designer Portfolio",
   description:
     "Portfolio of a visual designer with passion to create great experiences",
-  generator: "v0.dev",
 };
 
 
