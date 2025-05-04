@@ -1,8 +1,7 @@
 import localFont from 'next/font/local'
 
 export const myLocalFont = localFont({
-  src: '../../public/fonts/GeneralSans.ttf',
+  src: './GeneralSans.ttf',  // Path relative to this file
   display: 'swap',
-  // Add variable font settings
-  variable: '--font-general-sans', // CSS variable name
+  variable: '--font-general-sans',
 })

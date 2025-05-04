@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${myLocalFont.className} ${inter.className} antialiased tracking-tight`}>
+      <body className={`${myLocalFont.className} ${myLocalFont.variable} antialiased tracking-tight`}>
         {children}
       </body>
     </html>
