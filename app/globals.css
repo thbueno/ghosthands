@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
   --title: #0f0f0f;
-  --background: #e7e5e4;
+  --background: #e7e6e4;
   --primary: #d80e00;
   --secondary: #ff1200;
   --text: #5b645b;
@@ -119,7 +119,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply tracking-tight font-general-sans;
+    @apply font-general-sans;
   }
 
   h1 {
