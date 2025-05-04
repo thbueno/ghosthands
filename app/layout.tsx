@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import type React from "react";
+import { myLocalFont } from './fonts';
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Showcasy - Visual Designer Portfolio",
@@ -19,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased tracking-tight`}>
+      <body className={`${myLocalFont.className} antialiased tracking-tight`}>
         {children}
       </body>
     </html>
