@@ -23,7 +23,7 @@ export function AboutSection() {
           {/* Content Column */}
           <div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-              About Me
+              About me
             </h2>
             <p className="text-lg mb-10">
             Over the years I have invest time creating and converting ideas into pixel-perfect, performant, accessible and responsive applications/websites. I have always been excited about the entire development stack, so i frequently engage in backend too.
