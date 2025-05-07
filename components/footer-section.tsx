@@ -15,10 +15,10 @@ export function FooterSection() {
             </p>
             <div className="flex items-center">
               <Link
-                href="mailto:hello@kazarov.com"
+                href="mailto:thiagobueno.s@gmail.com"
                 className="text-4xl md:text-5xl lg:text-6xl text-stone-200 font-bold hover:text-white transition-colors"
               >
-                hello@kazarov.com
+                thiagobueno.s@gmail.com
               </Link>
               <Link
                 href="mailto:hello@kazarov.com"
