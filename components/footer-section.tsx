@@ -11,7 +11,7 @@ export function FooterSection() {
         <div className="container mx-auto px-6 md:px-12 pt-16 pb-12">
           <div className="mb-16">
             <p className="text-lg mb-6">
-              HAVE A NICE WORKS? LET&apos;S TALK WITH ME
+              Let&apos;s build something great together
             </p>
             <div className="flex items-center">
               <Link
