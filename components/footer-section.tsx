@@ -36,25 +36,25 @@ export function FooterSection() {
                   href="/"
                   className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
-                  HOME
+                  Home
                 </Link>
                 <Link
                   href="/about"
                   className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
-                  ABOUT ME
+                  About Me
                 </Link>
                 <Link
                   href="/works"
                   className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
-                  WORKS
+                  Works
                 </Link>
                 <Link
                   href="/insights"
                   className="text-sm text-background font-medium hover:text-secondary transition-colors"
                 >
-                  INSIGHTS
+                  Insights
                 </Link>
               </nav>
 
