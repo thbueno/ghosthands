@@ -18,7 +18,7 @@ export function FooterSection() {
                 href="mailto:thiagobueno.s@gmail.com"
                 className="text-4xl md:text-5xl lg:text-6xl text-stone-200 font-bold hover:text-white transition-colors"
               >
-                thiagobueno.s@gmail.com
+                thgbueno@gmail.com
               </Link>
               <Link
                 href="mailto:hello@kazarov.com"
