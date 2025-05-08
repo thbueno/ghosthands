@@ -21,7 +21,7 @@ const awards: Award[] = [
   },
   {
     id: "site-of-the-day-1",
-    title: "Site of The Day",
+    title: "Datasys - Sistemas de Gestão",
     year: "2022",
     organization: "CSS Winners",
     url: "#",
