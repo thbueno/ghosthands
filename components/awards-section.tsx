@@ -27,8 +27,8 @@ const awards: Award[] = [
     url: "#",
   },
   {
-    id: "best-ui-design",
-    title: "Best UI Design",
+    id: "esthalo",
+    title: "Estahlo - Comunicação",
     year: "2022",
     organization: "CSS Design Awards",
     url: "#",
