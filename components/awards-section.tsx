@@ -14,7 +14,7 @@ interface Award {
 const awards: Award[] = [
   {
     id: "honorable-mention",
-    title: "Honorable Mention",
+    title: "GOV BR - Governança Brasil",
     year: "2022",
     organization: "AWWARDS",
     url: "#",
