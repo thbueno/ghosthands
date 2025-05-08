@@ -13,14 +13,14 @@ interface Award {
 // Sample awards data
 const awards: Award[] = [
   {
-    id: "honorable-mention",
+    id: "gov-br",
     title: "GOV BR - Governança Brasil",
     year: "2022",
     organization: "AWWARDS",
     url: "#",
   },
   {
-    id: "site-of-the-day-1",
+    id: "datasys",
     title: "Datasys - Sistemas de Gestão",
     year: "2022",
     organization: "CSS Winners",
