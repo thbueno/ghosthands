@@ -34,8 +34,8 @@ const awards: Award[] = [
     url: "#",
   },
   {
-    id: "site-of-the-day-2",
-    title: "Site of The Day",
+    id: "timezpot",
+    title: "Timezpot",
     year: "2022",
     organization: "AWWARDS",
     url: "#",
