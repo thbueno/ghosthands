@@ -36,7 +36,7 @@ const awards: Award[] = [
   {
     id: "timezpot",
     title: "Timezpot",
-    year: "2022",
+    year: "2014-2016",
     organization: "UI/UX Designer",
     url: "#",
   },
