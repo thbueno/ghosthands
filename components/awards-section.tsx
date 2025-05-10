@@ -15,14 +15,14 @@ const awards: Award[] = [
   {
     id: "gov-br",
     title: "GOV BR - Governança Brasil",
-    year: "2017-2022",
+    year: "2017 to 2022",
     organization: "Software Engineer",
     url: "#",
   },
   {
     id: "datasys",
     title: "Datasys - Sistemas de Gestão",
-    year: "2015-2017",
+    year: "2015 to 2017",
     organization: "Frontend Developer",
     url: "#",
   },
