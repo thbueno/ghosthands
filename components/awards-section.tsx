@@ -13,6 +13,13 @@ interface Award {
 // Sample awards data
 const awards: Award[] = [
   {
+    id: "esthalo",
+    title: "Estahlo - Comunicação",
+    year: "2022-2025",
+    organization: "Software Engineer",
+    url: "#",
+  },
+  {
     id: "gov-br",
     title: "GOV BR - Governança Brasil",
     year: "2017 to 2022",
@@ -24,13 +31,6 @@ const awards: Award[] = [
     title: "Datasys - Sistemas de Gestão",
     year: "2015 to 2017",
     organization: "Frontend Developer",
-    url: "#",
-  },
-  {
-    id: "esthalo",
-    title: "Estahlo - Comunicação",
-    year: "2022-2025",
-    organization: "Software Engineer",
     url: "#",
   },
   {
