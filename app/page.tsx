@@ -22,7 +22,7 @@ export default function Home() {
           <div className="col-span-1">
             <h1 className=" leading-[1.1] mb-8">
               I&apos;m a Software Engineer with passion to create{" "}
-              <span> ggreat experiences</span>
+              <span> gggreat experiences</span>
             </h1>
           </div>
           <div className="col-span-1 lg:col-span-2">
