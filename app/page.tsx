@@ -34,7 +34,7 @@ export default function Home() {
                 <p className="text-lg md:text-xl">
                   I&apos;m Thiago, a Software Engineer focus
                   on Front-end and UI/UX that are memorable, enjoyable,
-                  and get the job done.
+                  and current.
                 </p>
               </div>
             </div>
