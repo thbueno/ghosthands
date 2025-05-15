@@ -33,7 +33,7 @@ export default function Home() {
               <div className="lg:col-start-2 flex items-center">
                 <p className="text-lg md:text-xl">
                   I&apos;m Thiago, a Software Engineer focus
-                  on Front end and UI/UX that are easy to use, enjoyable,
+                  on Front end and UI/UX that are remarkable, enjoyable,
                   and get the job done.
                 </p>
               </div>
