@@ -30,7 +30,7 @@ const awards: Award[] = [
     id: "esthalo",
     title: "Estahlo - Comunicação",
     year: "2022",
-    organization: "CSS Design Awards",
+    organization: "Engenheiro de software",
     url: "#",
   },
   {
