@@ -23,7 +23,7 @@ const awards: Award[] = [
     id: "datasys",
     title: "Datasys - Sistemas de Gestão",
     year: "2022",
-    organization: "Engenheiro de software",
+    organization: "Frontend Developer",
     url: "#",
   },
   {
