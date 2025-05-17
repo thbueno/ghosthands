@@ -16,7 +16,7 @@ const awards: Award[] = [
     id: "esthalo",
     title: "Esthalo - Advertising",
     year: "2022 to 2025",
-    organization: "Digital Advertising Software Engineer",
+    organization: "Senior Software Engineer",
     url: "#",
   },
   {
