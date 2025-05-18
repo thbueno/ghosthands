@@ -32,9 +32,7 @@ export default function Home() {
               </div>
               <div className="lg:col-start-2 flex items-center">
                 <p className="text-lg md:text-xl">
-                  I&apos;m Thiago, a Software Engineer focus
-                  on Front-end and UI/UX that are memorable, enjoyable,
-                  and current.
+                Here you can browse through my current projects, my past works, play with some of my experiments, learn more about me or read some of my essays and notes
                 </p>
               </div>
             </div>
