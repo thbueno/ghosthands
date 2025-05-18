@@ -32,7 +32,7 @@ export default function Home() {
               </div>
               <div className="lg:col-start-2 flex items-center">
                 <p className="text-lg md:text-xl">
-                Virtual greetings to you, I&apos;m Yann-Edern and this is my personal space on the InternetsHere you can browse through my current projects, my past works and learn more about me. Feel free!
+                Virtual greetings to you, I&apos;m Thiago Bueno and this is my professional space on the Internet. Here you can browse through my current projects, my past works and learn more about me. Feel free!
                 </p>
               </div>
             </div>
