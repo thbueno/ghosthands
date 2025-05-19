@@ -21,7 +21,7 @@ const awards: Award[] = [
   },
   {
     id: "gov-br",
-    title: "GOVBsdR - Governança Brasil",
+    title: "GOVBsdrR - Governança Brasil",
     year: "2018 to 2022",
     organization: "Software Engineer",
     url: "#",
