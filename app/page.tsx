@@ -21,8 +21,8 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-24 mt-12">
           <div className="col-span-1">
             <h1 className=" leading-[1.1] mb-8">
-              I&apos;m a Interdisciplinary Software Engineer specializing in crafting user-friendly products and brands with expertise{" "}
-              <span> great experiences</span>
+              I&apos;m a Interdisciplinary Software Engineer specializing in crafting cutting edge aplications with expertise in{" "}
+              <span>Front-end and UI/UX</span>
             </h1>
           </div>
           <div className="col-span-1 lg:col-span-2">
