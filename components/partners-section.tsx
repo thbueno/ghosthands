@@ -113,7 +113,7 @@ export function PartnersSection({
       {!hideTitle && (
         <div className="container mx-auto px-4 md:px-8 lg:px-24 mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            My creative toolbox 
+            My creative Toolbox 
           </h2>
         </div>
       )}
