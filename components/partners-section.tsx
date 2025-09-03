@@ -15,12 +15,12 @@ const partners: Partner[] = [
   {
     id: "rackspace",
     name: "React",
-    logo: "/images/react_logo.svg",
+    logo: "/images/stack/react-logo.svg",
   },
   {
     id: "pipefy",
     name: "Next.js",
-    logo: "/images/Nextjs_Logo.svg",
+    logo: "/images/stack/nextjs-logo.svg",
   },
   {
     id: "teamwork",
@@ -113,7 +113,7 @@ export function PartnersSection({
       {!hideTitle && (
         <div className="container mx-auto px-4 md:px-8 lg:px-24 mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            My creatisve Toolbox
+            My tech Toolbox
           </h2>
         </div>
       )}
