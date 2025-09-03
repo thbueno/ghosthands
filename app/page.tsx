@@ -12,7 +12,7 @@ import { WorksSection } from "@/components/works-section";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background px-10">
       {/* Navigation */}
       <NavBar />
 
@@ -21,7 +21,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-24 mt-12">
           <div className="col-span-1">
             <h1 className=" leading-[1.1] mb-8">
-              I&apos;m a Software Engineer building standout aplications with{" "}
+              I&apos;m a Software Engineer building standout aplications with{" "} <br />
               <span>remarkable UI/UX</span>
             </h1>
           </div>

@@ -24,8 +24,8 @@ const partners: Partner[] = [
   },
   {
     id: "teamwork",
-    name: "Teamwork",
-    logo: "/images/teamwork-logo.svg",
+    name: "Vite",
+    logo: "/images/stack/vite-logo.svg",
   },
   {
     id: "django",
