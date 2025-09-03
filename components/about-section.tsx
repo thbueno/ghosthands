@@ -21,11 +21,11 @@ export function AboutSection() {
           </div>
 
           {/* Content Column */}
-          <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+          <div className="gap-6 flex flex-col">
+            <h2>
               About me
             </h2>
-            <p className="text-lg mb-10">
+            <p>
             Over the years I have invest time creating and converting ideas into pixel-perfect, performant, accessible and responsive applications/websites. I have always been deeply interest about the entire development stack, so i frequently engage in backend too.
             </p>
             <Link

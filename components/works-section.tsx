@@ -71,7 +71,7 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="flex justify-between items-center">
         <div>
-          <h3 className="text-xl font-bold text-title">{project.title}</h3>
+          <h2>{project.title}</h2>
           <p className="text-sm text-text">{project.category}</p>
         </div>
         <Link

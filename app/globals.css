@@ -123,11 +123,15 @@ body {
   }
 
   h1 {
-    @apply text-[color:var(--title)] font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tight;
+    @apply text-[color:var(--title)] font-bold text-4xl md:text-5xl lg:text-5xl tracking-tight;
   }
 
   h2 {
-    @apply text-[color:var(--title)] font-semibold text-2xl tracking-tight;
+    @apply text-[color:var(--title)] font-bold text-4xl md:text-5xl lg:text-5xl tracking-tight;
+  }
+
+  h3 {
+    @apply text-[color:var(--title)] font-semibold text-3xl md:text-4xl lg:text-4xl tracking-tight;
   }
 
   p {
@@ -135,6 +139,6 @@ body {
   }
 
   span {
-    @apply text-[color:var(--secondary)] font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tight;
+    @apply text-[color:var(--secondary)] font-bold text-4xl md:text-5xl lg:text-5xl tracking-tight;
   }
 }
