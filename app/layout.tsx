@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type React from "react";
-import { myLocalFont } from './fonts';
+import { dmMono, myLocalFont } from './fonts';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${myLocalFont.className} ${myLocalFont.variable} antialiased `}>
+      <body className={`${myLocalFont.className} ${myLocalFont.variable} ${dmMono.variable} antialiased `}>
         {children}
       </body>
     </html>
