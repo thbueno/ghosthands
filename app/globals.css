@@ -131,7 +131,7 @@ body {
   }
 
   h3 {
-    @apply text-[color:var(--title)] font-semibold text-3xl md:text-4xl lg:text-4xl tracking-tight;
+    @apply text-[color:var(--title)] font-semibold text-2xl md:text-3xl lg:text-3xl tracking-tight;
   }
 
   p {
