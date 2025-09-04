@@ -135,7 +135,7 @@ body {
   }
 
   p {
-    @apply text-[color:var(--text)] text-base;
+    @apply text-[color:var(--text)] text-base font-dm-mono uppercase;
   }
 
   span {
