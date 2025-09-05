@@ -54,8 +54,8 @@ export default function Home() {
 
       {/* Partners Section */}
       <PartnersSection
-        baseSpeed={40}
-        decelerationFactor={0.1}
+        baseSpeed={100}
+        decelerationFactor={0.3}
         transitionDuration={400}
       />
 
