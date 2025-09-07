@@ -24,8 +24,8 @@ export function NavBar() {
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Showcasy_about_section.jpg-bUqRlOdy9atvjR6mivxT9jhrJIV3vU.jpeg"
               alt="Designer portrait"
-              width={100}
-              height={600}
+              width={180}
+              height={180}
               className="w-full h-auto object-cover"
             />
               <span className="text-2xl font-bold">Thiago</span>Bueno
