@@ -26,9 +26,9 @@ export function NavBar() {
               alt="Designer portrait"
               width={180}
               height={180}
-              className="w-14 h-auto object-contain rounded-xl"
+              className="w-16 h-auto object-contain rounded-xl"
             />
-              <span className="text-2xl font-bold">Thiago Bueno</span>
+              <span className="text-2xl font-bold text-title">Thiago Bueno</span>
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
