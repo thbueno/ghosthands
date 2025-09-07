@@ -20,13 +20,13 @@ export function NavBar() {
       <header className="sticky top-0 left-0 right-0 bg-background z-50">
         <div className="container mx-auto px-4 md:px-8 lg:px-24 py-8">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-title text-2xl font-bold">
+            <Link href="/" className="flex gap-2 text-title text-2xl font-bold">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Showcasy_about_section.jpg-bUqRlOdy9atvjR6mivxT9jhrJIV3vU.jpeg"
+              src="/images/profile_photo.jpeg"
               alt="Designer portrait"
               width={180}
               height={180}
-              className="w-full h-auto object-cover"
+              className="w-3 h-auto object-contain"
             />
               <span className="text-2xl font-bold">Thiago</span>Bueno
             </Link>
