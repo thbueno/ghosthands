@@ -28,7 +28,7 @@ export function NavBar() {
               height={180}
               className="w-14 h-auto object-contain rounded-xl"
             />
-              <span className="text-2xl font-bold">Thiago</span>Bueno
+              <span className="text-2xl font-bold">Thiago Bueno</span>
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
