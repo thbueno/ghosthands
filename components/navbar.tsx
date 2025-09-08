@@ -29,7 +29,7 @@ export function NavBar() {
               className="w-16 h-auto object-contain rounded-3xl"
             />
             <div className="flex flex-col">
-              <span className="text-xl font-semibold text-title">Thiago Bueno</span>
+              <span className="text-2xl font-semibold text-title">Thiago Bueno</span>
               <p className="text-xs">Software Engineer</p>
             </div>
             </Link>
