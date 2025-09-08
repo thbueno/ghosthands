@@ -20,15 +20,18 @@ export function NavBar() {
       <header className="sticky top-0 left-0 right-0 bg-background z-50">
         <div className="container mx-auto px-4 md:px-8 lg:px-24 py-8">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center align-middle gap-3 text-title text-2xl font-bold">
+            <Link href="/" className="flex items-center align-middle gap-3">
             <Image
-              src="/images/profile_photo.jpeg"
+              src="/images/profile-photo.png"
               alt="Designer portrait"
               width={180}
               height={180}
-              className="w-16 h-auto object-contain rounded-xl"
+              className="w-16 h-auto object-contain rounded-2xl"
             />
+            <div className="flex flex-col">
               <span className="text-2xl font-bold text-title">Thiago Bueno</span>
+              <p className="text-sm">Software Engineer</p>
+            </div>
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
