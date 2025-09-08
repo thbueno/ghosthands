@@ -22,15 +22,15 @@ export function NavBar() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center align-middle gap-3">
             <Image
-              src="/images/profile-photo.png"
+              src="/images/profile-photo-light.png"
               alt="Designer portrait"
               width={180}
               height={180}
-              className="w-16 h-auto object-contain rounded-2xl"
+              className="w-16 h-auto object-contain rounded-3xl"
             />
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-title">Thiago Bueno</span>
-              <p className="text-sm">Software Engineer</p>
+              <span className="text-xl font-semibold text-title">Thiago Bueno</span>
+              <p className="text-xs">Software Engineer</p>
             </div>
             </Link>
             <div className="flex items-center gap-4">
