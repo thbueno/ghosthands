@@ -9,6 +9,8 @@ import { NavBar } from "@/components/navbar";
 import { PartnersSection } from "@/components/partners-section";
 import { SocialLinks } from "@/components/social-links";
 import { WorksSection } from "@/components/works-section";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,9 +22,22 @@ export default function Home() {
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-24 mt-12">
           <div className="col-span-1">
+            <Link href="/" className="flex items-center align-bottom gap-3">
+            <h1 className=" leading-[1.1]">Hi, i'm </h1>
+            <Image
+              src="/images/profile-photo-light.png"
+              alt="Designer portrait"
+              width={180}
+              height={180}
+              className="w-20 h-auto object-contain rounded-3xl"
+            />
+            <div className="flex flex-col">
+              <h1 className=" leading-[1.1]">Thiago Bueno</h1>
+            </div>
+            </Link>
             <h1 className=" leading-[1.1] mb-8">
-              pushing pixels to build standout applications{" "} <br />
-              <span>remarkable UI/UX</span>
+              a software engineer building{" "} <br />
+              <span>standout applications</span>
             </h1>
           </div>
           <div className="col-span-1 lg:col-span-2">
