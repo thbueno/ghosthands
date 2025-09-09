@@ -18,7 +18,7 @@ export default function Home() {
       {/* Navigation */}
       <NavBar />
 
-      <div className="container mx-auto px-8 md:px-8 lg:px-24 py-8">
+      <div className="container mx-auto px-8 md:px-8 lg:px-24 py-2">
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-24 mt-12">
           <div className="col-span-1">
@@ -35,7 +35,7 @@ export default function Home() {
               <h1 className=" leading-[1.1]">Thiago Bueno</h1>
             </div>
             </Link>
-            <h1 className=" leading-[1.1] mb-8">
+            <h1 className="leading-[1.2] mb-8">
               a software engineer building{" "} <br />
               <span>standout applications</span>
             </h1>
@@ -47,7 +47,7 @@ export default function Home() {
               </div>
               <div className="lg:col-start-2 flex items-center">
                 <p className="text-base md:text-base">
-                Virtual greetings to you, I&apos;m Thiago Bueno and this is my work space on the Internet. Here you can browse through my current projects, my past works and learn more about me. Don´t hesitate to reach out! if you have any questions or just want to say hi.
+                Virtual greetings to you, this is my work space on the Internet. Here you can browse through my current projects, my past works and learn more about me. Don´t hesitate to reach out! if you have any questions or just want to say hi.
                 </p>
               </div>
             </div>
