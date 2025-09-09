@@ -19,7 +19,7 @@ export default function Home() {
 
       <div className="container mx-auto px-8 py-2 md:px-8 lg:px-24">
         {/* Hero Section */}
-        <div className="mb-24 mt-12 grid grid-cols-1 gap-8 lg:grid-cols-1">
+        <div className="mb-14 mt-12 grid grid-cols-1 gap-10 lg:grid-cols-1">
           <div className="col-span-1 lg:pr-24">
             {/* Intro Section */}
             <div className="flex flex-row items-center gap-3 text-left">
@@ -46,13 +46,13 @@ export default function Home() {
             </div>
 
             {/* Tagline */}
-            <h2 className="mb-8 mt-4 leading-[1.3]">
+            <h2 className="leading-[1.3]">
               a software engineer building <span>standout applications</span>
             </h2>
           </div>
 
           <div className="col-span-1 lg:col-span-2">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
               <div className="flex items-center">
                 <div className="h-[1px] w-full bg-stone-400"></div>
               </div>
