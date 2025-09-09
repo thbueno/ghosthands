@@ -82,11 +82,11 @@ export default function Home() {
       <WorksSection />
 
       {/* Partners Section */}
-      <PartnersSection
+      {/* <PartnersSection
         baseSpeed={100}
         decelerationFactor={0.3}
         transitionDuration={400}
-      />
+      /> */}
 
       {/* CTA Section */}
       <CTASection />
