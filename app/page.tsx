@@ -10,7 +10,7 @@ import { PartnersSection } from "@/components/partners-section";
 import { SocialLinks } from "@/components/social-links";
 import { WorksSection } from "@/components/works-section";
 import Image from "next/image";
-import Link from "next/link";
+
 
 export default function Home() {
   return (
@@ -21,9 +21,9 @@ export default function Home() {
       <div className="container mx-auto px-8 md:px-8 lg:px-24 py-2">
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-24 mt-12">
-          <div className="col-span-1">
-            <Link href="/" className="flex items-center align-bottom gap-3">
-            <h1 className=" leading-[1.1]">Hi, i'm </h1>
+          <div className="col-span-1 lg:pr-24">
+            <div className="flex flex-row items-center align-bottom gap-3">
+              <h1 className=" leading-[1.1]">Hi, i'm</h1>
             <Image
               src="/images/profile-photo-light.png"
               alt="Designer portrait"
@@ -32,11 +32,11 @@ export default function Home() {
               className="w-20 h-auto object-contain rounded-3xl"
             />
             <div className="flex flex-col">
-              <h1 className=" leading-[1.1]">Thiago Bueno</h1>
+              <h1>Thiago Bueno</h1>
             </div>
-            </Link>
-            <h1 className="leading-[1.2] mb-8">
-              a software engineer building{" "} <br />
+            </div>
+            <h1 className="leading-[1.3] mb-8">
+              a software engineer building{" "}
               <span>standout applications</span>
             </h1>
           </div>
@@ -62,7 +62,7 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <AboutSection />
+      {/* <AboutSection /> */}
 
       {/* Works Section */}
       <WorksSection />

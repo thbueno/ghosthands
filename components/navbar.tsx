@@ -26,7 +26,7 @@ export function NavBar() {
               alt="Designer portrait"
               width={180}
               height={180}
-              className="w-20 h-auto object-contain rounded-3xl"
+              className="w-16 lg:w-20 h-auto object-contain rounded-3xl"
             />
             <div className="flex flex-col">
               {/* <span className="text-2xl font-black text-title">Thiago Bueno</span>
