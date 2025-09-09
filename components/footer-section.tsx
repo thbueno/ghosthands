@@ -1,28 +1,28 @@
-"use client";
+'use client'
 
-import { ArrowUpRight, Instagram, Twitter, Youtube } from "lucide-react";
-import Link from "next/link";
-import { NewsletterForm } from "./newsletter-form";
+import { ArrowUpRight, Instagram, Twitter, Youtube } from 'lucide-react'
+import Link from 'next/link'
+import { NewsletterForm } from './newsletter-form'
 
 export function FooterSection() {
   return (
-    <footer className="py-12 px-4 md:px-8 lg:px-24">
-      <div className="bg-title text-background rounded-3xl overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 pt-16 pb-12">
+    <footer className="px-4 py-12 md:px-8 lg:px-24">
+      <div className="overflow-hidden rounded-3xl bg-title text-background">
+        <div className="container mx-auto px-6 pb-12 pt-16 md:px-12">
           <div className="mb-16">
-            <p className="text-lg mb-6">
+            <p className="mb-6 text-lg">
               Let&apos;s build something great together
             </p>
             <div className="flex items-center">
               <Link
                 href="mailto:thiagobueno.s@gmail.com"
-                className="text-4xl md:text-5xl lg:text-6xl text-stone-200 font-bold hover:text-white transition-colors"
+                className="text-4xl font-bold text-stone-200 transition-colors hover:text-white md:text-5xl lg:text-6xl"
               >
                 thgbueno@gmail.com
               </Link>
               <Link
                 href="mailto:hello@kazarov.com"
-                className="ml-4 p-3 border border-background rounded-full hover:border-secondary hover:text-secondary transition-colors"
+                className="ml-4 rounded-full border border-background p-3 transition-colors hover:border-secondary hover:text-secondary"
               >
                 <ArrowUpRight size={24} />
               </Link>
@@ -30,29 +30,29 @@ export function FooterSection() {
           </div>
 
           <div className="border-t border-text py-8">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-              <nav className="flex flex-wrap gap-8 mb-6 md:mb-0">
+            <div className="mb-12 flex flex-col items-start justify-between md:flex-row md:items-center">
+              <nav className="mb-6 flex flex-wrap gap-8 md:mb-0">
                 <Link
                   href="/"
-                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
+                  className="text-sm font-medium text-background transition-colors hover:text-secondary"
                 >
                   Home
                 </Link>
                 <Link
                   href="/about"
-                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
+                  className="text-sm font-medium text-background transition-colors hover:text-secondary"
                 >
                   About Me
                 </Link>
                 <Link
                   href="/works"
-                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
+                  className="text-sm font-medium text-background transition-colors hover:text-secondary"
                 >
                   Works
                 </Link>
                 <Link
                   href="/insights"
-                  className="text-sm text-background font-medium hover:text-secondary transition-colors"
+                  className="text-sm font-medium text-background transition-colors hover:text-secondary"
                 >
                   Insights
                 </Link>
@@ -61,21 +61,21 @@ export function FooterSection() {
               <div className="flex gap-6">
                 <Link
                   href="#"
-                  className="text-background hover:text-secondary transition-colors"
+                  className="text-background transition-colors hover:text-secondary"
                 >
                   <Twitter size={20} />
                   <span className="sr-only">Twitter</span>
                 </Link>
                 <Link
                   href="#"
-                  className="text-background hover:text-secondary transition-colors"
+                  className="text-background transition-colors hover:text-secondary"
                 >
                   <Youtube size={20} />
                   <span className="sr-only">YouTube</span>
                 </Link>
                 <Link
                   href="#"
-                  className="text-background hover:text-secondary transition-colors"
+                  className="text-background transition-colors hover:text-secondary"
                 >
                   <svg
                     width="20"
@@ -91,7 +91,7 @@ export function FooterSection() {
                 </Link>
                 <Link
                   href="#"
-                  className="text-background hover:text-secondary transition-colors"
+                  className="text-background transition-colors hover:text-secondary"
                 >
                   <Instagram size={20} />
                   <span className="sr-only">Instagram</span>
@@ -104,5 +104,5 @@ export function FooterSection() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

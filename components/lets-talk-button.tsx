@@ -1,23 +1,25 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { twMerge } from "tailwind-merge";
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import { twMerge } from 'tailwind-merge'
 
 interface LetsTalkButtonProps {
-  variant?: "light" | "dark" | "red";
-  className?: string;
+  variant?: 'light' | 'dark' | 'red'
+  className?: string
 }
 
 export function LetsTalkButton({
-  variant = "light",
-  className = "",
+  variant = 'light',
+  className = '',
 }: LetsTalkButtonProps) {
-  const baseClasses = "flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-normal";
-  
+  const baseClasses =
+    'flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-normal'
+
   const variants = {
-    light: "border border-title text-title hover:border-secondary hover:text-secondary",
-    dark: "border border-background text-background hover:border-secondary hover:text-secondary",
-    red: "bg-secondary hover:bg-primary text-background",
-  };
+    light:
+      'border border-title text-title hover:border-secondary hover:text-secondary',
+    dark: 'border border-background text-background hover:border-secondary hover:text-secondary',
+    red: 'bg-secondary hover:bg-primary text-background',
+  }
 
   return (
     <Link
@@ -26,5 +28,5 @@ export function LetsTalkButton({
     >
       Let&apos;s Build <ArrowRight size={16} />
     </Link>
-  );
+  )
 }

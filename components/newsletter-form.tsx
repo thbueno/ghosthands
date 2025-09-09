@@ -1,34 +1,34 @@
-"use client";
+'use client'
 
-import { ArrowUpRight } from "lucide-react";
-import { type FormEvent, useState } from "react";
+import { ArrowUpRight } from 'lucide-react'
+import { type FormEvent, useState } from 'react'
 
 interface NewsletterFormProps {
-  className?: string;
+  className?: string
 }
 
 export function NewsletterForm({
-  className = "max-w-md",
+  className = 'max-w-md',
 }: NewsletterFormProps) {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('')
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Handle email subscription logic here
-    console.log("Email submitted:", email);
-    setEmail("");
-  };
+    console.log('Email submitted:', email)
+    setEmail('')
+  }
 
   return (
     <div className={className}>
-      <p className="text-text mb-6">Stay connected w/ me.</p>
+      <p className="mb-6 text-text">Stay connected w/ me.</p>
       <form onSubmit={handleSubmit} className="relative">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="w-full bg-transparent border-b border-background py-2 pr-12 focus:outline-none focus:border-white transition-colors text-background placeholder:text-text"
+          className="w-full border-b border-background bg-transparent py-2 pr-12 text-background transition-colors placeholder:text-text focus:border-white focus:outline-none"
           required
         />
         <button
@@ -40,5 +40,5 @@ export function NewsletterForm({
         </button>
       </form>
     </div>
-  );
+  )
 }

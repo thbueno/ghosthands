@@ -1,36 +1,36 @@
-"use client";
+'use client'
 
-import { LetsTalkButton } from "@/components/lets-talk-button";
-import { MenuButton } from "@/components/menu-button";
-import { ArrowRight, X } from "lucide-react";
-import Link from "next/link";
-import { type FormEvent, useState } from "react";
-import { NewsletterForm } from "./newsletter-form";
-import { SocialLinks } from "./social-links";
+import { LetsTalkButton } from '@/components/lets-talk-button'
+import { MenuButton } from '@/components/menu-button'
+import { ArrowRight, X } from 'lucide-react'
+import Link from 'next/link'
+import { type FormEvent, useState } from 'react'
+import { NewsletterForm } from './newsletter-form'
+import { SocialLinks } from './social-links'
 
 interface DropdownMenuProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen: boolean
+  onClose: () => void
 }
 
 export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('')
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Handle email subscription logic here
-    console.log("Email submitted:", email);
-    setEmail("");
-  };
+    console.log('Email submitted:', email)
+    setEmail('')
+  }
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-title text-background z-50 overflow-auto">
-      <div className="container mx-auto px-4 md:px-8 lg:px-24 py-8 flex flex-col min-h-screen">
+    <div className="fixed inset-0 z-50 overflow-auto bg-title text-background">
+      <div className="container mx-auto flex min-h-screen flex-col px-4 py-8 md:px-8 lg:px-24">
         {/* Header */}
-        <header className="flex justify-between items-center mb-8">
-          <div className="text-background text-2xl font-extrabold">
+        <header className="mb-8 flex items-center justify-between">
+          <div className="text-2xl font-extrabold text-background">
             <span className="text-2xl font-extrabold">Thiago</span>Bueno
           </div>
           <div className="flex items-center gap-4">
@@ -44,76 +44,76 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
           <nav className="py-8">
             <ul className="space-y-8">
               <li>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <Link
                     href="/"
-                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
+                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
                   >
-                    Home{" "}
-                    <span className="text-stone-500 text-2xl md:text-3xl">
+                    Home{' '}
+                    <span className="text-2xl text-stone-500 md:text-3xl">
                       (01)
                     </span>
                   </Link>
                   <Link
                     href="/"
-                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
+                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
                   >
                     <ArrowRight size={20} />
                   </Link>
                 </div>
               </li>
               <li>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <Link
                     href="/about"
-                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
+                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
                   >
-                    About Me{" "}
-                    <span className="text-stone-500 text-2xl md:text-3xl">
+                    About Me{' '}
+                    <span className="text-2xl text-stone-500 md:text-3xl">
                       (02)
                     </span>
                   </Link>
                   <Link
                     href="/about"
-                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
+                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
                   >
                     <ArrowRight size={20} />
                   </Link>
                 </div>
               </li>
               <li>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <Link
                     href="/works"
-                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
+                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
                   >
-                    Works{" "}
-                    <span className="text-stone-500 text-2xl md:text-3xl">
+                    Works{' '}
+                    <span className="text-2xl text-stone-500 md:text-3xl">
                       (03)
                     </span>
                   </Link>
                   <Link
                     href="/works"
-                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
+                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
                   >
                     <ArrowRight size={20} />
                   </Link>
                 </div>
               </li>
               <li>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <Link
                     href="/insights"
-                    className="text-5xl md:text-6xl font-bold hover:text-stone-300 transition-colors"
+                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
                   >
-                    Insights{" "}
-                    <span className="text-stone-500 text-2xl md:text-3xl">
+                    Insights{' '}
+                    <span className="text-2xl text-stone-500 md:text-3xl">
                       (04)
                     </span>
                   </Link>
                   <Link
                     href="/insights"
-                    className="p-4 border border-stone-700 rounded-full hover:bg-stone-900 transition-colors"
+                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
                   >
                     <ArrowRight size={20} />
                   </Link>
@@ -124,10 +124,10 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-stone-800 pt-8 mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-8 border-t border-stone-800 pt-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div>
-              <h3 className="text-xl text-stone-400 mb-6">/Follow me.</h3>
+              <h3 className="mb-6 text-xl text-stone-400">/Follow me.</h3>
               <SocialLinks variant="dark" />
             </div>
             {/* <div>
@@ -157,5 +157,5 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }

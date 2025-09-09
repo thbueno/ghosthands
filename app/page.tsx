@@ -1,16 +1,15 @@
-"use client";
+'use client'
 
-import { AboutSection } from "@/components/about-section";
-import { AwardsSection } from "@/components/awards-section";
-import { CTASection } from "@/components/cta-section";
-import { FooterSection } from "@/components/footer-section";
-import { LetsTalkButton } from "@/components/lets-talk-button";
-import { NavBar } from "@/components/navbar";
-import { PartnersSection } from "@/components/partners-section";
-import { SocialLinks } from "@/components/social-links";
-import { WorksSection } from "@/components/works-section";
-import Image from "next/image";
-
+import { AboutSection } from '@/components/about-section'
+import { AwardsSection } from '@/components/awards-section'
+import { CTASection } from '@/components/cta-section'
+import { FooterSection } from '@/components/footer-section'
+import { LetsTalkButton } from '@/components/lets-talk-button'
+import { NavBar } from '@/components/navbar'
+import { PartnersSection } from '@/components/partners-section'
+import { SocialLinks } from '@/components/social-links'
+import { WorksSection } from '@/components/works-section'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -18,36 +17,38 @@ export default function Home() {
       {/* Navigation */}
       <NavBar />
 
-      <div className="container mx-auto px-8 md:px-8 lg:px-24 py-2">
+      <div className="container mx-auto px-8 py-2 md:px-8 lg:px-24">
         {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-24 mt-12">
+        <div className="mb-24 mt-12 grid grid-cols-1 gap-8 lg:grid-cols-1">
           <div className="col-span-1 lg:pr-24">
-            <div className="flex flex-row items-center align-bottom gap-3">
-              <h1 className=" leading-[1.1]">Hi, i'm</h1>
-            <Image
-              src="/images/profile-photo-light.png"
-              alt="Designer portrait"
-              width={180}
-              height={180}
-              className="w-20 h-auto object-contain rounded-3xl"
-            />
-            <div className="flex flex-col">
-              <h1>Thiago Bueno</h1>
+            <div className="flex flex-row items-center gap-3 align-bottom">
+              <h1 className="leading-[1.1]">Hi, i'm</h1>
+              <Image
+                src="/images/profile-photo-light.png"
+                alt="Designer portrait"
+                width={180}
+                height={180}
+                className="h-auto w-20 rounded-3xl object-contain"
+              />
+              <div className="flex flex-col">
+                <h1>Thiago Bueno</h1>
+              </div>
             </div>
-            </div>
-            <h1 className="leading-[1.3] mb-8">
-              a software engineer building{" "}
-              <span>standout applications</span>
+            <h1 className="mb-8 leading-[1.3]">
+              a software engineer building <span>standout applications</span>
             </h1>
           </div>
           <div className="col-span-1 lg:col-span-2">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
               <div className="flex items-center">
-                <div className="w-full h-[1px] bg-stone-400"></div>
+                <div className="h-[1px] w-full bg-stone-400"></div>
               </div>
-              <div className="lg:col-start-2 flex items-center">
+              <div className="flex items-center lg:col-start-2">
                 <p className="text-base md:text-base">
-                Virtual greetings to you, this is my work space on the Internet. Here you can browse through my current projects, my past works and learn more about me. Don´t hesitate to reach out! if you have any questions or just want to say hi.
+                  Virtual greetings to you, this is my work space on the
+                  Internet. Here you can browse through my current projects, my
+                  past works and learn more about me. Don´t hesitate to reach
+                  out! if you have any questions or just want to say hi.
                 </p>
               </div>
             </div>
@@ -55,7 +56,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
           <SocialLinks />
           <LetsTalkButton variant="red" />
         </div>
@@ -83,5 +84,5 @@ export default function Home() {
       {/* Footer Section */}
       <FooterSection />
     </div>
-  );
+  )
 }

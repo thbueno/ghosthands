@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useRef, useEffect, useState } from "react"
-import Image from "next/image"
+import { useRef, useEffect, useState } from 'react'
+import Image from 'next/image'
 
 // Define the partner type
 interface Partner {
@@ -13,29 +13,29 @@ interface Partner {
 // Sample partner data
 const partners: Partner[] = [
   {
-    id: "rackspace",
-    name: "React",
-    logo: "/images/stack/react-logo.svg",
+    id: 'rackspace',
+    name: 'React',
+    logo: '/images/stack/react-logo.svg',
   },
   {
-    id: "pipefy",
-    name: "Next.js",
-    logo: "/images/stack/nextjs-logo.svg",
+    id: 'pipefy',
+    name: 'Next.js',
+    logo: '/images/stack/nextjs-logo.svg',
   },
   {
-    id: "teamwork",
-    name: "Vite",
-    logo: "/images/stack/vite-logo.svg",
+    id: 'teamwork',
+    name: 'Vite',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
-    id: "django",
-    name: "Django",
-    logo: "/images/django-logo.svg",
+    id: 'django',
+    name: 'Django',
+    logo: '/images/django-logo.svg',
   },
   {
-    id: "portal",
-    name: "Portal",
-    logo: "/images/portal-logo.svg",
+    id: 'portal',
+    name: 'Portal',
+    logo: '/images/portal-logo.svg',
   },
 ]
 
@@ -109,12 +109,10 @@ export function PartnersSection({
   const doubledPartners = [...partners, ...partners, ...partners]
 
   return (
-    <section className="py-24 md:py-32 overflow-hidden">
+    <section className="overflow-hidden py-24 md:py-32">
       {!hideTitle && (
-        <div className="container mx-auto px-4 md:px-8 lg:px-24 mb-16">
-          <h2>
-            My tech Toolbox
-          </h2>
+        <div className="container mx-auto mb-16 px-4 md:px-8 lg:px-24">
+          <h2>My tech Toolbox</h2>
         </div>
       )}
 
@@ -141,7 +139,7 @@ export function PartnersSection({
             {doubledPartners.map((partner, index) => (
               <div key={`${partner.id}-1-${index}`} className="flex-shrink-0">
                 <Image
-                  src={partner.logo || "/placeholder.svg"}
+                  src={partner.logo || '/placeholder.svg'}
                   alt={partner.name}
                   width={540}
                   height={180}
@@ -152,7 +150,7 @@ export function PartnersSection({
           </div>
         </div>
 
-        <div className="flex items-center mt-8">
+        <div className="mt-8 flex items-center">
           {/* Second row (offset for visual effect) */}
           <div
             ref={row2Ref}
@@ -164,7 +162,7 @@ export function PartnersSection({
             {doubledPartners.map((partner, index) => (
               <div key={`${partner.id}-2-${index}`} className="flex-shrink-0">
                 <Image
-                  src={partner.logo || "/placeholder.svg"}
+                  src={partner.logo || '/placeholder.svg'}
                   alt={partner.name}
                   width={180}
                   height={60}

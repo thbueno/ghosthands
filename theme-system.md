@@ -19,10 +19,10 @@ All theme variables are defined in `styles/theme.css` and are available througho
 
 ```css
 :root {
-  --title: #0F0F0F;
+  --title: #0f0f0f;
   --background: #d4e4d4;
   --primary: #44ff00;
-  --secondary: #FF1200;
+  --secondary: #ff1200;
   --text: #5b645b;
   /* And various shades/tints of each */
 }
@@ -34,11 +34,11 @@ All theme variables are defined in `styles/theme.css` and are available througho
 :root {
   --font-family-heading: 'Inter', system-ui, sans-serif;
   --font-family-body: 'Inter', system-ui, sans-serif;
-  
+
   --font-size-h1: 2.25rem;
   --font-size-h2: 1.875rem;
   /* Other font sizes */
-  
+
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   /* Other font weights */
@@ -61,7 +61,7 @@ All theme variables are defined in `styles/theme.css` and are available througho
 ### Using Tailwind Classes
 
 ```html
-<div class="text-primary bg-surface font-body text-p">
+<div class="bg-surface font-body text-p text-primary">
   This element uses the theme system through Tailwind classes
 </div>
 ```
@@ -72,7 +72,9 @@ All theme variables are defined in `styles/theme.css` and are available througho
 <h1>This heading uses the theme's h1 styling</h1>
 <h2>This heading uses the theme's h2 styling</h2>
 <p>This paragraph uses the theme's paragraph styling</p>
-<span class="text-primary">This span inherits styling but uses primary color</span>
+<span class="text-primary"
+  >This span inherits styling but uses primary color</span
+>
 ```
 
 ## Customizing the Theme
@@ -95,18 +97,15 @@ The application supports dark mode through the `.dark` class. Theme switching is
 To switch themes programmatically:
 
 ```jsx
-import { useTheme } from 'next-themes';
+import { useTheme } from 'next-themes'
 
 function ThemeSwitcher() {
-  const { setTheme } = useTheme();
-  
-  return (
-    <button onClick={() => setTheme('dark')}>
-      Switch to Dark Mode
-    </button>
-  );
+  const { setTheme } = useTheme()
+
+  return <button onClick={() => setTheme('dark')}>Switch to Dark Mode</button>
 }
 ```
+
 ```
 
 This comprehensive implementation satisfies all the requirements:
@@ -119,3 +118,4 @@ This comprehensive implementation satisfies all the requirements:
 - Maintained backward compatibility with existing styling
 
 The system allows complete theme customization by editing the single theme.css file while maintaining Tailwind's utility-first approach.
+```

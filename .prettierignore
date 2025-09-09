@@ -1,0 +1,6 @@
+# Ignore artifacts
+build
+.next
+
+# Ignore dependencies
+node_modules
