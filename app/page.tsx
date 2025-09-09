@@ -13,7 +13,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background px-10">
+    <div className="min-h-screen bg-background px-5 md:px-10 lg:px-10">
       {/* Navigation */}
       <NavBar />
 
@@ -21,8 +21,12 @@ export default function Home() {
         {/* Hero Section */}
         <div className="mb-24 mt-12 grid grid-cols-1 gap-8 lg:grid-cols-1">
           <div className="col-span-1 lg:pr-24">
-            <div className="flex flex-row items-center gap-3 align-bottom">
-              <h1 className="leading-[1.1]">Hi, i'm</h1>
+            {/* Intro Section */}
+            <div className="flex flex-row items-center gap-3 text-left">
+              {/* Hi, I'm */}
+              <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
+
+              {/* Image */}
               <Image
                 src="/images/profile-photo-light.png"
                 alt="Designer portrait"
@@ -30,14 +34,23 @@ export default function Home() {
                 height={180}
                 className="h-auto w-20 rounded-3xl object-contain"
               />
-              <div className="flex flex-col">
-                <h1>Thiago Bueno</h1>
+
+              {/* Thiago Bueno */}
+              <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1>
+
+              {/* Mobile stacked text */}
+              <div className="flex flex-col md:hidden">
+                <h1 className="leading-[1.3]">Hi, I'm</h1>
+                <h1 className="leading-[1.3]">Thiago Bueno</h1>
               </div>
             </div>
-            <h1 className="mb-8 leading-[1.3]">
+
+            {/* Tagline */}
+            <h2 className="mb-8 mt-4 leading-[1.3]">
               a software engineer building <span>standout applications</span>
-            </h1>
+            </h2>
           </div>
+
           <div className="col-span-1 lg:col-span-2">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
               <div className="flex items-center">
