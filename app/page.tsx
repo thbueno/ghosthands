@@ -17,7 +17,7 @@ export default function Home() {
       {/* Navigation */}
       <NavBar />
 
-      <div className="container mx-auto px-8 py-2 md:px-8 lg:px-24">
+      <div className="container mx-auto px-6 py-2 md:px-8 lg:px-24">
         {/* Hero Section */}
         <div className="mb-14 mt-12 grid grid-cols-1 gap-10 lg:grid-cols-1">
           <div className="col-span-1 lg:pr-24">
