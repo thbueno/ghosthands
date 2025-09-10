@@ -58,7 +58,7 @@ export default function Home() {
               </div>
               <div className="flex items-center lg:col-start-2">
                 <p className="text-base md:text-base">
-                  Virtual greetings to you, this is my work space on the
+                  Virtual Ggreetings to you, this is my work space on the
                   Internet. Here you can browse through my current projects, my
                   past works and learn more about me. Don´t hesitate to reach
                   out! if you have any questions or just want to say hi.
