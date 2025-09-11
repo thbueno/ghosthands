@@ -128,11 +128,11 @@ body {
   }
 
   h1 {
-    @apply text-2xl font-bold tracking-tight text-[color:var(--title)] sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-3xl font-bold tracking-tight text-[color:var(--title)] sm:text-3xl md:text-4xl lg:text-5xl;
   }
 
   h2 {
-    @apply text-2xl font-bold tracking-tight text-[color:var(--title)] sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-3xl font-bold tracking-tight text-[color:var(--title)] sm:text-3xl md:text-4xl lg:text-5xl;
   }
 
   h3 {
@@ -144,6 +144,6 @@ body {
   }
 
   span {
-    @apply text-2xl font-bold tracking-tight text-[color:var(--secondary)] sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-3xl font-bold tracking-tight text-[color:var(--secondary)] sm:text-3xl md:text-4xl lg:text-5xl;
   }
 }

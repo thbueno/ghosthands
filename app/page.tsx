@@ -19,7 +19,7 @@ export default function Home() {
 
       <div className="container">
         {/* Hero Section */}
-        <div className="mb-14 mt-12 grid grid-cols-1 gap-10 lg:grid-cols-1">
+        <div className="mb-14 mt-10 grid grid-cols-1 gap-10 lg:grid-cols-1">
           <div className="col-span-1">
             {/* Intro Section */}
             <div className="flex flex-row items-center gap-3 text-left">
@@ -46,7 +46,7 @@ export default function Home() {
             </div>
 
             {/* Tagline */}
-            <h2 className="leading-[1.3]">
+            <h2 className="leading-[1.3] lg:pr-24">
               a software engineer building{' '}
               <span className="break-words">standout applications</span>
             </h2>
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
+        <div className="flex flex-col items-center justify-between gap-14 md:flex-row md:items-center">
           <SocialLinks />
           <LetsTalkButton variant="red" />
         </div>

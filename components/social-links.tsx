@@ -22,14 +22,14 @@ export function SocialLinks({
   className = '',
 }: SocialLinksProps) {
   const baseClasses =
-    'flex items-center gap-1 text-md font-medium transition-colors'
+    'flex items-center gap-1 text-sm md:text-md lg:text-md font-medium transition-colors'
   const variantClasses =
     variant === 'dark'
       ? 'text-[color:var(--background)] hover:text-[color:var(--secondary)]'
       : 'text-[color:var(--title)] hover:text-[color:var(--secondary)]'
 
   return (
-    <div className="mb-8 flex gap-8 md:mb-0">
+    <div className="flex gap-6 md:mb-0 md:gap-8 lg:gap-8">
       {SOCIAL_LINKS.map((link) => (
         <Link
           key={link.name}
