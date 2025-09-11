@@ -13,11 +13,11 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
+    <div className="mx-auto min-h-screen overflow-x-hidden bg-background px-7 md:px-10 lg:px-40">
       {/* Navigation */}
       <NavBar />
 
-      <div className="container mx-auto max-w-7xl px-5 py-2 md:px-10 lg:px-24">
+      <div className="container">
         {/* Hero Section */}
         <div className="mb-14 mt-12 grid grid-cols-1 gap-10 lg:grid-cols-1">
           <div className="col-span-1">
@@ -71,7 +71,7 @@ export default function Home() {
 
         {/* Footer */}
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
-          {/* <SocialLinks /> */}
+          <SocialLinks />
           <LetsTalkButton variant="red" />
         </div>
       </div>
