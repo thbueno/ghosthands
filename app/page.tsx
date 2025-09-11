@@ -13,7 +13,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="mx-auto min-h-screen overflow-x-hidden bg-background px-7 md:px-10 lg:px-40">
+    <div className="min-h-screen">
       {/* Navigation */}
       <NavBar />
 
