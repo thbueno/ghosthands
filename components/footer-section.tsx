@@ -6,23 +6,23 @@ import { NewsletterForm } from './newsletter-form'
 
 export function FooterSection() {
   return (
-    <footer className="px-4 py-12 md:px-8 lg:px-24">
+    <footer className="overflow-x-hidden px-4 py-12 md:px-8 lg:px-24">
       <div className="overflow-hidden rounded-3xl bg-title text-background">
         <div className="container mx-auto px-6 pb-12 pt-16 md:px-12">
           <div className="mb-16">
             <p className="mb-6 text-lg">
               Let&apos;s build something great together
             </p>
-            <div className="flex items-center">
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <Link
                 href="mailto:thiagobueno.s@gmail.com"
-                className="text-4xl font-bold text-stone-200 transition-colors hover:text-white md:text-5xl lg:text-6xl"
+                className="break-all text-2xl font-bold text-stone-200 transition-colors hover:text-white sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 thgbueno@gmail.com
               </Link>
               <Link
                 href="mailto:hello@kazarov.com"
-                className="ml-4 rounded-full border border-background p-3 transition-colors hover:border-secondary hover:text-secondary"
+                className="rounded-full border border-background p-3 transition-colors hover:border-secondary hover:text-secondary"
               >
                 <ArrowUpRight size={24} />
               </Link>

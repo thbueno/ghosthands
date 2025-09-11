@@ -58,3 +58,4 @@ To get the project up and running, follow these steps:
   ```bash
   pnpm lint
   ```
+- **Documenting** Create a changelog.md file in the root directory, This file will be used to document all the changes made to the project. keep update every time you make a new change.

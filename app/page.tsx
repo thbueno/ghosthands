@@ -13,14 +13,14 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background px-5 md:px-10 lg:px-10">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       {/* Navigation */}
       <NavBar />
 
-      <div className="container mx-auto px-6 py-2 md:px-8 lg:px-24">
+      <div className="container mx-auto max-w-7xl px-5 py-2 md:px-10 lg:px-24">
         {/* Hero Section */}
         <div className="mb-14 mt-12 grid grid-cols-1 gap-10 lg:grid-cols-1">
-          <div className="col-span-1 lg:pr-24">
+          <div className="col-span-1">
             {/* Intro Section */}
             <div className="flex flex-row items-center gap-3 text-left">
               {/* Hi, I'm */}
@@ -47,7 +47,8 @@ export default function Home() {
 
             {/* Tagline */}
             <h2 className="leading-[1.3]">
-              a software engineer building <span>standout applications</span>
+              a software engineer building{' '}
+              <span className="break-words">standout applications</span>
             </h2>
           </div>
 
@@ -58,7 +59,7 @@ export default function Home() {
               </div>
               <div className="flex items-center lg:col-start-2">
                 <p className="text-base md:text-base">
-                  Virtuals greetings to you, this is my work space on the
+                  Virtual greetings to you, this is my work space on the
                   Internet. Here you can browse through my current projects, my
                   past works and learn more about me. Don´t hesitate to reach
                   out! if you have any questions or just want to say hi.
@@ -70,7 +71,7 @@ export default function Home() {
 
         {/* Footer */}
         <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
-          <SocialLinks />
+          {/* <SocialLinks /> */}
           <LetsTalkButton variant="red" />
         </div>
       </div>

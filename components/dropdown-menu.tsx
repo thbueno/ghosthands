@@ -44,76 +44,76 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
           <nav className="py-8">
             <ul className="space-y-8">
               <li>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/"
-                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
                     Home{' '}
-                    <span className="text-2xl text-stone-500 md:text-3xl">
+                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
                       (01)
                     </span>
                   </Link>
                   <Link
                     href="/"
-                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
+                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
                   >
                     <ArrowRight size={20} />
                   </Link>
                 </div>
               </li>
               <li>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/about"
-                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
                     About Me{' '}
-                    <span className="text-2xl text-stone-500 md:text-3xl">
+                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
                       (02)
                     </span>
                   </Link>
                   <Link
                     href="/about"
-                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
+                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
                   >
                     <ArrowRight size={20} />
                   </Link>
                 </div>
               </li>
               <li>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/works"
-                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
                     Works{' '}
-                    <span className="text-2xl text-stone-500 md:text-3xl">
+                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
                       (03)
                     </span>
                   </Link>
                   <Link
                     href="/works"
-                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
+                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
                   >
                     <ArrowRight size={20} />
                   </Link>
                 </div>
               </li>
               <li>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/insights"
-                    className="text-5xl font-bold transition-colors hover:text-stone-300 md:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
                     Insights{' '}
-                    <span className="text-2xl text-stone-500 md:text-3xl">
+                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
                       (04)
                     </span>
                   </Link>
                   <Link
                     href="/insights"
-                    className="rounded-full border border-stone-700 p-4 transition-colors hover:bg-stone-900"
+                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
                   >
                     <ArrowRight size={20} />
                   </Link>
