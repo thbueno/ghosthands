@@ -18,7 +18,7 @@ export function NavBar() {
   return (
     <>
       <header className="sticky left-0 right-0 top-0 z-50 bg-background">
-        <div className="container mx-auto px-4 py-8 md:px-8 lg:px-24">
+        <div className="container mx-auto py-8">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 align-middle">
               <Image
