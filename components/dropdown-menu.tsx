@@ -21,10 +21,15 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
     setEmail('')
   }
 
-  if (!isOpen) return null
-
   return (
-    <div className="fixed inset-0 z-40 bg-title text-background">
+    <div
+      aria-hidden={!isOpen}
+      className={`fixed inset-0 z-40 bg-title text-background transition-all duration-300 ease-in-out ${
+        isOpen
+          ? 'translate-y-0 opacity-100 delay-150'
+          : 'pointer-events-none -translate-y-1 opacity-0'
+      }`}
+    >
       <div className="container mx-auto flex min-h-screen flex-col px-4 pb-8 pt-28 md:px-8 lg:px-24">
         {/* Header intentionally omitted; reuse NavBar header */}
 

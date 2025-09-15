@@ -19,9 +19,8 @@ export function NavBar() {
     <>
       <header
         className={twMerge(
-          'sticky left-0 right-0 top-0 z-50 bg-background',
-          menuOpen &&
-            'bg-title text-background transition delay-150 duration-300 ease-in-out',
+          'sticky left-0 right-0 top-0 z-50 bg-background transition-colors duration-300 ease-in-out',
+          menuOpen && 'bg-title text-background delay-150',
         )}
       >
         <div className="container mx-auto py-8">
