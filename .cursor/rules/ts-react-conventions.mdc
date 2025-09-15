@@ -1,0 +1,15 @@
+---
+globs: *.ts,*.tsx
+---
+
+## TypeScript and React conventions
+
+- **Strict typing**: Project uses `strict` mode; avoid `any`. Prefer explicit props interfaces.
+- **Components**: Name React components in PascalCase and colocate small helpers nearby.
+- **Client components**: Add `use client` only when needed for state/effects or browser APIs.
+- **Hooks**: Derive state where possible. Keep components presentational where feasible.
+- **Events**: Use proper React event types (e.g., `FormEvent`).
+- **Imports**: Prefer the `@/*` alias; avoid deep relative paths.
+- **Accessibility**: Provide `alt` for `next/image`, `aria-label` for icon-only buttons.
+- **Icons**: Use `lucide-react` icons with consistent sizing via Tailwind classes.
+- **Styling**: Use Tailwind classes and CSS variables (e.g., `text-[color:var(--title)]`).

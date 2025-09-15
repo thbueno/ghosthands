@@ -1,0 +1,13 @@
+---
+description: App Router usage and patterns for this project
+---
+
+## Next.js App Router conventions
+
+- **Directory**: Use `app/` for routes; each route exports a component, metadata, or layout as needed.
+- **Server first**: Prefer Server Components; client components must start with `use client`.
+- **Images**: Use `next/image` with descriptive `alt`; static assets in `public/`.
+- **Links**: Prefer `next/link` for internal navigation.
+- **SEO/metadata**: Define metadata in route files where applicable.
+- **Config**: See [next.config.mjs](mdc:next.config.mjs) for build and image settings.
+- **Home route**: [app/page.tsx](mdc:app/page.tsx) imports [components/navbar.tsx](mdc:components/navbar.tsx), [components/dropdown-menu.tsx](mdc:components/dropdown-menu.tsx), and others.

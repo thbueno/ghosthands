@@ -1,0 +1,12 @@
+---
+description: UI component patterns and usage for navbar, dropdown, and buttons
+---
+
+## Components and UI patterns
+
+- **Navbar**: See [components/navbar.tsx](mdc:components/navbar.tsx). Keep header sticky, use container spacing, and toggle menu with local state.
+- **Dropdown menu (overlay)**: See [components/dropdown-menu.tsx](mdc:components/dropdown-menu.tsx). Render full-screen overlay when open; return `null` when closed.
+- **Buttons**: Primary CTA via `LetsTalkButton`; ensure accessible labels for icon-only buttons.
+- **Links**: Use `next/link` for internal navigation; ensure large tap targets in mobile menu.
+- **Icons**: Use `lucide-react` with consistent Tailwind sizing.
+- **Layout utilities**: Use `container`, flex/grid utilities, and spacing consistent with existing sections.

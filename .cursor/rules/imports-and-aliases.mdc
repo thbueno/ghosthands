@@ -1,0 +1,11 @@
+---
+description: Import paths, aliases, and module resolution
+---
+
+## Imports and path aliases
+
+- **Alias root**: Use `@/*` as defined in [tsconfig.json](mdc:tsconfig.json).
+- **Common aliases**: See [components.json](mdc:components.json) for `components`, `ui`, `lib`, `hooks`, and `utils`.
+- **Prefer absolute**: Use aliases instead of deep relative paths (`../../..`).
+- **Module resolution**: `moduleResolution: bundler` and `module: esnext` (ESM).
+- **Next-specific**: Use `next/link` and `next/image` from Next.js.

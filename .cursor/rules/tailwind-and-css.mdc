@@ -1,0 +1,14 @@
+---
+description: Tailwind CSS usage, theme variables, and styling conventions
+---
+
+## Tailwind and CSS conventions
+
+- **Config**: See [tailwind.config.ts](mdc:tailwind.config.ts). Dark mode via `class`.
+- **Theme variables**: Colors, radii, and fonts come from CSS variables in [app/globals.css](mdc:app/globals.css).
+- **Preferred approach**: Use utility classes; avoid adding new global CSS unless necessary.
+- **Color usage**: Use semantic classes (e.g., `bg-background`, `text-foreground`, `text-[color:var(--title)]`).
+- **Fonts**: Use `font-general-sans` and `font-dm-mono` families configured in Tailwind.
+- **Responsive**: Use configured screens (`sm`, `md`, `lg`, `xl`, `2xl`).
+- **Animations**: Prefer configured keyframes (`accordion-up/down`) when applicable.
+- **Merging classes**: Use `tailwind-merge` for conditional class composition.

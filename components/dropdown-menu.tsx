@@ -1,7 +1,5 @@
 'use client'
 
-import { LetsTalkButton } from '@/components/lets-talk-button'
-import { MenuButton } from '@/components/menu-button'
 import { ArrowRight, X } from 'lucide-react'
 import Link from 'next/link'
 import { type FormEvent, useState } from 'react'
@@ -26,18 +24,9 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 overflow-auto bg-title text-background">
-      <div className="container mx-auto flex min-h-screen flex-col px-4 py-8 md:px-8 lg:px-24">
-        {/* Header */}
-        <header className="mb-8 flex items-center justify-between">
-          <div className="text-2xl font-extrabold text-background">
-            <span className="text-2xl font-extrabold">Thiago</span>Bueno
-          </div>
-          <div className="flex items-center gap-4">
-            <LetsTalkButton variant="dark" />
-            <MenuButton isOpen={isOpen} onClick={onClose} />
-          </div>
-        </header>
+    <div className="fixed inset-0 z-40 overflow-auto bg-title text-background">
+      <div className="container mx-auto flex min-h-screen flex-col px-4 pb-8 pt-24 md:px-8 lg:px-24">
+        {/* Header intentionally omitted; reuse NavBar header */}
 
         {/* Navigation Menu */}
         <div className="flex-grow">

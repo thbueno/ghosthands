@@ -1,0 +1,13 @@
+---
+description: Guidance for AI assistants working in this repo
+---
+
+## AI Assistant Guidance
+
+- **Plan first**: Follow the process in [GEMINI.md](mdc:GEMINI.md). Propose a brief plan before large edits.
+- **Respect structure**: Use files and patterns documented in rules here and in project docs.
+- **Keep changes minimal**: Avoid broad refactors unless requested; prefer focused edits.
+- **Adhere to style**: Use Tailwind and CSS variables per [app/globals.css](mdc:app/globals.css) and [tailwind.config.ts](mdc:tailwind.config.ts).
+- **Type-safety**: Maintain `strict` typing; avoid `any`. Use proper React/Next types.
+- **Accessibility**: Provide alt text, labels, and keyboard-focusable controls.
+- **Testing locally**: Use `pnpm dev` and check for runtime errors before committing larger changes.

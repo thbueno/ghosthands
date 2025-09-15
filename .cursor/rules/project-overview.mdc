@@ -1,0 +1,34 @@
+---
+alwaysApply: true
+---
+
+## Project overview and key entry points
+
+- **Framework**: Next.js App Router with React and TypeScript
+- **Styling**: Tailwind CSS with CSS variables defined in [app/globals.css](mdc:app/globals.css) and config in [tailwind.config.ts](mdc:tailwind.config.ts)
+- **Home route**: [app/page.tsx](mdc:app/page.tsx)
+- **Components**: [components/](mdc:components) (e.g., [components/navbar.tsx](mdc:components/navbar.tsx), [components/dropdown-menu.tsx](mdc:components/dropdown-menu.tsx))
+- **Config**: [next.config.mjs](mdc:next.config.mjs), [tsconfig.json](mdc:tsconfig.json), [package.json](mdc:package.json)
+- **Theming docs**: [theme-system.md](mdc:theme-system.md)
+
+## Run and build
+
+```bash
+pnpm install
+pnpm dev
+pnpm build && pnpm start
+```
+
+## Conventions
+
+- **TypeScript**: strict mode; alias `@/*` from [tsconfig.json](mdc:tsconfig.json)
+- **App Router**: Prefer server components; add `use client` where needed
+- **Styling**: Prefer Tailwind utilities; use CSS variables in `:root` and `.dark` in [app/globals.css](mdc:app/globals.css)
+- **Formatting/Lint**: `pnpm format`, `pnpm lint`
+
+## Useful references
+
+- Next.js configuration: [next.config.mjs](mdc:next.config.mjs)
+- Tailwind setup: [tailwind.config.ts](mdc:tailwind.config.ts)
+- Theme variables: [app/globals.css](mdc:app/globals.css)
+- Aliases/UI registry: [components.json](mdc:components.json)
