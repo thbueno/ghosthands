@@ -20,7 +20,8 @@ export function NavBar() {
       <header
         className={twMerge(
           'sticky left-0 right-0 top-0 z-50 bg-background',
-          menuOpen && 'bg-title text-background',
+          menuOpen &&
+            'bg-title text-background transition delay-150 duration-300 ease-in-out',
         )}
       >
         <div className="container mx-auto py-8">
@@ -33,10 +34,6 @@ export function NavBar() {
                 height={180}
                 className="h-auto w-16 rounded-3xl object-contain lg:w-20"
               />
-              <div className="flex flex-col">
-                {/* <span className="text-2xl font-black text-title">Thiago Bueno</span>
-              <p className="text-xs">Software Engineer</p> */}
-              </div>
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden md:block">

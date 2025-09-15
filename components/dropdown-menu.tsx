@@ -24,8 +24,8 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-40 overflow-auto bg-title text-background">
-      <div className="container mx-auto flex min-h-screen flex-col px-4 pb-8 pt-24 md:px-8 lg:px-24">
+    <div className="fixed inset-0 z-40 bg-title text-background">
+      <div className="container mx-auto flex min-h-screen flex-col px-4 pb-8 pt-28 md:px-8 lg:px-24">
         {/* Header intentionally omitted; reuse NavBar header */}
 
         {/* Navigation Menu */}
