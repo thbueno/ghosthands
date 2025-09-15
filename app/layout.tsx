@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${myLocalFont.className} ${myLocalFont.variable} ${dmMono.variable} mx-auto overflow-x-hidden bg-background px-7 antialiased md:px-10 lg:px-40`}
+        className={`${myLocalFont.className} ${myLocalFont.variable} ${dmMono.variable} mx-auto bg-background px-7 antialiased md:px-10 lg:px-40`}
       >
         {children}
       </body>
