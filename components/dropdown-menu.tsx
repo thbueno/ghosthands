@@ -100,7 +100,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/insights"
                     className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
-                    Insights{' '}
+                    Experience{' '}
                     <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
                       (04)
                     </span>
