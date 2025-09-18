@@ -36,7 +36,7 @@ export function SocialLinks({
           href={link.href}
           className={`${baseClasses} ${variantClasses} ${className}`}
         >
-          {link.name} <ArrowRight size={14} className="rotate-45 transform" />
+          {link.name} <ArrowRight size={14} className="-rotate-45 transform" />
         </Link>
       ))}
     </div>
