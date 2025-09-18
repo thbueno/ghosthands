@@ -12,9 +12,9 @@ type SocialLink = {
 }
 
 const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'INSTAGRAM', href: '#' },
-  { name: 'BEHANCE', href: '#' },
-  { name: 'DRIBBBLE', href: '#' },
+  { name: 'LINKEDIN', href: '#' },
+  { name: 'GITHUB', href: '#' },
+  { name: 'TWITTER', href: '#' },
 ]
 
 export function SocialLinks({
