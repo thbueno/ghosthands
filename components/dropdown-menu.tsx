@@ -41,9 +41,9 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
                   >
-                    Home/{' '}
+                    Home{' '}
                   </Link>
                   <Link
                     href="/"
@@ -57,9 +57,9 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/about"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
                   >
-                    Works/{' '}
+                    Works{' '}
                   </Link>
                   <Link
                     href="/about"
@@ -73,9 +73,9 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/works"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
                   >
-                    About Me/
+                    About Me
                   </Link>
                   <Link
                     href="/works"
@@ -89,9 +89,9 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/insights"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
+                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
                   >
-                    Experience/
+                    Experience
                   </Link>
                   <Link
                     href="/insights"
