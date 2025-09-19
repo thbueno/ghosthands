@@ -30,7 +30,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
           : 'pointer-events-none -translate-y-full opacity-0 transition-all delay-150 duration-500 ease-in-out'
       }`}
     >
-      <div className="container mx-auto flex min-h-screen flex-col px-4 pb-8 pt-28 md:px-8 lg:px-24">
+      <div className="container mx-auto flex min-h-screen flex-col px-7 pb-8 pt-28 md:px-10 lg:px-40">
         {/* Header intentionally omitted; reuse NavBar header */}
 
         {/* Navigation Menu */}
@@ -43,10 +43,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/"
                     className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
-                    Home{' '}
-                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
-                      (01)
-                    </span>
+                    Home/{' '}
                   </Link>
                   <Link
                     href="/"
@@ -62,10 +59,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/about"
                     className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
-                    Works{' '}
-                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
-                      (02)
-                    </span>
+                    Works/{' '}
                   </Link>
                   <Link
                     href="/about"
@@ -81,10 +75,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/works"
                     className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
-                    About Me{' '}
-                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
-                      (03)
-                    </span>
+                    About Me/
                   </Link>
                   <Link
                     href="/works"
@@ -100,10 +91,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/insights"
                     className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-5xl lg:text-6xl"
                   >
-                    Experience{' '}
-                    <span className="text-lg text-stone-500 sm:text-xl md:text-2xl lg:text-3xl">
-                      (04)
-                    </span>
+                    Experience/
                   </Link>
                   <Link
                     href="/insights"
