@@ -27,7 +27,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
       className={`fixed inset-0 z-40 bg-title text-background transition-all duration-300 ease-in-out ${
         isOpen
           ? 'translate-y-0 opacity-100 delay-150'
-          : 'pointer-events-none -translate-y-1 opacity-0'
+          : 'pointer-events-none -translate-y-1 opacity-0 delay-150'
       }`}
     >
       <div className="container mx-auto flex min-h-screen flex-col px-4 pb-8 pt-28 md:px-8 lg:px-24">

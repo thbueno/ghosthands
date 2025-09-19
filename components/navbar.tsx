@@ -19,11 +19,11 @@ export function NavBar() {
     <>
       <header
         className={twMerge(
-          'sticky left-0 right-0 top-0 z-50 bg-background transition-colors duration-300 ease-in-out',
-          menuOpen && 'bg-title text-background delay-150',
+          'sticky left-0 right-0 top-0 z-50 -mx-7 bg-background transition-colors duration-300 ease-in-out md:-mx-10 lg:-mx-40',
+          menuOpen && 'bg-title text-background',
         )}
       >
-        <div className="container mx-auto py-8">
+        <div className="container mx-auto px-7 py-8 md:px-10 lg:px-40">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 align-middle">
               <Image
