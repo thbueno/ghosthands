@@ -20,7 +20,7 @@ export function NavBar() {
       <header
         className={twMerge(
           'sticky left-0 right-0 top-0 z-50 -mx-7 bg-background transition-colors duration-300 ease-in-out md:-mx-10 lg:-mx-40',
-          menuOpen && 'bg-title text-background',
+          menuOpen && 'bg-title text-background delay-[150ms] ease-in-out',
         )}
       >
         <div className="container mx-auto px-7 py-8 md:px-10 lg:px-40">
