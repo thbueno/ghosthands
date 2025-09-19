@@ -16,63 +16,64 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Navigation */}
       <NavBar />
+      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center">
+        <div className="container">
+          {/* Hero Section */}
+          <div className="mb-14 mt-10 grid grid-cols-1 gap-10 lg:grid-cols-1">
+            <div className="col-span-1">
+              {/* Intro Section */}
+              <div className="flex flex-row items-center gap-3 text-left">
+                {/* Hi, I'm */}
+                <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
 
-      <div className="container">
-        {/* Hero Section */}
-        <div className="mb-14 mt-10 grid grid-cols-1 gap-10 lg:grid-cols-1">
-          <div className="col-span-1">
-            {/* Intro Section */}
-            <div className="flex flex-row items-center gap-3 text-left">
-              {/* Hi, I'm */}
-              <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
+                {/* Image */}
+                <Image
+                  src="/images/profile-photo-light.png"
+                  alt="Designer portrait"
+                  width={180}
+                  height={180}
+                  className="h-auto w-20 rounded-3xl object-contain"
+                />
 
-              {/* Image */}
-              <Image
-                src="/images/profile-photo-light.png"
-                alt="Designer portrait"
-                width={180}
-                height={180}
-                className="h-auto w-20 rounded-3xl object-contain"
-              />
+                {/* Thiago Bueno */}
+                <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1>
 
-              {/* Thiago Bueno */}
-              <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1>
-
-              {/* Mobile stacked text */}
-              <div className="flex flex-col md:hidden">
-                <h1 className="leading-[1.3]">Hi, I'm</h1>
-                <h1 className="leading-[1.3]">Thiago Bueno</h1>
+                {/* Mobile stacked text */}
+                <div className="flex flex-col md:hidden">
+                  <h1 className="leading-[1.3]">Hi, I'm</h1>
+                  <h1 className="leading-[1.3]">Thiago Bueno</h1>
+                </div>
               </div>
+
+              {/* Tagline */}
+              <h2 className="leading-[1.3] lg:pr-24">
+                a software engineer building{' '}
+                <span className="break-words">standout applications</span>
+              </h2>
             </div>
 
-            {/* Tagline */}
-            <h2 className="leading-[1.3] lg:pr-24">
-              a software engineer building{' '}
-              <span className="break-words">standout applications</span>
-            </h2>
-          </div>
-
-          <div className="col-span-1 lg:col-span-2">
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-              <div className="flex items-center">
-                <div className="h-[1px] w-full bg-stone-400"></div>
-              </div>
-              <div className="flex items-center lg:col-start-2">
-                <p className="text-base md:text-base">
-                  Virtual greetings to you, this is my work space on the
-                  Internet. Here you can browse through my current projects, my
-                  past works and learn more about me. Don´t hesitate to reach
-                  out! if you have any questions or just want to say hi.
-                </p>
+            <div className="col-span-1 lg:col-span-2">
+              <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+                <div className="flex items-center">
+                  <div className="h-[1px] w-full bg-stone-400"></div>
+                </div>
+                <div className="flex items-center lg:col-start-2">
+                  <p className="text-base md:text-base">
+                    Virtual greetings to you, this is my work space on the
+                    Internet. Here you can browse through my current projects,
+                    my past works and learn more about me. Don´t hesitate to
+                    reach out! if you have any questions or just want to say hi.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Footer */}
-        <div className="flex flex-col items-center justify-between gap-14 md:flex-row md:items-center">
-          <SocialLinks />
-          <LetsTalkButton variant="red" />
+          {/* Footer */}
+          <div className="flex flex-col items-center justify-between gap-14 md:flex-row md:items-center">
+            <SocialLinks />
+            <LetsTalkButton variant="red" />
+          </div>
         </div>
       </div>
 
