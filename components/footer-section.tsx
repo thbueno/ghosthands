@@ -18,7 +18,7 @@ export function FooterSection() {
                 href="mailto:thiagobueno.s@gmail.com"
                 className="break-all text-2xl font-bold text-stone-200 transition-colors hover:text-white sm:text-3xl md:text-4xl lg:text-5xl"
               >
-                thgbueno@gmail.com
+                buenodev@proton.me
               </Link>
               <Link
                 href="mailto:hello@kazarov.com"
@@ -42,19 +42,19 @@ export function FooterSection() {
                   href="/about"
                   className="text-sm font-medium text-background transition-colors hover:text-secondary"
                 >
-                  About Me
+                  Works
                 </Link>
                 <Link
                   href="/works"
                   className="text-sm font-medium text-background transition-colors hover:text-secondary"
                 >
-                  Works
+                  About Me
                 </Link>
                 <Link
                   href="/insights"
                   className="text-sm font-medium text-background transition-colors hover:text-secondary"
                 >
-                  Insights
+                  Experience
                 </Link>
               </nav>
 

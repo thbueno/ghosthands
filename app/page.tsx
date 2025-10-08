@@ -16,10 +16,10 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Navigation */}
       <NavBar />
-      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center">
+      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-7 md:px-8 lg:px-12">
         <div className="container">
           {/* Hero Section */}
-          <div className="mb-14 mt-10 grid grid-cols-1 gap-10 lg:grid-cols-1">
+          <div className="mb-12 mt-6 grid grid-cols-1 gap-12 md:mt-4 lg:mt-2 lg:grid-cols-1">
             <div className="col-span-1">
               {/* Intro Section */}
               <div className="flex flex-row items-center gap-3 text-left">
