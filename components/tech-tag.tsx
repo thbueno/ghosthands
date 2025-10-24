@@ -21,6 +21,10 @@ const frontend: TagProps[] = [
     logo: '/images/stack/vite-logo.svg',
   },
   {
+    name: 'Figma',
+    logo: '/images/stack/vite-logo.svg',
+  },
+  {
     name: 'Vite',
     logo: '/images/django-logo.svg',
   },
@@ -32,10 +36,7 @@ const frontend: TagProps[] = [
     name: 'TypeScript',
     logo: '/images/portal-logo.svg',
   },
-  {
-    name: 'Node.js',
-    logo: '/images/portal-logo.svg',
-  },
+
   {
     name: 'HTML',
     logo: '/images/portal-logo.svg',
@@ -49,34 +50,46 @@ const frontend: TagProps[] = [
     logo: '/images/portal-logo.svg',
   },
   {
-    name: 'CSS',
+    name: 'Motion',
     logo: '/images/portal-logo.svg',
   },
   {
-    name: 'CSS',
+    name: 'Spring',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'React Router',
     logo: '/images/portal-logo.svg',
   },
 ]
 
 const backend: TagProps[] = [
   {
-    name: 'React',
-    logo: '/images/stack/react-logo.svg',
+    name: 'Node.js',
+    logo: '/images/portal-logo.svg',
   },
   {
-    name: 'Next.js',
+    name: 'MySQL',
     logo: '/images/stack/nextjs-logo.svg',
   },
   {
-    name: 'Vite',
+    name: 'PostgreSQL',
     logo: '/images/stack/vite-logo.svg',
   },
   {
-    name: 'Django',
+    name: 'Supabase',
     logo: '/images/django-logo.svg',
   },
   {
-    name: 'Portal',
+    name: 'Docker',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'FFmpeg',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'Drizzle',
     logo: '/images/portal-logo.svg',
   },
 ]
