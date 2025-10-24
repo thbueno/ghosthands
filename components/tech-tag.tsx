@@ -1,16 +1,29 @@
 import React from 'react'
+import { cn } from '@/lib/utils'
 
-// Define the tags type
-interface TagProps {
+// Define the tag type
+export interface Tag {
   name: string
   logo: string
 }
 
-// frontend tags
-const frontend: TagProps[] = [
+// Define component props
+interface TechTagProps {
+  tags: Tag[]
+  className?: string
+  tagClassName?: string
+  showLogo?: boolean
+}
+
+// Export predefined tag collections for reuse
+export const FRONTEND_TAGS: Tag[] = [
   {
     name: 'React',
     logo: '/images/stack/react-logo.svg',
+  },
+  {
+    name: 'Tailwind',
+    logo: '/images/stack/tailwind-logo.svg',
   },
   {
     name: 'Next.js',
@@ -36,7 +49,6 @@ const frontend: TagProps[] = [
     name: 'TypeScript',
     logo: '/images/portal-logo.svg',
   },
-
   {
     name: 'HTML',
     logo: '/images/portal-logo.svg',
@@ -63,7 +75,7 @@ const frontend: TagProps[] = [
   },
 ]
 
-const backend: TagProps[] = [
+export const BACKEND_TAGS: Tag[] = [
   {
     name: 'Node.js',
     logo: '/images/portal-logo.svg',
@@ -94,6 +106,28 @@ const backend: TagProps[] = [
   },
 ]
 
-export default function TechTag() {
-  return <div>tech-tag</div>
+export default function TechTag({
+  tags,
+  className,
+  tagClassName,
+  showLogo = true,
+}: TechTagProps) {
+  return (
+    <div className={cn('flex flex-wrap gap-2', className)}>
+      {tags.map((tag) => (
+        <div
+          key={tag.name}
+          className={cn(
+            'flex items-center gap-1 rounded-full border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-500',
+            tagClassName,
+          )}
+        >
+          {showLogo && (
+            <img src={tag.logo} alt={tag.name} className="h-4 w-4" />
+          )}
+          {tag.name}
+        </div>
+      ))}
+    </div>
+  )
 }

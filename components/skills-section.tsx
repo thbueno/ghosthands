@@ -1,4 +1,5 @@
 import React from 'react'
+import TechTag, { FRONTEND_TAGS, BACKEND_TAGS } from '@/components/tech-tag'
 
 export default function SkillsSection() {
   return (
@@ -13,12 +14,12 @@ export default function SkillsSection() {
         </div>
 
         {/* Frontend Section */}
-
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-6">
           <div>
             <h3>Frontend</h3>
-            <div></div>
+            <TechTag tags={FRONTEND_TAGS} />
           </div>
+
           {/* Divider */}
           <div className="flex items-center">
             <div className="h-[1px] w-full bg-stone-400"></div>
@@ -27,7 +28,7 @@ export default function SkillsSection() {
           {/* Backend Section */}
           <div>
             <h3>Backend</h3>
-            <div></div>
+            <TechTag tags={BACKEND_TAGS} />
           </div>
         </div>
       </div>
