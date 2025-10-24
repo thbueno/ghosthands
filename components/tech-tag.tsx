@@ -33,7 +33,27 @@ const frontend: TagProps[] = [
     logo: '/images/portal-logo.svg',
   },
   {
-    name: 'TypeScript',
+    name: 'Node.js',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'HTML',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'CSS',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'GraphQL',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'CSS',
+    logo: '/images/portal-logo.svg',
+  },
+  {
+    name: 'CSS',
     logo: '/images/portal-logo.svg',
   },
 ]
