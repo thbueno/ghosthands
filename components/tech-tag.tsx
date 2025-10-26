@@ -31,47 +31,47 @@ export const FRONTEND_TAGS: Tag[] = [
   },
   {
     name: 'React Native',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/react-logo.svg',
   },
   {
     name: 'Figma',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/figma-logo.svg',
   },
   {
     name: 'Vite',
-    logo: '/images/django-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
     name: 'JavaScript',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/javascript-logo.svg',
   },
   {
     name: 'TypeScript',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
     name: 'HTML',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
     name: 'CSS',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
     name: 'GraphQL',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
     name: 'Motion',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
     name: 'Spring',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
   {
     name: 'React Router',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/vite-logo.svg',
   },
 ]
 

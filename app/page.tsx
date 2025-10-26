@@ -7,6 +7,7 @@ import { FooterSection } from '@/components/footer-section'
 import { LetsTalkButton } from '@/components/lets-talk-button'
 import { NavBar } from '@/components/navbar'
 import { PartnersSection } from '@/components/partners-section'
+import SkillsSection from '@/components/skills-section'
 import { SocialLinks } from '@/components/social-links'
 import { WorksSection } from '@/components/works-section'
 import Image from 'next/image'
@@ -76,6 +77,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <SkillsSection />
 
       {/* About Section */}
       {/* <AboutSection /> */}
