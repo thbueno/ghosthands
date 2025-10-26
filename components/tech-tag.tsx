@@ -18,28 +18,28 @@ interface TechTagProps {
 // Export predefined tag collections for reuse
 export const FRONTEND_TAGS: Tag[] = [
   {
+    name: 'Figma',
+    logo: '/images/stack/figma-logo.svg',
+  },
+  {
     name: 'React',
     logo: '/images/stack/react-logo.svg',
-  },
-  {
-    name: 'Tailwind',
-    logo: '/images/stack/tailwind-logo.svg',
-  },
-  {
-    name: 'Next.js',
-    logo: '/images/stack/nextjs-logo.svg',
   },
   {
     name: 'React Native',
     logo: '/images/stack/react-logo.svg',
   },
   {
-    name: 'Figma',
-    logo: '/images/stack/figma-logo.svg',
+    name: 'Next.js',
+    logo: '/images/stack/nextjs-logo.svg',
   },
   {
     name: 'Vite',
     logo: '/images/stack/vite-logo.svg',
+  },
+  {
+    name: 'Expo',
+    logo: '/images/stack/expo-logo.svg',
   },
   {
     name: 'JavaScript',
@@ -47,62 +47,66 @@ export const FRONTEND_TAGS: Tag[] = [
   },
   {
     name: 'TypeScript',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/typescript-logo.svg',
   },
   {
     name: 'HTML',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/html-logo.svg',
   },
   {
     name: 'CSS',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/css-logo.svg',
   },
   {
-    name: 'GraphQL',
-    logo: '/images/stack/vite-logo.svg',
+    name: 'Tailwind',
+    logo: '/images/stack/tailwind-logo.svg',
   },
   {
     name: 'Motion',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/motion-logo.svg',
   },
   {
     name: 'Spring',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/spring-logo.svg',
   },
   {
     name: 'React Router',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/react-router-logo.svg',
   },
 ]
 
 export const BACKEND_TAGS: Tag[] = [
   {
     name: 'Node.js',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/nodejs-logo.svg',
   },
   {
     name: 'MySQL',
-    logo: '/images/stack/nextjs-logo.svg',
+    logo: '/images/stack/mysql-Logo.svg',
   },
   {
     name: 'PostgreSQL',
-    logo: '/images/stack/vite-logo.svg',
+    logo: '/images/stack/postgress-logo.svg',
   },
   {
     name: 'Supabase',
-    logo: '/images/django-logo.svg',
+    logo: '/images/stack/supabase.svg',
   },
   {
     name: 'Docker',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/docker-logo.svg',
   },
   {
     name: 'FFmpeg',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/ffmpeg_logo.svg',
   },
   {
     name: 'Drizzle',
-    logo: '/images/portal-logo.svg',
+    logo: '/images/stack/drizzle.svg',
+  },
+  {
+    name: 'GraphQL',
+    logo: '/images/stack/graphql.svg',
   },
 ]
 
@@ -113,17 +117,17 @@ export default function TechTag({
   showLogo = true,
 }: TechTagProps) {
   return (
-    <div className={cn('flex flex-wrap gap-2', className)}>
+    <div className={cn('flex flex-wrap gap-4', className)}>
       {tags.map((tag) => (
         <div
           key={tag.name}
           className={cn(
-            'flex items-center gap-1 rounded-full border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-500',
+            'flex items-center gap-2 rounded-full border border-[color:var(--title)] px-4 py-2 text-xs font-medium text-[color:var(--title)]',
             tagClassName,
           )}
         >
           {showLogo && (
-            <img src={tag.logo} alt={tag.name} className="h-4 w-4" />
+            <img src={tag.logo} alt={tag.name} className="h-6 w-6" />
           )}
           {tag.name}
         </div>
