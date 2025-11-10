@@ -3,7 +3,7 @@ import TechTag, { FRONTEND_TAGS, BACKEND_TAGS } from '@/components/tech-tag'
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="px-7 py-12 md:px-8 lg:px-12">
+    <section id="skills" className="px-7 py-20 md:px-8 lg:px-12">
       <div className="conteiner flex flex-col gap-12 lg:flex-row">
         <div className="flex flex-col gap-4">
           <h2>Skills</h2>

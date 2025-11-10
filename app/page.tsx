@@ -2,6 +2,7 @@
 
 import { AboutSection } from '@/components/about-section'
 import { AwardsSection } from '@/components/awards-section'
+import BlurText from '@/components/blur-text'
 import { CTASection } from '@/components/cta-section'
 import { FooterSection } from '@/components/footer-section'
 import { LetsTalkButton } from '@/components/lets-talk-button'
@@ -25,6 +26,13 @@ export default function Home() {
               {/* Intro Section */}
               <div className="flex flex-row items-center gap-3 text-left">
                 {/* Hi, I'm */}
+                <BlurText
+                  text="Hi, I'm"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  className="text-3xl font-bold tracking-tight text-[color:var(--title)] sm:text-3xl md:text-4xl lg:text-5xl"
+                />
                 <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
 
                 {/* Image */}
