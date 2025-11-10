@@ -95,7 +95,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   )
 
   return (
-    <p ref={ref} className={`blur-text ${className} flex flex-wrap`}>
+    <div ref={ref} className={`blur-text ${className} flex flex-wrap`}>
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots)
 
@@ -107,7 +107,7 @@ const BlurText: React.FC<BlurTextProps> = ({
         }
 
         return (
-          <motion.span
+          <motion.h1
             key={index}
             initial={fromSnapshot}
             animate={inView ? animateKeyframes : fromSnapshot}
@@ -122,10 +122,10 @@ const BlurText: React.FC<BlurTextProps> = ({
           >
             {segment === ' ' ? '\u00A0' : segment}
             {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
-          </motion.span>
+          </motion.h1>
         )
       })}
-    </p>
+    </div>
   )
 }
 

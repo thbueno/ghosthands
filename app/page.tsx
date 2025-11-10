@@ -31,9 +31,9 @@ export default function Home() {
                   delay={150}
                   animateBy="words"
                   direction="top"
-                  className="text-3xl font-bold tracking-tight text-[color:var(--title)] sm:text-3xl md:text-4xl lg:text-5xl"
+                  className="hidden leading-[1.3] md:block"
                 />
-                <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
+                {/* <h1 className="hidden leading-[1.3] md:block ">Hi, I'm</h1> */}
 
                 {/* Image */}
                 <Image
@@ -45,7 +45,14 @@ export default function Home() {
                 />
 
                 {/* Thiago Bueno */}
-                <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1>
+                <BlurText
+                  text="Thiago Bueno"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  className="hidden leading-[1.3] md:block"
+                />
+                {/* <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1> */}
 
                 {/* Mobile stacked text */}
                 <div className="flex flex-col md:hidden">
