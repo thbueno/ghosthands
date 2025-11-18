@@ -47,7 +47,7 @@ export default function Home() {
                 {/* Thiago Bueno */}
                 <BlurText
                   text="Thiago Bueno"
-                  delay={150}
+                  delay={250}
                   animateBy="words"
                   direction="top"
                   className="hidden leading-[1.3] md:block"
@@ -76,7 +76,7 @@ export default function Home() {
               {/* Tagline */}
               <BlurText
                 text="a software engineer building"
-                delay={300}
+                delay={200}
                 animateBy="words"
                 direction="top"
                 className="leading-[1.3] lg:pr-24"

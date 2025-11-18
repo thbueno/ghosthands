@@ -116,6 +116,7 @@ body {
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-general-sans);
+    text-rendering: optimizeLegibility;
   }
 
   h1,
