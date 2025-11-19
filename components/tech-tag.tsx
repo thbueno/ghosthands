@@ -108,6 +108,18 @@ export const BACKEND_TAGS: Tag[] = [
     name: 'GraphQL',
     logo: '/images/stack/graphql.svg',
   },
+  {
+    name: 'MongoDB',
+    logo: '/images/stack/mongo.svg',
+  },
+  {
+    name: 'Redis',
+    logo: '/images/stack/redis_logo.svg',
+  },
+  {
+    name: 'Apache Cassandra',
+    logo: '/images/stack/cassandra_logo.svg',
+  },
 ]
 
 export default function TechTag({
@@ -122,7 +134,7 @@ export default function TechTag({
         <div
           key={tag.name}
           className={cn(
-            'flex items-center gap-2 rounded-full border border-[color:var(--title)] px-4 py-2 text-xs font-medium text-[color:var(--title)]',
+            'flex items-center gap-2 rounded-full border border-[color:var(--title)] px-4 py-2 text-xs font-medium text-[color:var(--title)] transition-all ease-in hover:-translate-y-1',
             tagClassName,
           )}
         >
