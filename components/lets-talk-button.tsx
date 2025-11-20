@@ -12,13 +12,13 @@ export function LetsTalkButton({
   className = '',
 }: LetsTalkButtonProps) {
   const baseClasses =
-    'flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-normal'
+    'flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-medium'
 
   const variants = {
     light:
-      'border border-title text-title hover:border-secondary hover:text-secondary',
+      'border border-title text-title transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-background',
     dark: 'border border-background text-background hover:border-secondary hover:text-secondary',
-    red: 'bg-secondary hover:bg-primary text-background',
+    red: 'bg-secondary text-background border border-background transition-all duration-300 hover:bg-background hover:border hover:border-secondary hover:text-secondary',
   }
 
   return (
