@@ -66,8 +66,8 @@ export const FRONTEND_TAGS: Tag[] = [
     logo: '/images/stack/motion-logo.svg',
   },
   {
-    name: 'Spring',
-    logo: '/images/stack/spring-logo.svg',
+    name: 'GSAP',
+    logo: '/images/stack/gsap_logo.svg',
   },
   {
     name: 'React Router',
