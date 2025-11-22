@@ -120,6 +120,10 @@ export const BACKEND_TAGS: Tag[] = [
     name: 'Apache Cassandra',
     logo: '/images/stack/cassandra_logo.svg',
   },
+  {
+    name: 'Express',
+    logo: '/images/stack/express_logo.svg',
+  },
 ]
 
 export default function TechTag({
