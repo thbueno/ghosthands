@@ -76,9 +76,12 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <Link
           href={`/works/${project.id}`}
-          className="rounded-full border border-title p-3 transition-colors hover:border-secondary hover:text-secondary"
+          className="group flex items-center justify-center rounded-full border border-title p-3 transition-colors hover:border-secondary hover:text-secondary"
         >
-          <ArrowRight size={20} />
+          <ArrowRight
+            size={20}
+            className="transition-transform duration-300 ease-out group-hover:-rotate-45"
+          />
         </Link>
       </div>
     </div>
@@ -97,14 +100,18 @@ export function WorksSection() {
           ))}
         </div>
 
-        <div className="flex justify-center">
+        {/*  <div className="flex justify-center">
           <Link
             href="/works"
             className="inline-flex items-center text-lg font-medium transition-opacity hover:opacity-80"
           >
-            View All Works <ArrowRight className="ml-2" size={20} />
+            View All Works{' '}
+            <ArrowRight
+              className="ml-2 inline-block transition-transform duration-300 ease-out focus:translate-y-6 group-hover:-rotate-45"
+              size={20}
+            />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )

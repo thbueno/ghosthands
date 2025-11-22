@@ -134,7 +134,7 @@ export default function TechTag({
         <div
           key={tag.name}
           className={cn(
-            'flex items-center gap-2 rounded-full border border-[color:var(--title)] px-4 py-2 text-xs font-semibold text-[color:var(--title)] transition-all delay-75 duration-300 ease-in-out hover:-translate-y-1 hover:border-[color:var(--secondary)] hover:text-[color:var(--secondary)]',
+            'flex cursor-default items-center gap-2 rounded-full border border-[color:var(--title)] px-4 py-2 text-xs font-semibold text-[color:var(--title)] transition-all delay-75 duration-300 ease-in-out hover:-translate-y-1 hover:border-[color:var(--secondary)] hover:text-[color:var(--secondary)]',
             tagClassName,
           )}
         >

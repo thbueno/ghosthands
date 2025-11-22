@@ -12,7 +12,7 @@ export function LetsTalkButton({
   className = '',
 }: LetsTalkButtonProps) {
   const baseClasses =
-    'flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-medium'
+    'group flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-medium cursor-pointer'
 
   const variants = {
     light:
@@ -26,7 +26,11 @@ export function LetsTalkButton({
       href="#contact"
       className={twMerge(baseClasses, variants[variant], className)}
     >
-      Let&apos;s Build <ArrowRight size={16} />
+      Let&apos;s Build
+      <ArrowRight
+        size={16}
+        className="inline-block transition-transform duration-300 ease-out focus:translate-y-6 group-hover:-rotate-45"
+      />
     </Link>
   )
 }
