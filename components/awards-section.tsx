@@ -67,7 +67,7 @@ export function AwardsSection() {
                         </p>
                       </div>
                       <ArrowUpRight
-                        className="mt-1 opacity-70 transition-opacity group-hover:opacity-100"
+                        className="mt-1 opacity-70 transition-all duration-300 ease-out group-hover:rotate-45 group-hover:opacity-100"
                         size={20}
                       />
                     </div>
