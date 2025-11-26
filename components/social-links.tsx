@@ -22,7 +22,7 @@ export function SocialLinks({
   className = '',
 }: SocialLinksProps) {
   const baseClasses =
-    'flex items-center gap-1 text-sm md:text-md lg:text-md font-medium transition-colors'
+    'group flex items-center gap-1 text-sm md:text-md lg:text-md font-medium transition-colors'
   const variantClasses =
     variant === 'dark'
       ? 'text-[color:var(--background)] hover:text-[color:var(--secondary)]'
@@ -36,7 +36,11 @@ export function SocialLinks({
           href={link.href}
           className={`${baseClasses} ${variantClasses} ${className}`}
         >
-          {link.name} <ArrowRight size={14} className="-rotate-45 transform" />
+          {link.name}{' '}
+          <ArrowRight
+            size={14}
+            className="-rotate-45 transition-transform duration-300 ease-out group-hover:rotate-0"
+          />
         </Link>
       ))}
     </div>
