@@ -41,13 +41,13 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
+                    className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     Home{' '}
                   </Link>
                   <Link
                     href="/"
-                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
+                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-secondary sm:p-4"
                   >
                     <ArrowRight size={20} />
                   </Link>
@@ -57,7 +57,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/about"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
+                    className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     Works{' '}
                   </Link>
@@ -73,7 +73,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/works"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
+                    className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     About Me
                   </Link>
@@ -89,7 +89,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/insights"
-                    className="text-3xl font-bold transition-colors hover:text-stone-300 sm:text-4xl md:text-4xl lg:text-5xl"
+                    className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     Experience
                   </Link>
