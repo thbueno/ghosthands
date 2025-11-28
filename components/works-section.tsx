@@ -1,6 +1,6 @@
-import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowLinkButton } from './arrow-link-button'
 
 // Define the project type
 interface Project {
@@ -74,15 +74,7 @@ function ProjectCard({ project }: { project: Project }) {
           <h3>{project.title}</h3>
           <p>{project.category}</p>
         </div>
-        <Link
-          href={`/works/${project.id}`}
-          className="group flex items-center justify-center rounded-full border border-title p-3 transition-colors hover:border-secondary hover:text-secondary"
-        >
-          <ArrowRight
-            size={20}
-            className="transition-transform duration-300 ease-out group-hover:-rotate-45"
-          />
-        </Link>
+        <ArrowLinkButton href={`/works/${project.id}`} />
       </div>
     </div>
   )

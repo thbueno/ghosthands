@@ -1,8 +1,9 @@
 'use client'
 
-import { ArrowRight, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import Link from 'next/link'
 import { type FormEvent, useState } from 'react'
+import { ArrowLinkButton } from './arrow-link-button'
 import { NewsletterForm } from './newsletter-form'
 import { SocialLinks } from './social-links'
 
@@ -45,12 +46,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   >
                     Home{' '}
                   </Link>
-                  <Link
-                    href="/"
-                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-secondary sm:p-4"
-                  >
-                    <ArrowRight size={20} />
-                  </Link>
+                  <ArrowLinkButton href="/" variant="dark" />
                 </div>
               </li>
               <li>
@@ -61,12 +57,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   >
                     Works{' '}
                   </Link>
-                  <Link
-                    href="/about"
-                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
-                  >
-                    <ArrowRight size={20} />
-                  </Link>
+                  <ArrowLinkButton href="/about" variant="dark" />
                 </div>
               </li>
               <li>
@@ -77,12 +68,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   >
                     About Me
                   </Link>
-                  <Link
-                    href="/works"
-                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
-                  >
-                    <ArrowRight size={20} />
-                  </Link>
+                  <ArrowLinkButton href="/works" variant="dark" />
                 </div>
               </li>
               <li>
@@ -93,12 +79,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                   >
                     Experience
                   </Link>
-                  <Link
-                    href="/insights"
-                    className="flex-shrink-0 rounded-full border border-stone-700 p-3 transition-colors hover:bg-stone-900 sm:p-4"
-                  >
-                    <ArrowRight size={20} />
-                  </Link>
+                  <ArrowLinkButton href="/insights" variant="dark" />
                 </div>
               </li>
             </ul>
