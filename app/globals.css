@@ -14,6 +14,7 @@
 }
 
 body {
+  scroll-behavior: smooth;
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
   /* overflow-x: hidden; */
@@ -111,6 +112,7 @@ body {
     @apply border-border;
   }
   html {
+    scroll-behavior: smooth;
     overflow-x: hidden;
   }
   body {
@@ -147,4 +149,39 @@ body {
   span {
     @apply text-3xl font-bold tracking-tight text-[color:var(--secondary)] sm:text-3xl md:text-4xl lg:text-5xl;
   }
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0.5;
+    transform: translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fadeUp {
+  animation: fadeUp both;
+  animation-timeline: view();
+}
+
+.fadeUp-1 {
+  animation: fadeUp both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+
+.fadeUp-2 {
+  animation: fadeUp both;
+  animation-timeline: view();
+  animation-range: entry 40% cover 60%;
+}
+
+.fadeUp-3 {
+  animation: fadeUp both;
+  animation-timeline: view();
+  animation-range: entry 60% cover 80%;
 }
