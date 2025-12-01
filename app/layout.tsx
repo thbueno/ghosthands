@@ -5,9 +5,9 @@ import { dmMono, myLocalFont } from './fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Thiago Bueno - Visual Designer Portfolio',
+  title: 'Thiago Bueno - Dev Portfolio',
   description:
-    'Portfolio of a visual designer with passion to create great experiences',
+    'Portfolio of a software engineer with passion to create great applications',
 }
 
 const inter = Inter({ subsets: ['latin'] })
