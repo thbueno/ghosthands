@@ -25,14 +25,7 @@ export default function Home() {
               {/* Intro Section */}
               <div className="flex flex-row items-center gap-3 text-left">
                 {/* Hi, I'm */}
-                <BlurText
-                  text="Hi, I'm"
-                  delay={150}
-                  animateBy="words"
-                  direction="top"
-                  className="hidden leading-[1.3] md:block"
-                />
-                {/* <h1 className="hidden leading-[1.3] md:block ">Hi, I'm</h1> */}
+                <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
 
                 {/* Image */}
                 <Image
@@ -44,53 +37,27 @@ export default function Home() {
                 />
 
                 {/* Thiago Bueno */}
-                <BlurText
+                {/* <BlurText
                   text="Thiago Bueno"
                   delay={250}
                   animateBy="words"
                   direction="top"
                   className="hidden leading-[1.3] md:block"
-                />
-                {/* <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1> */}
+                /> */}
+                <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1>
 
                 {/* Mobile stacked text */}
                 <div className="flex flex-col md:hidden">
-                  <BlurText
-                    text="Hi, I'm"
-                    delay={150}
-                    animateBy="words"
-                    direction="top"
-                    className="leading-[1.3]"
-                  />
-                  <BlurText
-                    text="Thiago Bueno"
-                    delay={250}
-                    animateBy="words"
-                    direction="top"
-                    className="leading-[1.3]"
-                  />
+                  <h1 className="leading-[1.3]">Hi, I'm</h1>
+                  <h1 className="leading-[1.3]">Thiago Bueno</h1>
                 </div>
               </div>
 
               {/* Tagline */}
-              <BlurText
-                text="a software engineer building"
-                delay={200}
-                animateBy="words"
-                direction="top"
-                className="leading-[1.3] lg:pr-24"
-              />
-              <BlurText
-                text="standout applications"
-                delay={400}
-                animateBy="words"
-                direction="top"
-                className="break-words pt-2 leading-[1.3] !text-[color:var(--secondary)] lg:pr-24"
-              />
-              {/*   <h2 className="break-words leading-[1.3] lg:pr-24">
+              <h2 className="break-words leading-[1.3] lg:pr-24">
                 a software engineer building{' '}
-                <span className="break-words">standout applications</span>
-              </h2> */}
+                <span className="break-words">real applications</span>
+              </h2>
             </div>
 
             <div className="col-span-1 lg:col-span-2">
@@ -100,10 +67,10 @@ export default function Home() {
                 </div>
                 <div className="flex items-center lg:col-start-2">
                   <p className="text-base md:text-base">
-                    Virtual greetings to you, this is my work space on the
-                    Internet. Here you can browse through my current projects,
-                    my past works and learn more about me. Don´t hesitate to
-                    reach out! if you have any questions or just want to say hi.
+                    Virtual greetings, this is my work space on the Internet.
+                    Here you can browse through my current projects, my past
+                    works and learn more about me. Don´t hesitate to reach out!
+                    if you have any questions or just want to say hi.
                   </p>
                 </div>
               </div>

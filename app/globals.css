@@ -22,6 +22,7 @@ body {
 
 body {
   font-family: var(--font-general-sans);
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -119,6 +120,7 @@ body {
     @apply bg-background text-foreground;
     font-family: var(--font-general-sans);
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
   }
 
   h1,
@@ -155,7 +157,7 @@ body {
 @keyframes fadeUp {
   from {
     opacity: 0.5;
-    transform: translateY(10px) scale(0.9);
+    transform: translateY(10px) scale(0.8);
   }
   to {
     opacity: 1;
@@ -166,6 +168,7 @@ body {
 .fadeUp {
   animation: fadeUp both;
   animation-timeline: view();
+  transition: all 3s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .fadeUp-1 {
