@@ -21,7 +21,7 @@ export default function Home() {
         <div className="container">
           {/* Hero Section */}
           <div className="mb-12 mt-6 grid grid-cols-1 gap-12 md:mt-4 lg:mt-2 lg:grid-cols-1">
-            <div className="col-span-1">
+            <div className="duration-1500 col-span-1 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth">
               {/* Intro Section */}
               <div className="flex flex-row items-center gap-3 text-left">
                 {/* Hi, I'm */}
@@ -60,10 +60,10 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="col-span-1 lg:col-span-2">
+            <div className="duration-1500 col-span-1 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-delay-200 motion-ease-spring-smooth lg:col-span-2">
               <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
                 <div className="flex items-center">
-                  <div className="h-[1px] w-full bg-stone-400"></div>
+                  <div className="h-[1px] w-full bg-stone-400 motion-delay-300"></div>
                 </div>
                 <div className="flex items-center lg:col-start-2">
                   <p className="text-base md:text-base">
