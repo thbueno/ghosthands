@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLinkButton } from './arrow-link-button'
+import { AnimateOnScroll } from './animate-on-scroll'
 
 // Define the project type
 interface Project {
@@ -51,12 +52,14 @@ const projects: Project[] = [
 ]
 
 // Project Card Component
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
-    <div
+    <AnimateOnScroll
       className={`flex flex-col ${
         project.size === 'large' ? 'col-span-1 md:col-span-2' : 'col-span-1'
       }`}
+      delay={index * 100}
+      threshold={0.2}
     >
       <div className="mb-5 overflow-hidden rounded-3xl bg-gray-100">
         <Link href={`/works/${project.id}`}>
@@ -76,7 +79,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <ArrowLinkButton href={`/works/${project.id}`} />
       </div>
-    </div>
+    </AnimateOnScroll>
   )
 }
 
@@ -84,11 +87,13 @@ export function WorksSection() {
   return (
     <section className="py-24 md:py-32">
       <div className="container mx-auto md:px-8 lg:px-12">
-        <h2 className="mb-12">My Latest Works</h2>
+        <AnimateOnScroll threshold={0.3}>
+          <h2 className="mb-12">My Latest Works</h2>
+        </AnimateOnScroll>
 
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
