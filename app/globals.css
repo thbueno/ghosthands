@@ -153,44 +153,6 @@ body {
   }
 }
 
-/* Fade Up Animation */
-@keyframes fadeUp {
-  from {
-    filter: saturate(0) contrast(4) brightness(0.1) blur(5px);
-    opacity: 0;
-    scale: 0.95;
-    translate: 0 4rem;
-  }
-  to {
-    filter: none;
-    opacity: 1;
-    scale: 1;
-    translate: 0 0;
-  }
-}
-
-.fadeUp {
-  animation: fadeUp both;
-  animation-timeline: view(50% 20%);
-  transition: all 3s cubic-bezier(0.42, 0, 0.58, 1);
-}
-
-.fadeUp-1 {
-  animation: fadeUp both;
-  animation-timeline: view(50% 20%);
-}
-
-.fadeUp-2 {
-  animation: fadeUp both;
-  animation-timeline: view(65% 35%);
-}
-
-.fadeUp-3 {
-  animation: fadeUp both;
-  animation-timeline: view(70% 20%);
-  animation-range: entry 60% cover 100%;
-}
-
 /* Scroll-triggered animations with Intersection Observer */
 
 /* Base animation class - slide up + fade + blur (equivalent to Rombo motion classes) */
