@@ -190,3 +190,47 @@ body {
   animation-timeline: view(70% 20%);
   animation-range: entry 60% cover 100%;
 }
+
+/* Scroll-triggered animations with Intersection Observer */
+
+/* Base animation class - slide up + fade + blur (equivalent to Rombo motion classes) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(100px);
+  filter: blur(8px);
+  transition-property: opacity, transform, filter;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll[data-animate='true'] {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Variant: slide up + fade (no blur) */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition-property: opacity, transform;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-slide-up[data-animate='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variant: fade only */
+.animate-fade {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-fade[data-animate='true'] {
+  opacity: 1;
+}

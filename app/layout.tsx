@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import type React from 'react'
 import { dmMono, myLocalFont } from './fonts'
 import './globals.css'
+import ObserverProvider from '@/components/ObserverProvider'
 
 export const metadata: Metadata = {
   title: 'Thiago Bueno - Dev Portfolio',
@@ -22,10 +23,8 @@ export default function RootLayout({
       <body
         className={`${myLocalFont.className} ${myLocalFont.variable} ${dmMono.variable} mx-auto bg-background px-7 antialiased md:px-10 lg:px-40`}
       >
-        {children}
+        <ObserverProvider>{children}</ObserverProvider>
       </body>
     </html>
   )
 }
-
-import './globals.css'
