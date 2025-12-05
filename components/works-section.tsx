@@ -68,7 +68,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             alt={project.title}
             width={project.size === 'large' ? 1200 : 600}
             height={project.size === 'large' ? 800 : 400}
-            className="h-auto w-full object-cover transition-opacity hover:opacity-90"
+            className="grayscale-25 h-auto w-full object-cover transition-all delay-75 duration-200 ease-out hover:scale-105 hover:opacity-90 hover:grayscale-0"
           />
         </Link>
       </div>

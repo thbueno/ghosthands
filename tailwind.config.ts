@@ -26,6 +26,9 @@ const config: Config = {
       // => @media (min-width: 1152px) { ... }
     },
     extend: {
+      grayscale: {
+        25: '50%',
+      },
       colors: {
         // Custom theme colors
         title: 'var(--title)',

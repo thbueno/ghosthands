@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
+import { AnimateOnScroll } from '@/components/animate-on-scroll'
 
 // Define the award type
 interface Award {
@@ -47,19 +48,24 @@ export function AwardsSection() {
     <section className="py-24 md:py-32">
       <div className="container mx-auto md:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          <div className="md:col-span-1">
+          <AnimateOnScroll className="md:col-span-1" threshold={0.3}>
             <h2>
               Work <br /> Experience
             </h2>
-          </div>
+          </AnimateOnScroll>
           <div className="md:col-span-2">
             <ul className="space-y-6">
-              {awards.map((award) => (
-                <li key={award.id}>
+              {awards.map((award, index) => (
+                <AnimateOnScroll
+                  key={award.id}
+                  as="li"
+                  delay={index * 100}
+                  threshold={0.2}
+                >
                   <Link href={award.url} className="group block">
                     <div className="flex items-start justify-between border-b border-gray-200 pb-6">
                       <div>
-                        <h3 className="mb-1 text-xl font-bold transition-opacity group-hover:opacity-70">
+                        <h3 className="mb-1 text-xl font-bold transition-all duration-200 ease-out group-hover:text-secondary">
                           {award.title}
                         </h3>
                         <p className="text-gray-600">
@@ -72,7 +78,7 @@ export function AwardsSection() {
                       />
                     </div>
                   </Link>
-                </li>
+                </AnimateOnScroll>
               ))}
             </ul>
           </div>
