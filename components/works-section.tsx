@@ -61,14 +61,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       delay={index * 100}
       threshold={0.2}
     >
-      <div className="mb-5 overflow-hidden rounded-3xl bg-gray-100">
+      <div className="group mb-5 overflow-hidden rounded-3xl bg-gray-100">
         <Link href={`/works/${project.id}`}>
           <Image
             src={project.image || '/placeholder.svg'}
             alt={project.title}
             width={project.size === 'large' ? 1200 : 600}
             height={project.size === 'large' ? 800 : 400}
-            className="grayscale-25 h-auto w-full object-cover transition-all delay-75 duration-200 ease-out hover:scale-105 hover:opacity-90 hover:grayscale-0"
+            className="h-auto w-full object-cover transition-all duration-500 ease-in-out motion-safe:group-hover:scale-[1.1] motion-safe:group-focus:scale-[1.1]"
           />
         </Link>
       </div>
