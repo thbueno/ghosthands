@@ -196,3 +196,20 @@ body {
 .animate-fade[data-animate='true'] {
   opacity: 1;
 }
+
+/* 3D rotation animation */
+.perspective-3d {
+  perspective: 1000px;
+}
+
+.rotate-3d {
+  transform-style: preserve-3d;
+  transition-property: transform;
+  transform: rotateX(12deg) translateZ(-12px);
+  transition: transform 1.5s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rotate-3d[data-animate='true'] {
+  transform: rotateX(0deg) translateZ(0px);
+}

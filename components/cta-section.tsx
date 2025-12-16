@@ -4,8 +4,8 @@ import { AnimateOnScroll } from '@/components/animate-on-scroll'
 export function CTASection() {
   return (
     <section className="py-24 md:py-32">
-      <div className="container mx-auto md:px-8 lg:px-12">
-        <AnimateOnScroll threshold={0.3}>
+      <div className="perspective-3d container mx-auto md:px-8 lg:px-12">
+        <AnimateOnScroll variant="rotate-3d" threshold={0.8}>
           <div className="rounded-3xl bg-secondary px-6 py-24 text-center md:py-32">
             <AnimateOnScroll delay={100} threshold={0.2}>
               <h1 className="mb-8">

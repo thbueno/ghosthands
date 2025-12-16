@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 interface AnimateOnScrollProps {
   children: React.ReactNode
   className?: string
-  variant?: 'default' | 'slide-up' | 'fade'
+  variant?: 'default' | 'slide-up' | 'fade' | 'rotate-3d'
   delay?: number
   threshold?: number
   triggerOnce?: boolean
@@ -33,6 +33,11 @@ interface AnimateOnScrollProps {
  * <AnimateOnScroll variant="fade">
  *   <div>Content</div>
  * </AnimateOnScroll>
+ *
+ * // 3D rotation effect
+ * <AnimateOnScroll variant="rotate-3d">
+ *   <div>Content</div>
+ * </AnimateOnScroll>
  */
 export function AnimateOnScroll({
   children,
@@ -52,6 +57,7 @@ export function AnimateOnScroll({
     default: 'animate-on-scroll',
     'slide-up': 'animate-slide-up',
     fade: 'animate-fade',
+    'rotate-3d': 'rotate-3d',
   }[variant]
 
   return (
