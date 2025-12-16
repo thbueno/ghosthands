@@ -15,38 +15,38 @@ interface Project {
 // Sample project data
 const projects: Project[] = [
   {
-    id: 'estatery-1',
-    title: 'Estatery',
-    category: 'UI/UX',
-    image: '/images/FriendsTravel_screen1.jpg',
+    id: 'esthalo',
+    title: 'Esthalo Agency',
+    category: 'Full Stack',
+    image: '/images/Esthalo-cat.png',
     size: 'small',
   },
   {
-    id: 'wepay-1',
-    title: 'Wepay',
-    category: 'Branding',
-    image: '/images/govbr_dash3.jpg',
+    id: 'govbr',
+    title: 'GOVBR - Brazil Governance',
+    category: 'Front-end',
+    image: '/images/govbr_dash3.png',
     size: 'small',
   },
   {
-    id: 'estatery-2',
-    title: 'Estatery',
+    id: 'capsule',
+    title: 'Capsule app',
     category: 'UI/UX',
-    image: '/images/FriendsTravel_screen2.jpg',
+    image: '/images/Capsule_Friends_Mock.png',
     size: 'large',
   },
   {
-    id: 'estatery-3',
-    title: 'Estatery',
-    category: 'UI/UX',
-    image: '/images/estatery-laptop.png',
+    id: 'friends',
+    title: 'Friends Travel',
+    category: 'Full Stack',
+    image: '/images/FriendsTravel_screen1.png',
     size: 'small',
   },
   {
-    id: 'wepay-2',
-    title: 'Wepay',
-    category: 'Branding',
-    image: '/images/wepay-mobile.png',
+    id: 'sw',
+    title: 'SW Clean Energy',
+    category: 'Full Stack',
+    image: '/images/SW-Hero.png',
     size: 'small',
   },
 ]
@@ -88,7 +88,7 @@ export function WorksSection() {
     <section className="py-24 md:py-32">
       <div className="container mx-auto md:px-8 lg:px-12">
         <AnimateOnScroll threshold={0.3}>
-          <h2 className="mb-12">My Latest Works</h2>
+          <h2 className="mb-12">Handpicked Works</h2>
         </AnimateOnScroll>
 
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
