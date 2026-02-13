@@ -16,34 +16,34 @@ interface Project {
 // Sample project data
 const projects: Project[] = [
   {
-    id: 'estatery-1',
-    title: 'Estatery',
+    id: 'gov-br',
+    title: 'GOVBR',
+    category: 'Front-end',
+    image: '/images/govbr_dash3.png',
+  },
+  {
+    id: 'esthalo',
+    title: 'Esthalo',
+    category: 'Full Stack',
+    image: '/images/Esthalo-cat.png',
+  },
+  {
+    id: 'capsule',
+    title: 'Capsule',
     category: 'UI/UX',
-    image: '/images/estatery-laptop.png',
+    image: '/images/Capsule_Friends_Mock.png',
   },
   {
-    id: 'wepay-1',
-    title: 'Wepay',
-    category: 'Branding',
-    image: '/images/wepay-mobile.png',
+    id: 'friends-travel',
+    title: 'Friends Travel',
+    category: 'Full Stack',
+    image: '/images/FriendsTravel_screen1.png',
   },
   {
-    id: 'estatery-2',
-    title: 'Estatery',
-    category: 'UI/UX',
-    image: '/images/estatery-laptop-large.png',
-  },
-  {
-    id: 'estatery-3',
-    title: 'Estatery',
-    category: 'UI/UX',
-    image: '/images/estatery-laptop.png',
-  },
-  {
-    id: 'wepay-2',
-    title: 'Wepay',
-    category: 'Branding',
-    image: '/images/wepay-mobile.png',
+    id: 'sw-clean-energy',
+    title: 'SW Clean Energy',
+    category: 'Full Stack',
+    image: '/images/SW-Hero.png',
   },
 ]
 

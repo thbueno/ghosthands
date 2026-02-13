@@ -22,7 +22,7 @@ const projects: Project[] = [
     size: 'small',
   },
   {
-    id: 'govbr',
+    id: 'gov-br',
     title: 'GOVBR - Brazil Governance',
     category: 'Front-end',
     image: '/images/govbr_dash3.png',
@@ -36,14 +36,14 @@ const projects: Project[] = [
     size: 'large',
   },
   {
-    id: 'friends',
+    id: 'friends-travel',
     title: 'Friends Travel',
     category: 'Full Stack',
     image: '/images/FriendsTravel_screen1.png',
     size: 'small',
   },
   {
-    id: 'sw',
+    id: 'sw-clean-energy',
     title: 'SW Clean Energy',
     category: 'Full Stack',
     image: '/images/SW-Hero.png',

@@ -32,12 +32,12 @@ interface ProjectData {
 
 // Sample project data
 const projects: Record<string, ProjectData> = {
-  'estatery-1': {
-    id: 'estatery-1',
-    title: 'GOV BR governaça Brasil',
+  'gov-br': {
+    id: 'gov-br',
+    title: 'GOV-BR governaça Brasil',
     headline: 'Unleash Your Potential and Push Beyond Limits',
     image: '/images/estatery-laptop.png',
-    date: 'May 5, 2023',
+    date: 'November 5, 2017',
     client: 'Jacob McDany',
     services: ['Mobile App', 'Website Design', 'UI/UX'],
     websiteUrl: '#',
@@ -58,8 +58,8 @@ const projects: Record<string, ProjectData> = {
       usersLabel: 'Daily users enjoying sportly',
     },
   },
-  'wepay-1': {
-    id: 'wepay-1',
+  esthalo: {
+    id: 'esthalo',
     title: 'Travel Friends',
     headline: 'Revolutionizing Digital Payments for Everyone',
     image: '/images/wepay-mobile.png',
@@ -89,7 +89,7 @@ const projects: Record<string, ProjectData> = {
 export default function ProjectDetail() {
   const params = useParams()
   const projectId = params.id as string
-  const project = projects[projectId] || projects['estatery-1'] // Fallback to estatery if project not found
+  const project = projects[projectId] || projects['gov-br'] // Fallback to estatery if project not found
 
   // Scroll to top when the component mounts
   useEffect(() => {
