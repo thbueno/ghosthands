@@ -1,114 +1,44 @@
-'use client'
-
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { notFound } from 'next/navigation'
+import { getProjectBySlug, getAllProjectSlugs } from '@/lib/mdx'
+import { ScrollToTop } from '@/components/scroll-to-top'
 
-// Define project data type
-interface ProjectData {
-  id: string
-  title: string
-  headline: string
-  image: string
-  date: string
-  client: string
-  services: string[]
-  websiteUrl: string
-  about: string
-  clients: string
-  challenge: string
-  results: string
-  metrics: {
-    funding: string
-    fundingLabel: string
-    conversion: string
-    conversionLabel: string
-    users: string
-    usersLabel: string
+// Generate static params for all MDX project files
+export async function generateStaticParams() {
+  const slugs = getAllProjectSlugs()
+  return slugs.map((slug) => ({ id: slug }))
+}
+
+export default async function ProjectDetail({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
+  const project = await getProjectBySlug(id)
+
+  if (!project) {
+    notFound()
   }
-}
 
-// Sample project data
-const projects: Record<string, ProjectData> = {
-  'gov-br': {
-    id: 'gov-br',
-    title: 'GOV-BR governaça Brasil',
-    headline: 'Unleash Your Potential and Push Beyond Limits',
-    image: '/images/estatery-laptop.png',
-    date: 'November 5, 2017',
-    client: 'Jacob McDany',
-    services: ['Mobile App', 'Website Design', 'UI/UX'],
-    websiteUrl: '#',
-    about:
-      "At Sportly, we believe in making fitness fun and evolution. That's why we've developed a cutting-edge mobile app and dashboard that allows you to effortlessly track and manage your sport activities. Whether you're an avid runner, a devoted cyclist, or a fitness enthusiast, Sportly has got you covered! With Sportly, you'll enjoy a user-friendly interface that empowers you to log your workouts, set personal goals, and monitor your achievements. Whether you prefer running, Cycling, or engaging in various sports, our app provides detailed insights into your performance, distance covered, calories burned, and much more.",
-    clients:
-      'Our esteemed clients, who are passionate about maintaining an active lifestyle, inspired us to create Sportly. They sought an all-in-one solution that could seamlessly monitor their progress, provide insightful data, and keep them motivated throughout their fitness journey. We listened, and we delivered.',
-    challenge:
-      'To ensure a holistic experience, Sportly also offers a personalized dashboard accessible from any device. This dashboard gives you an overview of your progress, allowing you to analyze your data, track trends, and identify areas for improvement. You can even connect with fellow fitness enthusiasts, share your accomplishments, and embark on friendly challenges together!',
-    results:
-      "Let's understand that motivation plays a crucial role in maintaining an active lifestyle. That's why we've incorporated exciting features like badges, rewards, and challenges within Sportly. Achieve your goals and unlock various milestones to earn recognition and stay motivated on your fitness journey. So, whether you're a beginner looking to kickstart your fitness routine or a seasoned athlete striving for new personal bests, Sportly is your ideal companion. Download the app today and experience the joy of tracking your sport activity like never before!",
-    metrics: {
-      funding: '$25.8M',
-      fundingLabel: 'Total raised in funding so far',
-      conversion: '+24%',
-      conversionLabel: 'Conversion rate with new design',
-      users: '~400K',
-      usersLabel: 'Daily users enjoying sportly',
-    },
-  },
-  esthalo: {
-    id: 'esthalo',
-    title: 'Travel Friends',
-    headline: 'Revolutionizing Digital Payments for Everyone',
-    image: '/images/wepay-mobile.png',
-    date: 'April 12, 2020',
-    client: 'FinTech Solutions Inc.',
-    services: ['Mobile App', 'Branding', 'UI/UX'],
-    websiteUrl: '#',
-    about:
-      "At Wepay, we're transforming how people think about digital payments. Our platform combines security, speed, and simplicity to create a seamless payment experience for both individuals and businesses. With our intuitive interface, users can send money, pay bills, and manage their finances all in one place.",
-    clients:
-      'Our clients range from small businesses looking to streamline their payment processes to large enterprises seeking comprehensive financial solutions. They needed a reliable, user-friendly platform that could handle various transaction types while providing detailed analytics and insights.',
-    challenge:
-      'The financial technology landscape is highly competitive and constantly evolving. We needed to create a solution that not only met current industry standards but also anticipated future trends and user needs. Security was paramount, as was creating an interface that users of all technical abilities could navigate with ease.',
-    results:
-      "Since launching Wepay, we've seen remarkable growth in both user adoption and transaction volume. The platform has received praise for its clean design, robust security features, and overall user experience. Businesses have reported significant improvements in payment processing efficiency, while individual users appreciate the simplicity and reliability of the service.",
-    metrics: {
-      funding: '$18.5M',
-      fundingLabel: 'Secured in Series A funding',
-      conversion: '+32%',
-      conversionLabel: 'Increase in completed transactions',
-      users: '~250K',
-      usersLabel: 'Active monthly users',
-    },
-  },
-}
-
-export default function ProjectDetail() {
-  const params = useParams()
-  const projectId = params.id as string
-  const project = projects[projectId] || projects['gov-br'] // Fallback to estatery if project not found
-
-  // Scroll to top when the component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [projectId])
+  const { frontmatter, content } = project
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollToTop id={id} />
       <div className="container mx-auto px-4 py-12 md:px-8 lg:px-24">
         {/* Project Header */}
         <div className="mb-12">
-          <h4 className="mb-4 text-lg">{project.title}</h4>
+          <h4 className="mb-4 text-lg">{frontmatter.title}</h4>
           <h1 className="mb-8 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            {project.headline}
+            {frontmatter.headline}
           </h1>
           <div className="mb-12 overflow-hidden rounded-3xl bg-background">
             <Image
-              src={project.image || '/placeholder.svg'}
-              alt={project.title}
+              src={frontmatter.image || '/placeholder.svg'}
+              alt={frontmatter.title}
               width={1200}
               height={800}
               className="h-auto w-full object-cover"
@@ -122,18 +52,18 @@ export default function ProjectDetail() {
           <div className="space-y-8 md:col-span-1">
             <div>
               <h3 className="mb-2 text-lg font-medium">Date</h3>
-              <p className="">{project.date}</p>
+              <p className="">{frontmatter.date}</p>
             </div>
 
             <div>
               <h3 className="mb-2 text-lg font-medium">Client Name</h3>
-              <p className="">{project.client}</p>
+              <p className="">{frontmatter.client}</p>
             </div>
 
             <div>
               <h3 className="mb-2 text-lg font-medium">Services</h3>
               <div className="space-y-1">
-                {project.services.map((service, index) => (
+                {frontmatter.services.map((service, index) => (
                   <p key={index} className="">
                     {service}
                   </p>
@@ -143,7 +73,7 @@ export default function ProjectDetail() {
 
             <div>
               <Link
-                href={project.websiteUrl}
+                href={frontmatter.websiteUrl}
                 className="inline-flex items-center gap-2 rounded-full border border-title px-6 py-3 transition hover:border-secondary hover:text-secondary"
               >
                 Visit Website <ArrowUpRight size={16} />
@@ -151,50 +81,8 @@ export default function ProjectDetail() {
             </div>
           </div>
 
-          {/* Main Content */}
-          <div className="space-y-12 md:col-span-2">
-            <div>
-              <h2 className="mb-6 text-3xl font-bold">About</h2>
-              <p className="">{project.about}</p>
-            </div>
-
-            <div>
-              <h2 className="mb-6 text-3xl font-bold">Our Clients</h2>
-              <p className="">{project.clients}</p>
-            </div>
-
-            <div>
-              <h2 className="mb-6 text-3xl font-bold">Challenge</h2>
-              <p className="">{project.challenge}</p>
-            </div>
-
-            <div>
-              <h2 className="mb-6 text-3xl font-bold">Results</h2>
-              <p className="mb-12">{project.results}</p>
-
-              {/* Metrics */}
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                <div>
-                  <h3 className="mb-2 text-3xl font-bold">
-                    {project.metrics.funding}
-                  </h3>
-                  <p className="">{project.metrics.fundingLabel}</p>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-3xl font-bold">
-                    {project.metrics.conversion}
-                  </h3>
-                  <p className="">{project.metrics.conversionLabel}</p>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-3xl font-bold">
-                    {project.metrics.users}
-                  </h3>
-                  <p className="">{project.metrics.usersLabel}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Main Content — rendered from MDX */}
+          <div className="space-y-12 md:col-span-2">{content}</div>
         </div>
       </div>
     </div>

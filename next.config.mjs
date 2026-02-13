@@ -22,6 +22,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  transpilePackages: ['next-mdx-remote'],
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,

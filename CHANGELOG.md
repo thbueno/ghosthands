@@ -2,6 +2,132 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2026-02-13
+
+### Added - MDX Content Management System
+
+#### 🚀 **Migrated Works Section to MDX-based Content Management**
+
+**Overview**: Replaced hardcoded TypeScript project data with a file-based MDX content system, enabling easy addition of new project descriptions without code changes.
+
+#### 📁 **New Infrastructure**
+
+**Content Directory**:
+
+- Created `content/works/` directory for MDX project files
+- Added 5 MDX files: `gov-br.mdx`, `esthalo.mdx`, `capsule.mdx`, `friends-travel.mdx`, `sw-clean-energy.mdx`
+- Each MDX file contains frontmatter metadata + markdown content body
+
+**Content Utilities** (`lib/mdx.ts`):
+
+- `getProjectBySlug(slug)` - Loads and compiles MDX content for detail pages
+- `getAllProjects()` - Lightweight frontmatter-only parsing for listing pages
+- `getAllProjectSlugs()` - Generates static params for build-time rendering
+- `ProjectFrontmatter` TypeScript interface for type safety
+
+**Custom MDX Components** (`components/mdx-components.tsx`):
+
+- Custom component overrides for `h2`, `h3`, `p`, `span`, `strong`, `a`, `ul`, `ol`, `li`
+- Styled table components (`table`, `thead`, `tbody`, `tr`, `th`, `td`)
+- `ProjectImage` component for captioned images with rounded corners
+- Overrides global CSS styles (uppercase mono paragraphs) within MDX content areas
+- Ensures MDX content renders as normal readable prose
+
+**Client Component Extraction** (`components/scroll-to-top.tsx`):
+
+- Extracted scroll-to-top behavior into dedicated client component
+- Necessary because parent pages became Server Components
+
+#### 🔄 **Migrated Pages**
+
+**Project Detail Page** (`app/works/[id]/page.tsx`):
+
+- ✅ Converted from `'use client'` to Server Component
+- ✅ Removed hardcoded `projects` Record and `ProjectData` interface
+- ✅ Uses `getProjectBySlug()` to load MDX content dynamically
+- ✅ Added `generateStaticParams()` for static generation at build time
+- ✅ Added `notFound()` handling for invalid project slugs
+- ✅ Preserved identical layout template (header + sidebar + content grid)
+- ✅ MDX body renders in main content area with custom components
+
+**Works Listing Page** (`app/works/page.tsx`):
+
+- ✅ Converted from `'use client'` to Server Component
+- ✅ Removed hardcoded `projects` array
+- ✅ Uses `getAllProjects()` to load frontmatter from MDX files
+- ✅ Preserved identical grid layout and card UI
+
+**Homepage Works Section** (`components/works-section.tsx`):
+
+- ⚠️ Kept with hardcoded project data (mirrors `content/works/` frontmatter)
+- **Reason**: `app/page.tsx` is `'use client'`, cannot import Node.js `fs` module
+- **Trade-off**: Homepage uses static data, detail/listing pages use MDX (single source of truth for content authoring)
+
+#### ⚙️ **Configuration Updates**
+
+**Next.js Config** (`next.config.mjs`):
+
+- Added `transpilePackages: ['next-mdx-remote']` for proper bundling
+
+**Dependencies** (`package.json`):
+
+- Added `next-mdx-remote@6.0.0` - RSC-compatible MDX rendering
+- Added `gray-matter@4.0.3` - Frontmatter parsing for listing pages
+
+#### 🎨 **Styling & Design**
+
+- Custom MDX components preserve existing UI design system
+- Paragraphs render as normal text (not uppercase mono like global CSS)
+- Tables get proper rounded borders, hover effects, and spacing
+- Images use `next/image` with rounded corners and optional captions
+- Links get secondary color with underline and external target handling
+- Code blocks styled with dark background and syntax highlighting support
+
+#### 🎯 **Benefits**
+
+- ✅ **Easy Content Authoring**: Add new projects by creating `.mdx` files—no code changes needed
+- ✅ **Rich Content Support**: MDX enables images, tables, code blocks, custom components
+- ✅ **Type Safety**: TypeScript interfaces for frontmatter ensure data consistency
+- ✅ **Static Generation**: All project pages pre-rendered at build time for optimal performance
+- ✅ **Preserved UI**: Identical visual appearance to original hardcoded version
+- ✅ **Server Components**: Leverages Next.js 15 App Router for efficient rendering
+
+#### 📊 **Build Verification**
+
+- ✅ Production build successful (9.0s compilation time)
+- ✅ 11 pages generated (5 SSG project routes via `generateStaticParams`)
+- ✅ All routes render correctly: `/`, `/about`, `/works`, `/works/[id]`
+- ✅ Dev server verified via HTTP requests (browser unavailable in environment)
+
+#### 🔍 **Technical Details**
+
+**Files Created**:
+
+- `lib/mdx.ts` - Content utilities
+- `components/mdx-components.tsx` - Custom MDX component overrides
+- `components/scroll-to-top.tsx` - Client component for scroll behavior
+- `content/works/gov-br.mdx` - GOV-BR project content
+- `content/works/esthalo.mdx` - Esthalo project content
+- `content/works/capsule.mdx` - Capsule project stub
+- `content/works/friends-travel.mdx` - Friends Travel project stub
+- `content/works/sw-clean-energy.mdx` - SW Clean Energy project stub
+
+**Files Modified**:
+
+- `app/works/[id]/page.tsx` - Server Component with MDX rendering
+- `app/works/page.tsx` - Server Component with frontmatter listing
+- `components/works-section.tsx` - Restored hardcoded data for client context
+- `next.config.mjs` - Added transpilePackages
+- `package.json` - Added MDX dependencies
+
+**Architecture Decisions**:
+
+- Chose `next-mdx-remote` over `@next/mdx` because detail pages need a fixed layout template wrapping MDX content
+- Custom MDX components override global CSS styles within content areas only
+- Homepage works section uses static data due to client component boundary constraints
+
+---
+
 ## [Unreleased] - 2025-01-09
 
 ### Fixed - Mobile Horizontal Overflow Issues

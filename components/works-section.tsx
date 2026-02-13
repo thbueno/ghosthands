@@ -3,7 +3,9 @@ import Link from 'next/link'
 import { ArrowLinkButton } from './arrow-link-button'
 import { AnimateOnScroll } from './animate-on-scroll'
 
-// Define the project type
+// Project listing data for the homepage section
+// This is a lightweight mirror of the content/works/ MDX frontmatter.
+// For the full project details, see the individual .mdx files in content/works/.
 interface Project {
   id: string
   title: string
@@ -12,7 +14,6 @@ interface Project {
   size?: 'small' | 'large'
 }
 
-// Sample project data
 const projects: Project[] = [
   {
     id: 'esthalo',
@@ -96,19 +97,6 @@ export function WorksSection() {
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
-
-        {/*  <div className="flex justify-center">
-          <Link
-            href="/works"
-            className="inline-flex items-center text-lg font-medium transition-opacity hover:opacity-80"
-          >
-            View All Works{' '}
-            <ArrowRight
-              className="ml-2 inline-block transition-transform duration-300 ease-out focus:translate-y-6 group-hover:-rotate-45"
-              size={20}
-            />
-          </Link>
-        </div> */}
       </div>
     </section>
   )
