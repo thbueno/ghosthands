@@ -55,7 +55,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/about"
                     className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
-                    Works{' '}
+                    About Me{' '}
                   </Link>
                   <ArrowLinkButton href="/about" variant="dark" />
                 </div>
@@ -66,7 +66,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                     href="/works"
                     className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
-                    About Me
+                    Works{' '}
                   </Link>
                   <ArrowLinkButton href="/works" variant="dark" />
                 </div>

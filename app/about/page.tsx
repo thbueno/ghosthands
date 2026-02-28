@@ -1,66 +1,73 @@
-'use client'
-
 import Image from 'next/image'
-import { useEffect } from 'react'
 import { PartnersSection } from '@/components/partners-section'
+import { ScrollToTop } from '@/components/scroll-to-top'
 
 export default function AboutPage() {
-  // Scroll to top when the component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <div className="min-h-screen bg-background">
+      <ScrollToTop />
       <div className="container mx-auto px-4 py-12 md:px-8 lg:px-24">
         {/* About Header */}
         <div className="mb-16 text-center md:text-left">
           <h1 className="mb-8">
             <span className="text-secondary">About me:</span>
           </h1>
-          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
-            Most engineers I know either think like engineers or wish they
-            thought more like designers. I came at it from the other direction,
-            years in advertising and art direction, helping brands navigate the
-            early internet, before I learned to code and realized the two things
-            were the same job with different tools. Seven years in software
-            since then, working across agencies, tech companies, startups, and
-            product studios. The advertising background doesn't come up much in
-            pull requests, but it shows up constantly in every decision about
-            what a product should actually feel like to use.
-          </p>
-          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
-            Primarily working in React and Next.js on the frontend, TypeScript
-            by default, React Native when it's mobile. Backend is Node.js and
-            Python depending on the team and the problem, I don't have a
-            religion about it. Some of my database choices are PostgreSQL ,
-            MongoDB when schema flexibility is worth the tradeoff, Redis for
-            caching, Cassandra when you're dealing with write-heavy workloads at
-            scale. I've architected systems handling sustained loads above 100k
-            requests per second, and the main thing that work taught me is that
-            performance problems are almost always design problems in disguise.
-          </p>
-          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
-            Lately I've been going deep on the applied ML side , building with
-            RAG pipelines, experimenting with LoRA fine-tuning, getting my hands
-            dirty with the Python ecosystem beyond web frameworks. Not to pivot,
-            but because understanding what these tools actually do under the
-            hood changes how you design systems around them.
-          </p>
-          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
-            Currently I am based in East Asia, which means I'm closer to how a
-            significant portion of the world actually uses technology, patterns
-            that rarely show up in the case studies most Western engineers learn
-            from. That perspective has changed how I approach product decisions
-            in ways that are hard to articulate but easy to see in the work.
-          </p>
-          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
-            I contribute to open-source when I find gaps worth filling, believe
-            pair programming makes both the code and the people better, and have
-            a low tolerance for systems nobody can maintain six months later. If
-            you're working on something where architecture, performance, and
-            design need to talk to each other, I'm usually worth a conversation.
-          </p>
+          <div className="mx-auto max-w-4xl space-y-6 font-general-sans text-base normal-case tracking-normal text-[color:var(--text)] md:mx-0 md:text-xl">
+            <p>
+              Most engineers I know either think like engineers or wish they
+              thought more like designers. I came at it from the{' '}
+              <strong>other direction</strong>, years in advertising and art
+              direction, helping brands navigate the early internet, before I
+              learned to code and realized the two things were the same job with
+              different tools. Seven years in software since then, working
+              across agencies, tech companies, startups, and product studios.
+              The advertising background doesn&apos;t come up much in pull
+              requests, but it shows up constantly in every decision about what
+              a product should actually feel like to use.
+            </p>
+            <p>
+              Primarily working in <strong>React and Next.js</strong> on the
+              frontend, TypeScript by default, React Native when it&apos;s
+              mobile. Backend is Node.js and Python depending on the team and
+              the problem, I don&apos;t have a religion about it. Some of my
+              database choices are PostgreSQL, MongoDB when schema flexibility
+              is worth the tradeoff, Redis for caching, Cassandra when
+              you&apos;re dealing with write-heavy workloads at scale. I&apos;ve
+              architected systems handling{' '}
+              <strong>sustained loads above 100k requests per second</strong>,
+              and the main thing that work taught me is that{' '}
+              <strong>
+                performance problems are almost always design problems in
+                disguise
+              </strong>
+              .
+            </p>
+            <p>
+              Lately I&apos;ve been going deep on the{' '}
+              <strong>applied ML side</strong>, building with RAG pipelines,
+              experimenting with LoRA fine-tuning, getting my hands dirty with
+              the Python ecosystem beyond web frameworks. Not to pivot, but
+              because understanding what these tools actually do under the hood
+              changes how you design systems around them.
+            </p>
+            <p>
+              Currently I am based in <strong>East Asia</strong>, which means
+              I&apos;m closer to how a significant portion of the world actually
+              uses technology, patterns that rarely show up in the case studies
+              most Western engineers learn from. That perspective has changed
+              how I approach product decisions in ways that are hard to
+              articulate but easy to see in the work.
+            </p>
+            <p>
+              I contribute to open-source when I find gaps worth filling,
+              believe pair programming makes both the code and the people
+              better, and have a{' '}
+              <strong>low tolerance for systems nobody can maintain</strong> six
+              months later. If you&apos;re working on something where
+              architecture, performance, and design need to talk to each other,
+              I&apos;m usually worth a conversation.
+            </p>
+          </div>
         </div>
 
         {/* Designer Image */}

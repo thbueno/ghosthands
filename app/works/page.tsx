@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getAllProjects } from '@/lib/mdx'
+import { getAllProjects } from '@/lib/mdx-listing'
 import { ScrollToTop } from '@/components/scroll-to-top'
 
 export default function WorksPage() {

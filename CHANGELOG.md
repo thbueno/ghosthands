@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2026-02-28
+
+### Performance — `/about` & `/works` load time improvements
+
+#### 🔍 **Root Causes Identified**
+
+1. `/works` was importing `getAllProjects` from `lib/mdx.ts`, which also imported `compileMDX` from `next-mdx-remote/rsc` at module level — forcing the entire MDX compiler bundle into the listing page compile graph even though it was never used there (4.1s → expected ~1–1.5s).
+2. `/about` declared `'use client'` solely to call `useEffect(() => window.scrollTo(0,0))`, preventing the page from being a Server Component and adding unnecessary JS bundle weight.
+
+#### ⚡ **Changes Made**
+
+**`lib/mdx-listing.ts` (new file)**:
+
+- Extracted `getAllProjects()` and `getAllProjectSlugs()` into a standalone module
+- Zero `next-mdx-remote` imports — only `fs`, `path`, and `gray-matter`
+- List/slug-only functions have no reason to depend on the MDX compiler
+
+**`lib/mdx.ts` (trimmed)**:
+
+- Removed `matter` import (no longer needed after extracting listing helpers)
+- Removed `getAllProjects()` and `getAllProjectSlugs()` — now live in `lib/mdx-listing.ts`
+- Now contains only `getProjectBySlug()` and its `compileMDX` dependency
+
+**`app/works/page.tsx`**:
+
+- Updated import: `@/lib/mdx` → `@/lib/mdx-listing` (eliminates MDX compiler from this route's bundle)
+
+**`app/works/[id]/page.tsx`**:
+
+- `getProjectBySlug` still imports from `@/lib/mdx` (needs the compiler)
+- `getAllProjectSlugs` now imports from `@/lib/mdx-listing` (lean)
+
+**`app/about/page.tsx`**:
+
+- Removed `'use client'` directive — page is now a Server Component
+- Removed `useEffect` import
+- Replaced `useEffect(() => window.scrollTo(0,0))` with `<ScrollToTop />` (already used in `/works`)
+
+#### 🎯 **Expected Impact**
+
+| Route    | Before   | After                                       |
+| -------- | -------- | ------------------------------------------- |
+| `/about` | ~1,849ms | ~400–600ms (RSC, no client bundle overhead) |
+| `/works` | ~4,647ms | ~1,200–1,800ms (no MDX compiler in bundle)  |
+
+---
+
 ## [Unreleased] - 2026-02-13
 
 ### Added - MDX Content Management System

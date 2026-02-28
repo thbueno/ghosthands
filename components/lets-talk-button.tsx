@@ -5,11 +5,15 @@ import { twMerge } from 'tailwind-merge'
 interface LetsTalkButtonProps {
   variant?: 'light' | 'dark' | 'red'
   className?: string
+  text?: string
+  href?: string
 }
 
 export function LetsTalkButton({
   variant = 'light',
   className = '',
+  text = "Let's Build",
+  href = 'https://wa.me/84784551070',
 }: LetsTalkButtonProps) {
   const baseClasses =
     'group flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-medium cursor-pointer'
@@ -23,10 +27,10 @@ export function LetsTalkButton({
 
   return (
     <Link
-      href="#contact"
+      href={href}
       className={twMerge(baseClasses, variants[variant], className)}
     >
-      Let&apos;s Build
+      {text}
       <ArrowRight
         size={16}
         className="inline-block transition-transform duration-300 ease-out focus:translate-y-6 group-hover:-rotate-45"

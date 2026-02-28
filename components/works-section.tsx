@@ -75,8 +75,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </div>
       <div className="flex items-center justify-between">
         <div>
-          <h3>{project.title}</h3>
-          <p>{project.category}</p>
+          <h3 className="text-2xl">{project.title}</h3>
+          <p className="text-md">{project.category}</p>
         </div>
         <ArrowLinkButton href={`/works/${project.id}`} />
       </div>

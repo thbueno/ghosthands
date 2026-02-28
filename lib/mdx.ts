@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { mdxComponents } from '@/components/mdx-components'
 
@@ -20,7 +19,10 @@ export interface ProjectFrontmatter {
   size?: 'small' | 'large'
 }
 
-// Get a single project by slug — compiles MDX + extracts frontmatter
+// Get a single project by slug — compiles MDX + extracts frontmatter.
+// This is the only function that needs the heavy next-mdx-remote/rsc bundle.
+// Listing helpers (getAllProjects, getAllProjectSlugs) live in lib/mdx-listing.ts
+// to avoid pulling this bundle into the /works listing page.
 export async function getProjectBySlug(slug: string) {
   const filePath = path.join(CONTENT_DIR, `${slug}.mdx`)
 
@@ -41,42 +43,4 @@ export async function getProjectBySlug(slug: string) {
     frontmatter,
     content,
   }
-}
-
-// Get all projects — lightweight frontmatter-only parsing (no MDX compilation)
-export function getAllProjects() {
-  if (!fs.existsSync(CONTENT_DIR)) {
-    return []
-  }
-
-  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.mdx'))
-
-  const projects = files.map((filename) => {
-    const slug = filename.replace(/\.mdx$/, '')
-    const filePath = path.join(CONTENT_DIR, filename)
-    const source = fs.readFileSync(filePath, 'utf-8')
-    const { data } = matter(source)
-
-    return {
-      id: slug,
-      title: data.title as string,
-      category: data.category as string,
-      image: data.listingImage as string,
-      size: (data.size as 'small' | 'large') || undefined,
-    }
-  })
-
-  return projects
-}
-
-// Get all project slugs for generateStaticParams
-export function getAllProjectSlugs() {
-  if (!fs.existsSync(CONTENT_DIR)) {
-    return []
-  }
-
-  return fs
-    .readdirSync(CONTENT_DIR)
-    .filter((f) => f.endsWith('.mdx'))
-    .map((f) => f.replace(/\.mdx$/, ''))
 }

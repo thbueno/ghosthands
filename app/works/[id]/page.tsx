@@ -2,7 +2,8 @@ import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getProjectBySlug, getAllProjectSlugs } from '@/lib/mdx'
+import { getProjectBySlug } from '@/lib/mdx'
+import { getAllProjectSlugs } from '@/lib/mdx-listing'
 import { ScrollToTop } from '@/components/scroll-to-top'
 
 // Generate static params for all MDX project files

@@ -80,7 +80,7 @@ export default function Home() {
           {/* Footer */}
           <div className="duration-1500 flex flex-col items-center justify-between gap-14 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-delay-300 motion-ease-spring-smooth md:flex-row md:items-center">
             <SocialLinks />
-            <LetsTalkButton variant="red" />
+            <LetsTalkButton variant="red" text="About me" href="/about" />
           </div>
         </div>
       </div>

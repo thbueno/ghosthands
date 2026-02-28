@@ -20,13 +20,13 @@ export function FooterSection() {
               <AnimateOnScroll delay={200} threshold={0.2}>
                 <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <Link
-                    href="mailto:thiagobueno.s@gmail.com"
-                    className="break-all text-2xl font-bold text-stone-200 transition-colors hover:text-white sm:text-3xl md:text-4xl lg:text-5xl"
+                    href="mailto:thgbueno@proton.me"
+                    className="break-all text-xl font-bold text-stone-200 transition-colors hover:text-white sm:text-3xl md:text-4xl lg:text-5xl"
                   >
-                    buenodev@proton.me
+                    thgbueno@proton.me
                   </Link>
                   <Link
-                    href="mailto:hello@kazarov.com"
+                    href="mailto:thgbueno@proton.me"
                     className="rounded-full border border-background p-3 transition-colors hover:border-secondary hover:text-secondary"
                   >
                     <ArrowUpRight size={24} />

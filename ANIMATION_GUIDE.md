@@ -37,7 +37,7 @@ import { AnimateOnScroll } from '@/components/animate-on-scroll'
 export function MyComponent() {
   return (
     <AnimateOnScroll
-      className="motion-translate-y-in-100 motion-opacity-in-0 motion-blur-in-md duration-1000"
+      className="duration-1000 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0"
       delay={200}
       threshold={0.2}
     >

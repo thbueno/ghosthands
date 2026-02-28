@@ -93,6 +93,18 @@ export const BACKEND_TAGS: Tag[] = [
     logo: '/images/stack/supabase.svg',
   },
   {
+    name: 'Python',
+    logo: '/images/stack/python.svg',
+  },
+  {
+    name: 'Pydantic',
+    logo: '/images/stack/pydantic.svg',
+  },
+  {
+    name: 'Pandas',
+    logo: '/images/stack/pandas.svg',
+  },
+  {
     name: 'Docker',
     logo: '/images/stack/docker-logo.svg',
   },
