@@ -1,10 +1,10 @@
 ---
-title: 'Travel Friends'
-headline: 'Revolutionizing Digital Payments for Everyone'
-image: '/images/wepay-mobile.png'
+title: 'Esthalo'
+headline: 'Redesigning a Landing Page for an Advertising Agency'
+image: '/images/Esthalo-cat.png'
 date: 'April 12, 2020'
 client: 'FinTech Solutions Inc.'
-services: ['Mobile App', 'Branding', 'UI/UX']
+services: ['Frontend', 'Branding', 'UI/UX']
 websiteUrl: '#'
 category: 'Full Stack'
 listingImage: '/images/Esthalo-cat.png'
@@ -13,16 +13,26 @@ size: 'small'
 
 ## About
 
-At Wepay, we're transforming how people think about digital payments. Our platform combines security, speed, and simplicity to create a seamless payment experience for both individuals and businesses. With our intuitive interface, users can send money, pay bills, and manage their finances all in one place.
+Esthalo is an advertising agency with a real credibility problem on their own website. They could articulate sophisticated strategy for clients, show strong case studies, and name recognizable brands they'd worked with, but their own landing page was slow, visually flat, and hemorrhaging potential clients before they'd even read past the hero section. The brief was simple: fix the storefront.
 
-## Our Clients
+The first thing we did was look at the actual numbers. Heatmaps showed that roughly 15% of visitors left before scrolling at all, and of those who did scroll, about 40% bounced before hitting the first call-to-action. The problem wasn't that the content was wrong. People just weren't getting to it.
+We landed on three things that mattered more than anything else: the page needed to load fast enough that it didn't feel like the agency couldn't afford a decent server, the scroll experience needed to feel alive rather than static, and every animation had to earn its weight in bundle size. That last constraint shaped most of our technical decisions.
 
-Our clients range from small businesses looking to streamline their payment processes to large enterprises seeking comprehensive financial solutions. They needed a reliable, user-friendly platform that could handle various transaction types while providing detailed analytics and insights.
+**The stack:** Next.js 14 with the App Router, TypeScript, Tailwind CSS, Framer Motion, deployed on Vercel.
 
-## Challenge
+## Why these choices made sense
 
-The financial technology landscape is highly competitive and constantly evolving. We needed to create a solution that not only met current industry standards but also anticipated future trends and user needs. Security was paramount, as was creating an interface that users of all technical abilities could navigate with ease.
+The biggest early win came from leaning into React Server Components for everything above the fold. The hero section, the text, the headline, the agency name, is pure HTML shipped from the server. No JavaScript hydration, no layout shift waiting for the client to kick in. That single decision took the initial JS bundle from 347KB down to 89KB. The animation library doesn't load until the user has started scrolling, by which point the page is already rendered.
+We initially tried wiring scroll-triggered animations through regular React state, a useState that updated on every scroll event. This caused layout recalculations on every frame and the result was 23fps on mid-range Android. Not good. We tried debouncing, we tried throttling, neither got us above 45fps consistently. The fix was switching to Framer Motion's useScroll + useTransform, which runs outside React's render cycle entirely, on its own requestAnimationFrame loop. That got us locked at 60fps, including on a 2020 iPhone SE.
+The other performance problem was Framer Motion's bundle itself — 54KB gzipped, which was adding 0.8 seconds to Time to Interactive. Code-splitting by route didn't help on a single-page site. What did help was preloading on user intent: when someone hovered over "Learn More," we'd preload the animation chunk. By the time they clicked, it was cached. The perceived load time dropped to zero.
+We used Framer Motion over GSAP primarily for tree-shaking. We only needed the spring physics and the scroll utilities, and Framer lets you import just those. GSAP is more powerful but you're taking the whole thing. For a site with a strict 150KB JavaScript budget, that mattered.
+TypeScript on a six-section landing page isn't really about bug prevention. It's about being able to move a CTA above the testimonials at 4pm on a Thursday, when a conversion test result just came in, without spending the rest of the day debugging. The refactoring speed was the value.
+Tailwind's main benefit here was keeping the spacing and color system consistent across daily design changes. When you can't invent arbitrary margin: 17px values, the design stays coherent even as it evolves. The verbosity of utility classes is a real trade-off, but on a six-week timeline where the design changed almost daily, the iteration speed was worth it.
+On the infrastructure side: full static generation, with ISR set to revalidate every hour for case study content. Images converted to WebP/AVIF automatically through Next.js's <Image> component. Plausible for analytics (the 1KB script overhead versus Google Analytics' 45KB was an easy call, and the GDPR compliance simplified a conversation with the client's legal team).
 
-## Results
+## What we'd do differently
 
-Since launching Wepay, we've seen remarkable growth in both user adoption and transaction volume. The platform has received praise for its clean design, robust security features, and overall user experience. Businesses have reported significant improvements in payment processing efficiency, while individual users appreciate the simplicity and reliability of the service.
+The Framer Motion typing issue with animation variants cost us six hours that we shouldn't have lost. Framer's TypeScript types for complex nested variant objects don't always align with what the runtime accepts. We ended up writing a small AnimationVariant type utility that made the contracts explicit. That should have been done at the start, not discovered through an afternoon of cryptic errors.
+We also only added Lighthouse CI to the PR pipeline partway through the project, after a deployment inadvertently regressed the LCP score. It should have been there from day one.
+Results
+After deploying: FCP dropped from 2.8s to 1.1s, LCP from 4.2s to 1.9s, CLS from 0.18 to 0.02. Lighthouse score went from 67 to 98. Over the following 60 days in A/B testing, the bounce rate fell from 47% to 31%, median scroll depth went from 42% to 73%, and conversion to discovery call booking lifted from 3.2% to 3.7%. The mobile conversion gap, which had been stark, 1.8% on mobile versus 3.2% on desktop, mostly closed, with mobile reaching 3.4%. That last metric mattered most to the client, since most of their inbound traffic came from phones.

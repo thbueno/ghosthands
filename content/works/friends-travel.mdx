@@ -1,10 +1,10 @@
 ---
-title: 'Friends Travel'
-headline: ''
-image: ''
+title: 'Travel Friends'
+headline: 'Group Travel Coordination Without the Spreadsheet'
+image: '/images/FriendsTravel_screen1.png'
 date: ''
 client: ''
-services: []
+services: ['Frontend', 'Branding', 'UI/UX', 'System Design']
 websiteUrl: '#'
 category: 'Full Stack'
 listingImage: '/images/FriendsTravel_screen1.png'
@@ -13,4 +13,50 @@ size: 'small'
 
 ## About
 
-_Content coming soon._
+The real cost of disorganized group travel isn't the occasional missed connection, it's the coordination tax that eats into the trip itself. Organizers in group travel typically spend around 30% of their time on logistics management rather than actually being present. For travel agencies, the cost is more concrete: missed pickups, reschedules, and delayed confirmations add up to roughly 15% in operational overhead. Travel Friends is an attempt to route around most of that.
+
+The core product is an itinerary that treats status updates as first-class data. Travelers, providers, and agencies all read from the same source, all see the same current state, and all get notified through their preferred channel when something changes. The goal isn't to add another app to the trip it's to make the logistics invisible enough that people stop thinking about them.
+
+**The stack:** React + TypeScript + Tailwind + Vite on the web; Flutter for mobile; Firebase Realtime Database + Firestore; PostgreSQL for analytics and auditing; Cloudflare Workers for edge functions; Firebase Cloud Messaging for push notifications; Sinch for SMS fallback; Google Maps Platform for location features.
+
+## Why this stack, specifically
+
+**Firebase over Supabase for mobile clients**: The core mobile use case involves location tracking, presence detection, and push notifications over unreliable connections. Firebase's offline-first SDKs handle network dropouts gracefully without manual synchronization logic, writes queue locally and sync when connectivity restores, with built-in exponential backoff. Firebase Security Rules also gave us a meaningful security property: authorization is evaluated at the database level, not in application code. A provider cannot read a traveler's payment data regardless of what our application does, because the database itself enforces the boundary. This is a stronger guarantee than application-level checks.
+
+We kept PostgreSQL running in parallel for analytics, reporting, and historical auditing. Firebase is the live system; Postgres is the record of truth for business reporting. Adding a second datastore is a real operational cost, we manage two schemas, two connection pools, two backup strategies, and it was a deliberate trade-off rather than an architectural ideal.
+
+**Flutter over React Native**: The mobile app tracks provider location every five seconds, renders a live map, and handles push notifications simultaneously. React Native's JavaScript bridge becomes a bottleneck under that kind of load, everything runs through a single thread, and location updates plus map rendering competed for the same queue. Flutter compiles to native ARM, so the CPU is doing two things at once rather than serializing everything through JS. The performance difference was measurable on mid-range Android devices.
+
+The code-sharing trade-off is real: we share roughly 40% of logic across platforms (Dart business logic, data models, validation), compared to the theoretical 70% React Native promises. The 40% that is shared is actually reliable, no platform-specific quirks leaking through the abstraction. We made peace with writing more platform-specific UI code in exchange for predictable performance.
+
+**Vite on the web frontend**: Dev server startup under 400ms, near-instantaneous hot module replacement. When you're debugging real-time synchronization issues across three user roles, slow rebuilds compound into a genuinely painful development loop. Vite eliminated that.
+
+**Cloudflare Workers for notification routing**: When a traveler marks "I'm 5 minutes away," that notification needs to reach the provider's phone quickly. Cloudflare Workers run in over 300 data centers globally with sub-10ms cold starts. We route through Workers to FCM, which delivers to native mobile. The pattern is straightforward: Firebase database change → Cloud Function trigger → Cloudflare Worker → FCM → device. SMS fallback via Sinch handles edge cases where FCM doesn't deliver (old device, no internet at all).
+
+We chose Sinch over Twilio for international coverage. The regulatory compliance overhead with Twilio for certain markets, particularly South/Southeast Asia, added friction we didn't want to deal with at this stage.
+
+### Key features in practice
+
+**The notification system**: Timing-aware push notifications use Firebase Cloud Functions to evaluate context before sending. If a traveler is actively viewing the itinerary, the in-app feed updates instead of firing a push notification. If they're away, FCM delivers to the device. Smart coalescing prevents notification spam, if a provider reports a 10-minute delay, the system doesn't send three separate reminders; it schedules one, delayed.
+
+**RBAC through Firebase Security Rules**: Each user role (traveler, provider, agency) is a separate data swimlane. Travelers see their itinerary, their assigned provider's live location, and the provider's canned quick-responses. Providers see the pickup location, current traveler status, and the agency's preferred routing. Agencies see a real-time map of all active trips with performance metrics. These are enforced server-side in Firebase rules, not in our application logic.
+
+**Quick-reply system**: Typing on a phone while running to catch a train is bad UX. Providers and travelers get configurable quick-reply buttons ("I'm 5 minutes away," "Running late +10 min," "Ready for pickup"). Each tap flows back through Firebase, updates the activity feed, and triggers the appropriate notification. Free-form messages fall back to NLP classification, with ambiguous messages flagged for human review during high-traffic periods.
+
+**Live location tracking**: Provider location stored in Firebase with geohash indexing for efficient range queries. When connectivity drops in a tunnel, the app shows last-known position from local cache. The Google Maps SDK queries the Firebase layer directly and deep-links to turn-by-turn navigation on tap.
+
+### A concurrency problem we actually had
+
+Early on, when an agency was updating the schedule while a traveler was querying it simultaneously, travelers occasionally saw stale pickup times. The fix came from combining three things: Firebase Security Rules ensuring only authenticated, authorized reads occur; real-time client subscriptions so when the database changes, the UI updates within a few hundred milliseconds; and optimistic UI updates so the user sees their own actions reflected immediately, with a revert if the server rejects the write. This doesn't fully eliminate the consistency window, there's still a short period where two clients might see different state, but it reduced it to the point where users stopped noticing.
+
+### Results
+
+Over six months from a five-person private beta: grew to 2,400 monthly active users, 64% weekly active rate, $12K MRR from premium tier. Measured against our pre-launch baseline on the core problem: time spent coordinating logistics dropped from 30% of trip time to 9%. Manual planning time per trip fell from roughly eight hours to under two. The 64% weekly active rate held steady through month six, which suggested the product was being used on actual trips rather than just being downloaded and forgotten.
+
+### Trade-offs we're living with
+
+Firebase becomes expensive at scale in a way that's hard to predict in advance. For the current usage it's fine, but a migration to a custom WebSocket layer over PostgreSQL becomes realistic sometime around the 50,000 MAU mark. SMS delivery failure rates around 0.5% sound small but matter when the failed message is "your driver is waiting outside", we handle this with in-app redundancy and read receipts, but it's not a solved problem. Flutter's package ecosystem for specialized use cases (certain payment flows, some AR features) still occasionally requires platform-specific code. We knew this going in; it's manageable but not painless.
+
+### What we'd build differently
+
+Event sourcing for the itinerary from day one. The trip lifecycle is inherently a sequence of events, created, provider assigned, traveler confirmed, provider en route, arrived, and an event-sourced architecture would make debugging state inconsistencies much simpler than our current approach. We've also retroactively added observability instrumentation that should have been there from the start: real-time latency tracking, notification delivery success rates, and state consistency gap monitoring took longer to instrument than they should have. Ship the dashboards when you ship the feature.

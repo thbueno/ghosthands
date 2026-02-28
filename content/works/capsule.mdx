@@ -1,16 +1,44 @@
 ---
 title: 'Capsule'
-headline: ''
-image: ''
+headline: "Building a Messaging App That Doesn't Optimize for Addiction"
+image: '/images/Capsule_Friends_Mock.png'
 date: ''
 client: ''
 services: []
 websiteUrl: '#'
-category: 'UI/UX'
+category: 'Mobile, UI/UX, Design System'
 listingImage: '/images/Capsule_Friends_Mock.png'
 size: 'large'
 ---
 
 ## About
 
-_Content coming soon._
+Most social products are built to maximize time-on-platform. Capsule is built on the opposite assumption: that the people who matter to you deserve more than a scroll feed, and that making sharing slightly more intentional produces content worth keeping. It's a messaging and memory app for close friends and family.
+The product has four main surfaces: Capsules (sealed, curated bundles of messages, photos, and voice notes), a calm chat interface for everyday messaging, a Moments feed visible only to an Inner Circle you define, and presence notifications that tell you when close friends are actually online and available, for talking now, not for leaving async replies that never get read.
+
+**The stack:** React Native with Expo, TypeScript, Supabase (PostgreSQL + Realtime + Storage), TanStack Query, Zustand, deployed via EAS.
+
+## Why Expo
+
+We chose Expo's managed workflow for a three-person team building for both iOS and Android simultaneously. Yes, bare React Native gives you more low-level control. But Expo's managed builds handled camera access, push notifications, and media handling out of the box, covering what we estimated was around 95% of our needs. When we hit the edges, a specific audio recording behavior that needed customization, we dropped into a custom development build. The overhead was manageable.
+EAS's over-the-air update capability was genuinely useful in the early months. We shipped a few critical JavaScript-layer fixes without going through App Store review. For a small team iterating quickly, that's a meaningful advantage.
+
+## Data and real-time
+
+We use Supabase for everything: PostgreSQL as the database, Realtime for message subscriptions and presence, Storage for media. The Realtime layer works by piping PostgreSQL's logical replication through Elixir servers that push changes to clients over WebSockets. In practice this means: client sends a message via REST, the database confirms receipt, Realtime broadcasts the confirmed message to all participants. We get transactional consistency on the write without managing our own WebSocket infrastructure.
+For presence, knowing who's online, Supabase's Realtime Presence API does the work. Clients subscribe to a channel, the server tracks join and leave events, and the UI updates accordingly. There's roughly 500ms of latency here due to polling intervals, which is acceptable for "is my friend online right now" but would be too slow for a trading application.
+
+## State management
+
+We split client state cleanly between Zustand and TanStack Query. TanStack Query owns everything that comes from the server: Capsule data, message history, user profiles. It handles caching, background refetching, and stale-while-revalidate automatically. Zustand handles local UI state: which Capsule is open, form draft state, theme preferences. Keeping these separate prevented the common failure mode of a 5,000-line Redux store where nobody knows if a given piece of data is server-sourced or local.
+One thing we underestimated: Zustand's shallow equality checks for derived state. We spent more time debugging unexpected re-renders from Zustand subscriptions than we did on any server-state issue. The lesson was to be more deliberate about selector granularity from the start rather than discovering it through performance complaints.
+
+## Media uploads and offline
+
+When a user creates a Capsule, we show it immediately with local images, upload to Supabase Storage in the background, then swap in the final URLs when the upload completes. If the upload fails, we show a retry option without destroying the user's draft. Expo's ImageManipulator compresses images client-side before upload, roughly 60% size reduction on typical phone photos, and we run video compression server-side via an Edge Function.
+For offline: small caches use AsyncStorage, larger datasets (chat history, Capsule metadata) use MMKV, and TanStack Query's caching layer sits on top. Messages written offline queue locally and flush in order when connectivity returns. Failed messages after three retry attempts surface an explicit error state, the user can retry or discard, rather than wondering if their message went through.
+The one honest limitation in our conflict resolution: shared Capsules edited by multiple people use last-write-wins. This is fast and simple but means that if two people edit a Capsule caption at the same time, one of them loses their change silently. For an app built around preserving meaningful moments, this is a real product problem we haven't solved well yet, field-level merging would be better, and it's on the roadmap.
+
+## What we'd do differently
+
+Pick your state management patterns before writing the first component. We retrofitted Zustand conventions partway through and paid for it. Also: encrypt messages from the start. Adding E2E encryption to an existing data model is significantly harder than designing for it upfront, and it's the first thing users ask about when they understand the product.

@@ -16,13 +16,50 @@ export default function AboutPage() {
         {/* About Header */}
         <div className="mb-16 text-center md:text-left">
           <h1 className="mb-8">
-            <span className="text-secondary">About me,</span> a Software
-            Engineer
+            <span className="text-secondary">About me:</span>
           </h1>
           <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
-            As a Senior Designer with over 10 years of experience, I specialize
-            in creating intuitive and user-centered interfaces for a wide range
-            of digital products and experiences.
+            Most engineers I know either think like engineers or wish they
+            thought more like designers. I came at it from the other direction,
+            years in advertising and art direction, helping brands navigate the
+            early internet, before I learned to code and realized the two things
+            were the same job with different tools. Seven years in software
+            since then, working across agencies, tech companies, startups, and
+            product studios. The advertising background doesn't come up much in
+            pull requests, but it shows up constantly in every decision about
+            what a product should actually feel like to use.
+          </p>
+          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
+            Primarily working in React and Next.js on the frontend, TypeScript
+            by default, React Native when it's mobile. Backend is Node.js and
+            Python depending on the team and the problem, I don't have a
+            religion about it. Some of my database choices are PostgreSQL ,
+            MongoDB when schema flexibility is worth the tradeoff, Redis for
+            caching, Cassandra when you're dealing with write-heavy workloads at
+            scale. I've architected systems handling sustained loads above 100k
+            requests per second, and the main thing that work taught me is that
+            performance problems are almost always design problems in disguise.
+          </p>
+          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
+            Lately I've been going deep on the applied ML side , building with
+            RAG pipelines, experimenting with LoRA fine-tuning, getting my hands
+            dirty with the Python ecosystem beyond web frameworks. Not to pivot,
+            but because understanding what these tools actually do under the
+            hood changes how you design systems around them.
+          </p>
+          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
+            Currently I am based in East Asia, which means I'm closer to how a
+            significant portion of the world actually uses technology, patterns
+            that rarely show up in the case studies most Western engineers learn
+            from. That perspective has changed how I approach product decisions
+            in ways that are hard to articulate but easy to see in the work.
+          </p>
+          <p className="mx-auto max-w-4xl text-lg md:mx-0 md:text-xl">
+            I contribute to open-source when I find gaps worth filling, believe
+            pair programming makes both the code and the people better, and have
+            a low tolerance for systems nobody can maintain six months later. If
+            you're working on something where architecture, performance, and
+            design need to talk to each other, I'm usually worth a conversation.
           </p>
         </div>
 
