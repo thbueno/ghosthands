@@ -134,14 +134,6 @@ export default function AboutPage() {
           </h2>
         </div>
       </div>
-
-      {/* Partners Carousel */}
-      <PartnersSection
-        baseSpeed={40}
-        decelerationFactor={0.1}
-        transitionDuration={400}
-        hideTitle={true}
-      />
     </div>
   )
 }

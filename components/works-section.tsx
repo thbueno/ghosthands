@@ -86,7 +86,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export function WorksSection() {
   return (
-    <section className="py-24 md:py-32">
+    <section id="works" className="py-24 md:py-32">
       <div className="container mx-auto md:px-8 lg:px-12">
         <AnimateOnScroll threshold={0.3}>
           <h2 className="mb-12">Handpicked Works</h2>

@@ -47,19 +47,19 @@ export function FooterSection() {
                     Home
                   </Link>
                   <Link
-                    href="/about"
+                    href="/#works"
                     className="text-sm font-medium text-background transition-colors hover:text-secondary"
                   >
                     Works
                   </Link>
                   <Link
-                    href="/works"
+                    href="/about"
                     className="text-sm font-medium text-background transition-colors hover:text-secondary"
                   >
                     About Me
                   </Link>
                   <Link
-                    href="/insights"
+                    href="/#experience"
                     className="text-sm font-medium text-background transition-colors hover:text-secondary"
                   >
                     Experience

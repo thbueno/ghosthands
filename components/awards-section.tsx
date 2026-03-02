@@ -45,7 +45,7 @@ const awards: Award[] = [
 
 export function AwardsSection() {
   return (
-    <section className="py-24 md:py-32">
+    <section id="experience" className="py-24 md:py-32">
       <div className="container mx-auto md:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <AnimateOnScroll className="md:col-span-1" threshold={0.3}>

@@ -42,44 +42,60 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/"
+                    onClick={onClose}
                     className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     Home{' '}
                   </Link>
-                  <ArrowLinkButton href="/" variant="dark" />
+                  <ArrowLinkButton href="/" variant="dark" onClick={onClose} />
                 </div>
               </li>
               <li>
                 <div className="flex items-center justify-between gap-4">
                   <Link
                     href="/about"
+                    onClick={onClose}
                     className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     About Me{' '}
                   </Link>
-                  <ArrowLinkButton href="/about" variant="dark" />
+                  <ArrowLinkButton
+                    href="/about"
+                    variant="dark"
+                    onClick={onClose}
+                  />
                 </div>
               </li>
               <li>
                 <div className="flex items-center justify-between gap-4">
                   <Link
-                    href="/works"
+                    href="/#works"
+                    onClick={onClose}
                     className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     Works{' '}
                   </Link>
-                  <ArrowLinkButton href="/works" variant="dark" />
+                  <ArrowLinkButton
+                    href="/#works"
+                    variant="dark"
+                    onClick={onClose}
+                  />
                 </div>
               </li>
               <li>
                 <div className="flex items-center justify-between gap-4">
                   <Link
-                    href="/insights"
+                    href="/#experience"
+                    onClick={onClose}
                     className="text-3xl font-bold transition-colors hover:text-secondary sm:text-4xl md:text-4xl lg:text-5xl"
                   >
                     Experience
                   </Link>
-                  <ArrowLinkButton href="/insights" variant="dark" />
+                  <ArrowLinkButton
+                    href="/#experience"
+                    variant="dark"
+                    onClick={onClose}
+                  />
                 </div>
               </li>
             </ul>

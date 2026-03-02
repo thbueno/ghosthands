@@ -77,7 +77,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Footer */}
+          {/* Hero Footer */}
           <div className="duration-1500 flex flex-col items-center justify-between gap-14 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-delay-300 motion-ease-spring-smooth md:flex-row md:items-center">
             <SocialLinks />
             <LetsTalkButton variant="red" text="About me" href="/about" />
@@ -92,13 +92,6 @@ export default function Home() {
 
       {/* Works Section */}
       <WorksSection />
-
-      {/* Partners Section */}
-      {/* <PartnersSection
-        baseSpeed={100}
-        decelerationFactor={0.3}
-        transitionDuration={400}
-      /> */}
 
       {/* CTA Section */}
       <CTASection />

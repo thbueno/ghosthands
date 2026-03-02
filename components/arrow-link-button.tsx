@@ -5,12 +5,14 @@ interface ArrowLinkButtonProps {
   href: string
   variant?: 'light' | 'dark'
   size?: number
+  onClick?: () => void
 }
 
 export function ArrowLinkButton({
   href,
   variant = 'light',
   size = 20,
+  onClick,
 }: ArrowLinkButtonProps) {
   const variantStyles = {
     light: 'border-title hover:border-secondary hover:text-secondary',
@@ -20,6 +22,7 @@ export function ArrowLinkButton({
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={`group flex flex-shrink-0 items-center justify-center rounded-full border p-3 transition-colors sm:p-4 ${variantStyles[variant]}`}
     >
       <ArrowRight
