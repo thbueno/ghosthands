@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { mdxComponents } from '@/components/mdx-components'
-import React, { type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'works')
 
@@ -57,11 +57,7 @@ export async function getAboutContent() {
 
   const { content } = await compileMDX({
     source,
-    components: {
-      ...mdxComponents,
-      p: ({ children }: { children?: ReactNode }) =>
-        React.createElement('p', null, children),
-    },
+    components: mdxComponents,
   })
 
   return {
