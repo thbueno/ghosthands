@@ -8,7 +8,7 @@ import { SocialLinks } from './social-links'
 
 export function FooterSection() {
   return (
-    <footer className="overflow-x-hidden py-12 md:px-8 lg:px-12">
+    <footer className="overflow-hidden py-12 md:px-8 lg:px-12">
       <AnimateOnScroll className="overflow-hidden rounded-3xl bg-title text-background">
         <div className="container mx-auto px-6 pb-12 pt-16 md:px-12">
           <AnimateOnScroll threshold={0.2}>
