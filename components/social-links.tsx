@@ -12,9 +12,18 @@ type SocialLink = {
 }
 
 const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'LINKEDIN', href: '#' },
-  { name: 'GITHUB', href: '#' },
-  { name: 'TWITTER', href: '#' },
+  {
+    name: 'LINKEDIN',
+    href: 'https://www.linkedin.com/in/thiago-bueno-dos-santos-28714924/',
+  },
+  {
+    name: 'GITHUB',
+    href: 'https://github.com/thbueno',
+  },
+  {
+    name: 'WHATSAPP',
+    href: 'https://wa.me/84784551070',
+  },
 ]
 
 export function SocialLinks({

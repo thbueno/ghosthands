@@ -4,6 +4,7 @@ import { ArrowUpRight, Instagram, Twitter, Youtube } from 'lucide-react'
 import Link from 'next/link'
 import { NewsletterForm } from './newsletter-form'
 import { AnimateOnScroll } from '@/components/animate-on-scroll'
+import { SocialLinks } from './social-links'
 
 export function FooterSection() {
   return (
@@ -39,7 +40,7 @@ export function FooterSection() {
           <div className="border-t border-text py-8">
             <AnimateOnScroll delay={300} threshold={0.2}>
               <div className="mb-12 flex flex-col items-start justify-between md:flex-row md:items-center">
-                <nav className="mb-6 flex flex-wrap gap-8 md:mb-0">
+                {/* <nav className="mb-6 flex flex-wrap gap-8 md:mb-0">
                   <Link
                     href="/"
                     className="text-sm font-medium text-background transition-colors hover:text-secondary"
@@ -64,10 +65,11 @@ export function FooterSection() {
                   >
                     Experience
                   </Link>
-                </nav>
+                </nav> */}
 
                 <div className="flex gap-6">
-                  <Link
+                  <SocialLinks variant="dark" />
+                  {/* <Link
                     href="#"
                     className="text-background transition-colors hover:text-secondary"
                   >
@@ -103,7 +105,7 @@ export function FooterSection() {
                   >
                     <Instagram size={20} />
                     <span className="sr-only">Instagram</span>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </AnimateOnScroll>

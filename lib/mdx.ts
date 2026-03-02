@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { mdxComponents } from '@/components/mdx-components'
+import React, { type ReactNode } from 'react'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'works')
 
@@ -41,6 +42,29 @@ export async function getProjectBySlug(slug: string) {
   return {
     slug,
     frontmatter,
+    content,
+  }
+}
+
+export async function getAboutContent() {
+  const filePath = path.join(process.cwd(), 'content', 'about.mdx')
+
+  if (!fs.existsSync(filePath)) {
+    return null
+  }
+
+  const source = fs.readFileSync(filePath, 'utf-8')
+
+  const { content } = await compileMDX({
+    source,
+    components: {
+      ...mdxComponents,
+      p: ({ children }: { children?: ReactNode }) =>
+        React.createElement('p', null, children),
+    },
+  })
+
+  return {
     content,
   }
 }
