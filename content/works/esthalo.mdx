@@ -9,6 +9,11 @@ websiteUrl: '#'
 category: 'Full Stack'
 listingImage: '/images/Esthalo-cat.png'
 size: 'small'
+galleryImages:
+  - '/images/Esthalo-cat.png'
+  - '/images/Esthalo-expertise.png'
+  - '/images/Esthalo-agents.png'
+  - '/images/Esthalo-valores.png'
 ---
 
 ## About
@@ -18,15 +23,23 @@ Esthalo is an advertising agency with a real credibility problem on their own we
 The first thing we did was look at the actual numbers. Heatmaps showed that roughly 15% of visitors left before scrolling at all, and of those who did scroll, about 40% bounced before hitting the first call-to-action. The problem wasn't that the content was wrong. People just weren't getting to it.
 We landed on three things that mattered more than anything else: the page needed to load fast enough that it didn't feel like the agency couldn't afford a decent server, the scroll experience needed to feel alive rather than static, and every animation had to earn its weight in bundle size. That last constraint shaped most of our technical decisions.
 
+<ProjectImage
+  src="/images/Esthalo-expertise.png"
+  alt="Expertise Section"
+  caption="Expertise Section"
+/>
+
 **The stack:** Next.js 14 with the App Router, TypeScript, Tailwind CSS, Framer Motion, deployed on Vercel.
 
 ## Why these choices made sense
 
 The biggest early win came from leaning into React Server Components for everything above the fold. The hero section, the text, the headline, the agency name, is pure HTML shipped from the server. No JavaScript hydration, no layout shift waiting for the client to kick in. That single decision took the initial JS bundle from 347KB down to 89KB. The animation library doesn't load until the user has started scrolling, by which point the page is already rendered.
 We initially tried wiring scroll-triggered animations through regular React state, a useState that updated on every scroll event. This caused layout recalculations on every frame and the result was 23fps on mid-range Android. Not good. We tried debouncing, we tried throttling, neither got us above 45fps consistently. The fix was switching to Framer Motion's useScroll + useTransform, which runs outside React's render cycle entirely, on its own requestAnimationFrame loop. That got us locked at 60fps, including on a 2020 iPhone SE.
+
 The other performance problem was Framer Motion's bundle itself — 54KB gzipped, which was adding 0.8 seconds to Time to Interactive. Code-splitting by route didn't help on a single-page site. What did help was preloading on user intent: when someone hovered over "Learn More," we'd preload the animation chunk. By the time they clicked, it was cached. The perceived load time dropped to zero.
 We used Framer Motion over GSAP primarily for tree-shaking. We only needed the spring physics and the scroll utilities, and Framer lets you import just those. GSAP is more powerful but you're taking the whole thing. For a site with a strict 150KB JavaScript budget, that mattered.
 TypeScript on a six-section landing page isn't really about bug prevention. It's about being able to move a CTA above the testimonials at 4pm on a Thursday, when a conversion test result just came in, without spending the rest of the day debugging. The refactoring speed was the value.
+
 Tailwind's main benefit here was keeping the spacing and color system consistent across daily design changes. When you can't invent arbitrary margin: 17px values, the design stays coherent even as it evolves. The verbosity of utility classes is a real trade-off, but on a six-week timeline where the design changed almost daily, the iteration speed was worth it.
 On the infrastructure side: full static generation, with ISR set to revalidate every hour for case study content. Images converted to WebP/AVIF automatically through Next.js's `<Image>` component. Plausible for analytics (the 1KB script overhead versus Google Analytics' 45KB was an easy call, and the GDPR compliance simplified a conversation with the client's legal team).
 

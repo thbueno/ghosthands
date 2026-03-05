@@ -18,6 +18,7 @@ export interface ProjectFrontmatter {
   category: string
   listingImage: string
   size?: 'small' | 'large'
+  galleryImages?: string[]
 }
 
 // Get a single project by slug — compiles MDX + extracts frontmatter.

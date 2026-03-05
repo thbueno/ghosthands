@@ -1,10 +1,10 @@
 import { ArrowUpRight } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getProjectBySlug } from '@/lib/mdx'
 import { getAllProjectSlugs } from '@/lib/mdx-listing'
 import { ScrollToTop } from '@/components/scroll-to-top'
+import { ProjectGallery } from '@/components/project-gallery'
 
 // Generate static params for all MDX project files
 export async function generateStaticParams() {
@@ -36,15 +36,10 @@ export default async function ProjectDetail({
           <h1 className="mb-8 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
             {frontmatter.headline}
           </h1>
-          <div className="mb-12 overflow-hidden rounded-3xl bg-background">
-            <Image
-              src={frontmatter.image || '/placeholder.svg'}
-              alt={frontmatter.title}
-              width={1200}
-              height={800}
-              className="h-auto w-full object-cover"
-            />
-          </div>
+          <ProjectGallery
+            images={frontmatter.galleryImages ?? [frontmatter.image]}
+            alt={frontmatter.title}
+          />
         </div>
 
         {/* Project Content */}
