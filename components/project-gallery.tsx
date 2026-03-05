@@ -45,16 +45,22 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
           alt={alt}
           width={1200}
           height={800}
-          className="h-auto w-full object-cover"
+          className="h-auto w-full object-contain"
         />
       </div>
     )
   }
 
   return (
-    <div className="mb-12">
+    // items-stretch: both columns share the same height.
+    // The thumbnail strip drives the height (sum of natural thumbnail heights);
+    // the main image panel stretches to fill it.
+    <div className="mb-12 flex flex-col lg:flex-row lg:items-stretch lg:gap-4">
       {/* Main image viewport */}
-      <div ref={emblaRef} className="overflow-hidden rounded-3xl bg-background">
+      <div
+        ref={emblaRef}
+        className="overflow-hidden rounded-3xl bg-background lg:flex-1"
+      >
         <div className="flex">
           {images.map((src, index) => (
             <div key={index} className="min-w-0 shrink-0 grow-0 basis-full">
@@ -63,33 +69,43 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
                 alt={`${alt} — ${index + 1}`}
                 width={1200}
                 height={800}
-                className="h-auto w-full object-cover"
+                className="h-auto w-full object-contain"
               />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Thumbnail strip — full width, thumbnails share space equally */}
-      <div className="mt-4 flex w-full items-center gap-2">
+      {/* Thumbnail strip
+          Mobile:  horizontal row below main image (aspect-video cells, flex-1)
+          Desktop: vertical column to the right, fixed width, natural height per thumb */}
+      <div className="mt-4 flex w-full items-center gap-2 lg:mt-0 lg:w-40 lg:flex-col lg:gap-2">
         {images.map((src, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
             className={cn(
-              'relative min-w-0 flex-1 overflow-hidden rounded-xl transition-all duration-200',
+              'relative overflow-hidden rounded-xl transition-all duration-200',
+              // Mobile: equal-width cells with a fixed aspect ratio in a row
+              'aspect-video min-w-0 flex-1',
+              // Desktop: full column width, natural height driven by intrinsic image ratio
+              'lg:aspect-auto lg:w-full lg:flex-none',
               selectedIndex === index
                 ? 'ring-1 ring-white ring-offset-2 ring-offset-background'
                 : 'opacity-50 hover:opacity-100',
             )}
             aria-label={`View image ${index + 1}`}
           >
+            {/*
+              h-auto w-full: width fills the column, height follows the image's
+              intrinsic aspect ratio — no letterbox gap, no cropping.
+            */}
             <Image
               src={src}
               alt={`${alt} thumbnail ${index + 1}`}
-              width={400}
-              height={240}
-              className="h-full w-full object-contain"
+              width={192}
+              height={108}
+              className="h-auto w-full object-contain"
             />
           </button>
         ))}

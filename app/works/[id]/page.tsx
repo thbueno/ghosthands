@@ -43,9 +43,9 @@ export default async function ProjectDetail({
         </div>
 
         {/* Project Content */}
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Sidebar */}
-          <div className="space-y-8 md:col-span-1">
+          {/* <div className="space-y-8 md:col-span-1">
             <div>
               <h3 className="mb-2 text-lg font-medium">Date</h3>
               <p className="">{frontmatter.date}</p>
@@ -75,10 +75,10 @@ export default async function ProjectDetail({
                 Visit Website <ArrowUpRight size={16} />
               </Link>
             </div>
-          </div>
+          </div> */}
 
           {/* Main Content — rendered from MDX */}
-          <div className="space-y-12 md:col-span-2">{content}</div>
+          <div className="space-y-12 px-12 md:col-span-3">{content}</div>
         </div>
       </div>
     </div>
