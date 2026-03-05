@@ -3,7 +3,6 @@
 import * as React from 'react'
 import Image from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface ProjectGalleryProps {
@@ -36,14 +35,6 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
     },
     [emblaApi],
   )
-
-  const scrollPrev = React.useCallback(() => {
-    emblaApi?.scrollPrev()
-  }, [emblaApi])
-
-  const scrollNext = React.useCallback(() => {
-    emblaApi?.scrollNext()
-  }, [emblaApi])
 
   // Fallback: single image, no carousel UI
   if (!images || images.length <= 1) {
@@ -79,50 +70,29 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
         </div>
       </div>
 
-      {/* Thumbnail strip with nav arrows */}
-      <div className="mt-4 flex items-center gap-2">
-        {/* Prev button */}
-        <button
-          onClick={scrollPrev}
-          className="shrink-0 rounded-full p-1.5 text-muted-foreground transition-colors hover:text-foreground"
-          aria-label="Previous image"
-        >
-          <ChevronLeft size={20} />
-        </button>
-
-        {/* Thumbnails */}
-        <div className="flex flex-1 items-center gap-2 overflow-x-auto">
-          {images.map((src, index) => (
-            <button
-              key={index}
-              onClick={() => scrollTo(index)}
-              className={cn(
-                'shrink-0 overflow-hidden rounded-xl transition-all duration-200',
-                selectedIndex === index
-                  ? 'ring-2 ring-foreground ring-offset-2 ring-offset-background'
-                  : 'opacity-60 hover:opacity-100',
-              )}
-              aria-label={`View image ${index + 1}`}
-            >
-              <Image
-                src={src}
-                alt={`${alt} thumbnail ${index + 1}`}
-                width={120}
-                height={80}
-                className="h-16 w-24 object-cover md:h-20 md:w-28"
-              />
-            </button>
-          ))}
-        </div>
-
-        {/* Next button */}
-        <button
-          onClick={scrollNext}
-          className="shrink-0 rounded-full p-1.5 text-muted-foreground transition-colors hover:text-foreground"
-          aria-label="Next image"
-        >
-          <ChevronRight size={20} />
-        </button>
+      {/* Thumbnail strip — full width, thumbnails share space equally */}
+      <div className="mt-4 flex w-full items-center gap-2">
+        {images.map((src, index) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            className={cn(
+              'relative min-w-0 flex-1 overflow-hidden rounded-xl transition-all duration-200',
+              selectedIndex === index
+                ? 'ring-1 ring-white ring-offset-2 ring-offset-background'
+                : 'opacity-50 hover:opacity-100',
+            )}
+            aria-label={`View image ${index + 1}`}
+          >
+            <Image
+              src={src}
+              alt={`${alt} thumbnail ${index + 1}`}
+              width={400}
+              height={240}
+              className="h-full w-full object-contain"
+            />
+          </button>
+        ))}
       </div>
     </div>
   )

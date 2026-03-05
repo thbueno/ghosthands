@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **Scroll-aware navbar:** The navigation bar now reduces its height by ~30% after the user scrolls more than 10px down the page. Padding transitions from `py-8` to `py-5` and the logo scales from `w-16/lg:w-20` to `w-11/lg:w-14`, all with a smooth `transition-all duration-300 ease-in-out` animation. The compact state is suppressed while the dropdown menu is open. Changes are isolated to `components/navbar.tsx`.
 - Added an optional `text` property to the `LetsTalkButtonProps` interface in `components/lets-talk-button.tsx`, allowing the button text to be customizable instead of defaulting strictly to "Let's Build".
 
 ### Fixed
