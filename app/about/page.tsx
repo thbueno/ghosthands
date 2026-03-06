@@ -21,7 +21,7 @@ export default async function AboutPage() {
         </div>
 
         {/* Designer Image */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <div className="overflow-hidden rounded-3xl">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Showcasy_about_page.jpg-dWT3AGLPu4bdn2MYrpH44MnCFaynoa.jpeg"
@@ -31,10 +31,10 @@ export default async function AboutPage() {
               className="h-auto w-full object-cover"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Designer Description */}
-        <div className="mb-24">
+        {/* <div className="mb-24">
           <h2 className="mb-12 text-3xl font-bold md:text-4xl">
             I&apos;m the UI/UX and brand designer you need to take your digital
             presence to the next level
@@ -56,10 +56,10 @@ export default async function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Experience Timeline */}
-        <div className="mb-32 grid grid-cols-1 gap-12 md:grid-cols-3">
+        {/* <div className="mb-32 grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>
             <p className="mb-2 text-stone-400">2013-2015</p>
             <h3 className="mb-2 text-4xl font-bold">2 years</h3>
@@ -75,14 +75,14 @@ export default async function AboutPage() {
             <h3 className="mb-2 text-4xl font-bold">5+ years</h3>
             <p>as a Head of Product Designer at Rovio</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Partners Section Title */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h2 className="text-4xl font-bold md:text-5xl">
             A visual partner for brands, companies, and agencies
           </h2>
-        </div>
+        </div> */}
       </div>
     </div>
   )

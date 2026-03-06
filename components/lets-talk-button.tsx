@@ -12,7 +12,7 @@ interface LetsTalkButtonProps {
 export function LetsTalkButton({
   variant = 'light',
   className = '',
-  text = "Let's Build",
+  text = "Let's Talk",
   href = 'https://wa.me/84784551070',
 }: LetsTalkButtonProps) {
   const baseClasses =

@@ -18,28 +18,28 @@ const awards: Award[] = [
     title: 'Esthalo - Advertising',
     year: '2022 to 2025',
     organization: 'Senior Software Engineer',
-    url: '#',
+    url: 'https://www.linkedin.com/in/buenothg/#experience',
   },
   {
     id: 'gov-br',
     title: 'GOVBR - Governança Brasil',
     year: '2018 to 2022',
     organization: 'Software Engineer',
-    url: '#',
+    url: 'https://www.linkedin.com/in/buenothg/#experience',
   },
   {
     id: 'datasys',
     title: 'Datasys - Sistemas de Gestão',
     year: '2016 to 2018',
     organization: 'Frontend Developer',
-    url: '#',
+    url: 'https://www.linkedin.com/in/buenothg/#experience',
   },
   {
     id: 'timezpot',
     title: 'Timezpot',
     year: '2014 to 2016',
     organization: 'UI/UX Engineer',
-    url: '#',
+    url: 'https://www.linkedin.com/in/buenothg/#experience',
   },
 ]
 

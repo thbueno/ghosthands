@@ -31,7 +31,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
           : 'pointer-events-none -translate-y-full opacity-0 transition-all delay-150 duration-500 ease-in-out'
       }`}
     >
-      <div className="container mx-auto flex min-h-screen flex-col px-7 pb-8 pt-28 md:px-10 lg:px-40">
+      <div className="container mx-auto flex min-h-screen flex-col px-7 pb-8 pt-28 md:px-10 lg:px-12">
         {/* Header intentionally omitted; reuse NavBar header */}
 
         {/* Navigation Menu */}

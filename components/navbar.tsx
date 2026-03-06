@@ -34,7 +34,7 @@ export function NavBar() {
       >
         <div
           className={twMerge(
-            'container mx-auto px-7 md:px-10 lg:px-40',
+            'container mx-auto px-7 md:px-10 lg:px-12',
             'transition-all duration-300 ease-in-out',
             isCompact ? 'py-5' : 'py-8',
           )}

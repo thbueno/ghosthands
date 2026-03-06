@@ -17,7 +17,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Navigation */}
       <NavBar />
-      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-7 md:px-8 lg:px-12">
+      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-7 md:px-8 lg:px-16">
         <div className="container">
           {/* Hero Section */}
           <div className="mb-12 mt-6 grid grid-cols-1 gap-12 md:mt-4 lg:mt-2 lg:grid-cols-1">
@@ -54,9 +54,9 @@ export default function Home() {
               </div>
 
               {/* Tagline */}
-              <h2 className="break-words leading-[1.3] lg:pr-24">
-                a software engineer building{' '}
-                <span className="break-words">real applications</span>
+              <h2 className="break-words leading-[1.3] lg:pr-32">
+                a software engineer designing apps that solve{' '}
+                <span className="break-words">real life challenges</span>
               </h2>
             </div>
 
