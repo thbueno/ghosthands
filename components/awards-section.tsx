@@ -22,14 +22,14 @@ const awards: Award[] = [
   },
   {
     id: 'gov-br',
-    title: 'GOVBR - Governança Brasil',
+    title: 'GOVBR - Government Management Systems',
     year: '2017 to 2022',
     organization: 'Senior Software Engineer',
     url: 'https://www.linkedin.com/in/buenothg/#experience',
   },
   {
     id: 'datasys',
-    title: 'Datasys - Sistemas de Gestão',
+    title: 'Datasys - HR Management Systems',
     year: '2015 to 2017',
     organization: 'Frontend Engineer',
     url: 'https://www.linkedin.com/in/buenothg/#experience',
