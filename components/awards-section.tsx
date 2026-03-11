@@ -16,7 +16,7 @@ const awards: Award[] = [
   {
     id: 'esthalo',
     title: 'Esthalo - Product Development',
-    year: '2022 to today ',
+    year: '2022 to today',
     organization: 'Senior Product Engineer',
     url: 'https://www.linkedin.com/in/buenothg/#experience',
   },
