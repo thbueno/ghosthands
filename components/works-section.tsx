@@ -18,28 +18,28 @@ const projects: Project[] = [
   {
     id: 'esthalo',
     title: 'Esthalo Agency',
-    category: 'Full Stack',
+    category: 'Redesigning a Landing Page',
     image: '/images/Esthalo-cat.png',
     size: 'small',
   },
   {
     id: 'gov-br',
     title: 'GOVBR - Brazil Governance',
-    category: 'Front-end',
+    category: 'Government Management System',
     image: '/images/govbr_dash3.png',
     size: 'small',
   },
   {
     id: 'capsule',
     title: 'Capsule app',
-    category: 'UI/UX',
+    category: 'Building a Messaging App',
     image: '/images/Capsule_Friends_Mock.png',
     size: 'large',
   },
   {
     id: 'friends-travel',
     title: 'Friends Travel',
-    category: 'Full Stack',
+    category: 'Group Travel System',
     image: '/images/FriendsTravel_screen1.png',
     size: 'small',
   },
@@ -74,10 +74,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </Link>
       </div>
       <div className="flex items-center justify-between">
-        <div>
-          <h3 className="text-2xl">{project.title}</h3>
-          <p className="text-md">{project.category}</p>
-        </div>
+        <Link href={`/works/${project.id}`}>
+          <h3 className="text-2xl">{project.category}</h3>
+          <p className="text-md">{project.title}</p>
+        </Link>
         <ArrowLinkButton href={`/works/${project.id}`} />
       </div>
     </AnimateOnScroll>
