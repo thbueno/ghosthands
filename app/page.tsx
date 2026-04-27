@@ -54,9 +54,9 @@ export default function Home() {
               </div>
 
               {/* Tagline */}
-              <h2 className="break-words leading-[1.3] lg:pr-32">
-                a software engineer with{' '}
-                <span className="break-words">10 years of experience</span>
+              <h2 className="break-words leading-[1.3] lg:pr-48">
+                ten years building systems <br /> and products{' '}
+                <span className="break-words">with code</span>
               </h2>
             </div>
 
