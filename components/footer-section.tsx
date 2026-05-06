@@ -1,10 +1,11 @@
 'use client'
 
-import { ArrowUpRight, Instagram, Twitter, Youtube } from 'lucide-react'
+import { Instagram, Twitter, Youtube } from 'lucide-react'
 import Link from 'next/link'
 import { NewsletterForm } from './newsletter-form'
 import { AnimateOnScroll } from '@/components/animate-on-scroll'
 import { SocialLinks } from './social-links'
+import { ArrowLinkButton } from './arrow-link-button'
 
 export function FooterSection() {
   return (
@@ -19,19 +20,18 @@ export function FooterSection() {
                 </p>
               </AnimateOnScroll>
               <AnimateOnScroll delay={200} threshold={0.2}>
-                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                <div className="group flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <Link
-                    href="mailto:thgbueno@proton.me"
-                    className="break-all text-xl font-bold text-stone-200 transition-colors hover:text-white sm:text-3xl md:text-4xl lg:text-5xl"
+                    href="mailto:thinobueno@proton.me"
+                    className="break-all text-xl font-bold text-stone-200 transition-colors hover:text-secondary sm:text-3xl md:text-4xl lg:text-5xl"
                   >
-                    thgbueno@proton.me
+                    thinobueno@proton.me
                   </Link>
-                  <Link
-                    href="mailto:thgbueno@proton.me"
-                    className="rounded-full border border-background p-3 transition-colors hover:border-secondary hover:text-secondary"
-                  >
-                    <ArrowUpRight size={24} />
-                  </Link>
+                  <ArrowLinkButton
+                    href="mailto:thinobueno@proton.me"
+                    variant="ghost"
+                    className="group-hover:border-secondary group-hover:text-secondary"
+                  />
                 </div>
               </AnimateOnScroll>
             </div>

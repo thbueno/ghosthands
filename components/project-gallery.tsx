@@ -55,11 +55,11 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
     // items-stretch: both columns share the same height.
     // The thumbnail strip drives the height (sum of natural thumbnail heights);
     // the main image panel stretches to fill it.
-    <div className="mb-12 flex flex-col lg:flex-row lg:items-stretch lg:gap-4">
+    <div className="mb-12 flex flex-col min-[1366px]:flex-row min-[1366px]:items-stretch min-[1366px]:gap-4">
       {/* Main image viewport */}
       <div
         ref={emblaRef}
-        className="overflow-hidden rounded-3xl bg-background lg:flex-1"
+        className="overflow-hidden rounded-3xl bg-background min-[1366px]:flex-1"
       >
         <div className="flex">
           {images.map((src, index) => (
@@ -79,7 +79,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
       {/* Thumbnail strip
           Mobile:  horizontal row below main image (aspect-video cells, flex-1)
           Desktop: vertical column to the right, fixed width, natural height per thumb */}
-      <div className="mt-4 flex w-full items-center gap-2 lg:mt-0 lg:w-40 lg:flex-col lg:gap-2">
+      <div className="mt-4 flex w-full items-center gap-2 min-[1366px]:mt-0 min-[1366px]:w-40 min-[1366px]:flex-col min-[1366px]:gap-2">
         {images.map((src, index) => (
           <button
             key={index}
@@ -89,7 +89,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
               // Mobile: equal-width cells with a fixed aspect ratio in a row
               'aspect-video min-w-0 flex-1',
               // Desktop: full column width, natural height driven by intrinsic image ratio
-              'lg:aspect-auto lg:w-full lg:flex-none',
+              'min-[1366px]:aspect-auto min-[1366px]:w-full min-[1366px]:flex-none',
               selectedIndex === index
                 ? 'ring-1 ring-white ring-offset-2 ring-offset-background'
                 : 'opacity-50 hover:opacity-100',
