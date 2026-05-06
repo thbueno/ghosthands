@@ -25,7 +25,7 @@ export function FooterSection() {
                     href="mailto:thinobueno@proton.me"
                     className="break-all text-xl font-bold text-stone-200 transition-colors hover:text-secondary sm:text-3xl md:text-4xl lg:text-5xl"
                   >
-                    thinobueno@proton.me
+                    thinobueno@proton.mee
                   </Link>
                   <ArrowLinkButton
                     href="mailto:thinobueno@proton.me"
