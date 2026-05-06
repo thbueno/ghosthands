@@ -56,20 +56,20 @@ const projects: Project[] = [
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <AnimateOnScroll
-      className={`flex flex-col ${
+      className={`group/card flex flex-col ${
         project.size === 'large' ? 'col-span-1 md:col-span-2' : 'col-span-1'
       }`}
       delay={index * 100}
       threshold={0.2}
     >
-      <div className="group mb-5 overflow-hidden rounded-3xl bg-gray-100">
+      <div className="group/image mb-5 overflow-hidden rounded-3xl bg-gray-100 [transform:translateZ(0)]">
         <Link href={`/works/${project.id}`}>
           <Image
             src={project.image || '/placeholder.svg'}
             alt={project.title}
             width={project.size === 'large' ? 1200 : 600}
             height={project.size === 'large' ? 800 : 400}
-            className="h-auto w-full object-cover transition-all duration-500 ease-in-out motion-safe:group-hover:scale-[1.1] motion-safe:group-focus:scale-[1.1]"
+            className="h-auto w-full transform-gpu object-cover transition-transform duration-500 ease-in-out group-hover/image:scale-110"
           />
         </Link>
       </div>
@@ -78,7 +78,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <h3 className="text-2xl">{project.category}</h3>
           <p className="text-md">{project.title}</p>
         </Link>
-        <ArrowLinkButton href={`/works/${project.id}`} />
+        <ArrowLinkButton
+          href={`/works/${project.id}`}
+          className="group-hover/card:border-secondary group-hover/card:text-secondary"
+        />
       </div>
     </AnimateOnScroll>
   )

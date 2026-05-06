@@ -6,6 +6,7 @@ interface ArrowLinkButtonProps {
   variant?: 'light' | 'dark'
   size?: number
   onClick?: () => void
+  className?: string
 }
 
 export function ArrowLinkButton({
@@ -13,6 +14,7 @@ export function ArrowLinkButton({
   variant = 'light',
   size = 20,
   onClick,
+  className,
 }: ArrowLinkButtonProps) {
   const variantStyles = {
     light: 'border-title hover:border-secondary hover:text-secondary',
@@ -23,11 +25,11 @@ export function ArrowLinkButton({
     <Link
       href={href}
       onClick={onClick}
-      className={`group flex flex-shrink-0 items-center justify-center rounded-full border p-3 transition-colors sm:p-4 ${variantStyles[variant]}`}
+      className={`group flex flex-shrink-0 items-center justify-center rounded-full border p-3 transition-colors sm:p-4 ${variantStyles[variant]} ${className ?? ''}`}
     >
       <ArrowRight
         size={size}
-        className="transition-transform duration-300 ease-out group-hover:-rotate-45"
+        className="transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover/card:-rotate-45"
       />
     </Link>
   )
