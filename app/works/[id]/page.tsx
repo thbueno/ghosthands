@@ -5,6 +5,7 @@ import { getProjectBySlug } from '@/lib/mdx'
 import { getAllProjectSlugs } from '@/lib/mdx-listing'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import { ProjectGallery } from '@/components/project-gallery'
+import { ProjectSidebar } from '@/components/project-sidebar'
 
 // Generate static params for all MDX project files
 export async function generateStaticParams() {
@@ -43,21 +44,11 @@ export default async function ProjectDetail({
         </div>
 
         {/* Project Content */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
           {/* Sidebar */}
-          {/* <div className="space-y-8 md:col-span-1">
+          <ProjectSidebar>
             <div>
-              <h3 className="mb-2 text-lg font-medium">Date</h3>
-              <p className="">{frontmatter.date}</p>
-            </div>
-
-            <div>
-              <h3 className="mb-2 text-lg font-medium">Client Name</h3>
-              <p className="">{frontmatter.client}</p>
-            </div>
-
-            <div>
-              <h3 className="mb-2 text-lg font-medium">Services</h3>
+              <h3 className="mb-2 text-lg font-medium">Stack</h3>
               <div className="space-y-1">
                 {frontmatter.services.map((service, index) => (
                   <p key={index} className="">
@@ -72,13 +63,13 @@ export default async function ProjectDetail({
                 href={frontmatter.websiteUrl}
                 className="inline-flex items-center gap-2 rounded-full border border-title px-6 py-3 transition hover:border-secondary hover:text-secondary"
               >
-                Visit Website <ArrowUpRight size={16} />
+                Repository <ArrowUpRight size={16} />
               </Link>
             </div>
-          </div> */}
+          </ProjectSidebar>
 
           {/* Main Content — rendered from MDX */}
-          <div className="space-y-12 px-12 md:col-span-3">{content}</div>
+          <div className="space-y-12 px-12 md:col-span-4">{content}</div>
         </div>
       </div>
     </div>
