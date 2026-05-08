@@ -48,10 +48,10 @@ export default async function ProjectDetail({
           {/* Sidebar */}
           <ProjectSidebar>
             <div>
-              <h3 className="mb-2 text-lg font-medium">Stack</h3>
+              <h3 className="mb-2 text-lg font-bold">Stack</h3>
               <div className="space-y-1">
                 {frontmatter.services.map((service, index) => (
-                  <p key={index} className="">
+                  <p key={index} className="text-xs">
                     {service}
                   </p>
                 ))}
@@ -63,7 +63,7 @@ export default async function ProjectDetail({
                 href={frontmatter.websiteUrl}
                 className="inline-flex items-center gap-2 rounded-full border border-title px-6 py-3 transition hover:border-secondary hover:text-secondary"
               >
-                Repository <ArrowUpRight size={16} />
+                See more <ArrowUpRight size={16} />
               </Link>
             </div>
           </ProjectSidebar>
