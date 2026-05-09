@@ -85,13 +85,13 @@ export default function Home() {
         </div>
       </div>
 
-      <SkillsSection />
-
       {/* About Section */}
       {/* <AboutSection /> */}
 
       {/* Works Section */}
       <WorksSection />
+
+      <SkillsSection />
 
       {/* CTA Section */}
       <CTASection />
