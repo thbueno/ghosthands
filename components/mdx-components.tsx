@@ -53,13 +53,13 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
   ),
   // Paragraphs — override the global uppercase mono style for content text
   p: ({ children }: { children?: ReactNode }) => (
-    <p className="mb-4 font-general-sans text-base normal-case tracking-normal text-[color:var(--text)]">
+    <p className="mb-4 font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </p>
   ),
   // Spans — override the global large bold style
   span: ({ children }: { children?: ReactNode }) => (
-    <span className="font-general-sans text-base font-normal normal-case tracking-normal">
+    <span className="font-sf-mono text-base font-normal normal-case tracking-normal">
       {children}
     </span>
   ),
@@ -82,17 +82,17 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
   ),
   // Lists
   ul: ({ children }: { children?: ReactNode }) => (
-    <ul className="mb-4 ml-6 list-disc space-y-2 font-general-sans text-base normal-case tracking-normal text-[color:var(--text)]">
+    <ul className="mb-4 ml-6 list-disc space-y-2 font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </ul>
   ),
   ol: ({ children }: { children?: ReactNode }) => (
-    <ol className="mb-4 ml-6 list-decimal space-y-2 font-general-sans text-base normal-case tracking-normal text-[color:var(--text)]">
+    <ol className="mb-4 ml-6 list-decimal space-y-2 font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </ol>
   ),
   li: ({ children }: { children?: ReactNode }) => (
-    <li className="font-general-sans text-base normal-case tracking-normal text-[color:var(--text)]">
+    <li className="font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </li>
   ),
@@ -112,12 +112,12 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
     <tr className="transition-colors hover:bg-gray-50/50">{children}</tr>
   ),
   th: ({ children }: { children?: ReactNode }) => (
-    <th className="px-4 py-3 text-left font-general-sans text-sm font-semibold normal-case tracking-normal text-[color:var(--title)]">
+    <th className="px-4 py-3 text-left font-sf-mono text-sm font-semibold normal-case tracking-normal text-[color:var(--title)]">
       {children}
     </th>
   ),
   td: ({ children }: { children?: ReactNode }) => (
-    <td className="px-4 py-3 font-general-sans text-sm normal-case tracking-normal text-[color:var(--text)]">
+    <td className="px-4 py-3 font-sf-mono text-sm normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </td>
   ),

@@ -90,6 +90,7 @@ const config: Config = {
         'general-sans': ['var(--font-general-sans)'],
         sans: ['var(--font-general-sans)', 'system-ui', 'sans-serif'],
         'dm-mono': ['var(--font-dm-mono)', 'monospace'],
+        'sf-mono': ['var(--font-sf-mono)', 'monospace'],
       },
       borderRadius: {
         lg: 'var(--radius)',
