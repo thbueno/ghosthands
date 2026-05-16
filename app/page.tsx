@@ -63,14 +63,14 @@ export default function Home() {
             <div className="duration-1500 col-span-1 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth lg:col-span-2">
               <div className="grid grid-cols-1 gap-10 motion-delay-200 lg:grid-cols-2">
                 <div className="flex items-center">
-                  <div className="h-[1px] w-full bg-stone-400"></div>
+                  <div className="h-[1px] w-full bg-border dark:bg-text"></div>
                 </div>
                 <div className="flex items-center lg:col-start-2">
                   <p className="text-base md:text-base">
                     Virtual greetings, this is my work space on the Internet.
                     Here you can browse through my current projects, my past
-                    works and learn more about me. Don´t hesitate to reach out!
-                    if you have any questions or just want to say hi.
+                    works and learn more about me. Don&apos;t hesitate to reach
+                    out! if you have any questions or just want to say hi.
                   </p>
                 </div>
               </div>

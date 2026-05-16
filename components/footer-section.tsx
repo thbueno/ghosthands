@@ -10,7 +10,7 @@ import { ArrowLinkButton } from './arrow-link-button'
 export function FooterSection() {
   return (
     <footer className="overflow-hidden py-12 md:px-8 lg:px-12">
-      <AnimateOnScroll className="overflow-hidden rounded-3xl bg-title text-background">
+      <AnimateOnScroll className="overflow-hidden rounded-3xl bg-[--surface-dark] text-[--on-surface-dark]">
         <div className="container mx-auto px-6 pb-12 pt-16 md:px-12">
           <AnimateOnScroll threshold={0.2}>
             <div className="mb-16">
@@ -23,13 +23,13 @@ export function FooterSection() {
                 <div className="group flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <Link
                     href="mailto:thinobueno@proton.me"
-                    className="break-all text-xl font-bold text-stone-200 transition-colors hover:text-secondary sm:text-3xl md:text-4xl lg:text-5xl"
+                    className="break-all text-xl font-bold text-[--on-surface-dark] transition-colors hover:text-secondary sm:text-3xl md:text-4xl lg:text-5xl"
                   >
                     thinobueno@proton.me
                   </Link>
                   <ArrowLinkButton
                     href="mailto:thinobueno@proton.me"
-                    variant="ghost"
+                    variant="surface-dark"
                     className="group-hover:border-secondary group-hover:text-secondary"
                   />
                 </div>
@@ -68,7 +68,7 @@ export function FooterSection() {
                 </nav> */}
 
                 <div className="flex gap-6">
-                  <SocialLinks variant="dark" />
+                  <SocialLinks variant="surface-dark" />
                   {/* <Link
                     href="#"
                     className="text-background transition-colors hover:text-secondary"

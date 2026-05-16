@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
 
 interface LetsTalkButtonProps {
-  variant?: 'light' | 'dark' | 'red'
+  variant?: 'light' | 'dark' | 'red' | 'surface-dark'
   className?: string
   text?: string
   href?: string
@@ -22,6 +22,7 @@ export function LetsTalkButton({
     light:
       'border border-title text-title transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-background',
     dark: 'border border-background text-background hover:border-secondary hover:text-secondary',
+    'surface-dark': 'border border-[--on-surface-dark] text-[--on-surface-dark] hover:border-secondary hover:text-secondary',
     red: 'bg-secondary text-background border border-background transition-all duration-300 hover:bg-background hover:border hover:border-secondary hover:text-secondary',
   }
 

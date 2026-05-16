@@ -3,6 +3,8 @@
 import { DropdownMenu } from '@/components/dropdown-menu'
 import { LetsTalkButton } from '@/components/lets-talk-button'
 import { MenuButton } from '@/components/menu-button'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -29,7 +31,7 @@ export function NavBar() {
       <header
         className={twMerge(
           'sticky left-0 right-0 top-0 z-50 -mx-7 bg-background transition-all duration-300 ease-in-out md:-mx-10 lg:-mx-40',
-          menuOpen && 'bg-title text-background delay-[150ms] ease-in-out',
+          menuOpen && 'bg-[--surface-dark] text-[--on-surface-dark] delay-[150ms] ease-in-out',
         )}
       >
         <div
@@ -54,8 +56,20 @@ export function NavBar() {
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
-                <LetsTalkButton variant={menuOpen ? 'dark' : 'light'} />
+                <LetsTalkButton variant={menuOpen ? 'surface-dark' : 'light'} />
               </div>
+              <AnimatePresence>
+                {!menuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                  >
+                    <ThemeToggle variant="light" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <MenuButton isOpen={menuOpen} onClick={toggleMenu} />
             </div>
           </div>

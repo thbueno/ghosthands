@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 interface SocialLinksProps {
-  variant?: 'light' | 'dark'
+  variant?: 'light' | 'dark' | 'surface-dark'
   className?: string
 }
 
@@ -33,9 +33,11 @@ export function SocialLinks({
   const baseClasses =
     'group flex items-center gap-1 text-sm md:text-md lg:text-md font-medium transition-colors'
   const variantClasses =
-    variant === 'dark'
-      ? 'text-[color:var(--background)] hover:text-[color:var(--secondary)]'
-      : 'text-[color:var(--title)] hover:text-[color:var(--secondary)]'
+    variant === 'surface-dark'
+      ? 'text-[color:var(--on-surface-dark)] hover:text-[color:var(--secondary)]'
+      : variant === 'dark'
+        ? 'text-[color:var(--background)] hover:text-[color:var(--secondary)]'
+        : 'text-[color:var(--title)] hover:text-[color:var(--secondary)]'
 
   return (
     <div className="flex gap-6 md:mb-0 md:gap-8 lg:gap-8">

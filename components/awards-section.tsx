@@ -63,12 +63,12 @@ export function AwardsSection() {
                   threshold={0.2}
                 >
                   <Link href={award.url} className="group block">
-                    <div className="flex items-start justify-between border-b border-gray-200 pb-6">
+                    <div className="flex items-start justify-between border-b border-border pb-6">
                       <div>
                         <h3 className="mb-1 text-xl font-bold transition-all duration-200 ease-out group-hover:text-secondary">
                           {award.title}
                         </h3>
-                        <p className="text-gray-600">
+                        <p className="text-text">
                           {award.year} - {award.organization}
                         </p>
                       </div>

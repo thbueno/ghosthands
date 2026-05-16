@@ -28,7 +28,7 @@ export function NewsletterForm({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="w-full border-b border-background bg-transparent py-2 pr-12 text-background transition-colors placeholder:text-text focus:border-white focus:outline-none"
+          className="w-full border-b border-[--on-surface-dark] bg-transparent py-2 pr-12 text-[--on-surface-dark] transition-colors placeholder:text-[--on-surface-dark]/50 focus:border-white focus:outline-none"
           required
         />
         <button

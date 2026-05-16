@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 interface ArrowLinkButtonProps {
   href: string
-  variant?: 'light' | 'dark' | 'ghost'
+  variant?: 'light' | 'dark' | 'ghost' | 'surface-dark'
   size?: number
   onClick?: () => void
   className?: string
@@ -20,6 +20,7 @@ export function ArrowLinkButton({
     light: 'border-title hover:border-secondary hover:text-secondary',
     dark: 'border-stone-700 hover:bg-stone-900',
     ghost: 'border-background hover:border-secondary hover:text-secondary',
+    'surface-dark': 'border-[--on-surface-dark] text-[--on-surface-dark] hover:border-secondary hover:text-secondary',
   }
 
   return (

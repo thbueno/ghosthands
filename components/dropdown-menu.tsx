@@ -25,7 +25,7 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
   return (
     <div
       aria-hidden={!isOpen}
-      className={`fixed inset-0 z-40 bg-title text-background transition-all duration-300 ease-in-out ${
+      className={`fixed inset-0 z-40 bg-[--surface-dark] text-[--on-surface-dark] transition-all duration-300 ease-in-out ${
         isOpen
           ? 'translate-y-0 opacity-100 delay-150'
           : 'pointer-events-none -translate-y-full opacity-0 transition-all delay-150 duration-500 ease-in-out'
@@ -103,10 +103,10 @@ export function DropdownMenu({ isOpen, onClose }: DropdownMenuProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-8 border-t border-stone-800 pt-8">
+        <div className="mt-8 border-t border-[--on-surface-dark]/20 pt-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div>
-              <h3 className="mb-6 text-xl text-stone-400">/Follow me.</h3>
+              <h3 className="mb-6 text-xl text-[--on-surface-dark]/60">/Follow me.</h3>
               <SocialLinks variant="dark" />
             </div>
             {/* <div>

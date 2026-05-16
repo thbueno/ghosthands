@@ -62,7 +62,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       delay={index * 100}
       threshold={0.2}
     >
-      <div className="group/image mb-5 overflow-hidden rounded-3xl bg-gray-100 [transform:translateZ(0)]">
+      <div className="group/image mb-5 overflow-hidden rounded-3xl bg-muted [transform:translateZ(0)]">
         <Link href={`/works/${project.id}`}>
           <Image
             src={project.image || '/placeholder.svg'}
