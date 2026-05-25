@@ -66,13 +66,13 @@ function ProjectCard({ project }: { project: Project }) {
 
       {/* Text below image */}
       <div className="p-4 sm:p-5.5">
-        <h3 className="text-primary-dark text-22 font-semibold leading-[1.3] tracking-[-0.01em]">
+        <h3 className="text-primary-dark text-24 font-semibold leading-[1.3] tracking-[-0.01em]">
           {project.category}
         </h3>
-        <p className="text-secondary-muted mt-1 text-19 leading-[1.4]">
+        <p className="text-secondary-muted mt-1 text-22 leading-[1.4]">
           {project.title}
         </p>
-        <p className="text-secondary-muted mt-3.5 text-17 opacity-0 transition-opacity duration-150 ease-in-out group-hover:opacity-100">
+        <p className="text-secondary-muted mt-3.5 text-19 opacity-0 transition-opacity duration-150 ease-in-out group-hover:opacity-100">
           {project.linkLabel} →
         </p>
       </div>
@@ -83,7 +83,7 @@ function ProjectCard({ project }: { project: Project }) {
 export function WorksSection() {
   return (
     <div>
-      <p className="section-label text-secondary-muted translate-y-4 pb-4.5 text-19 leading-[1.4] opacity-0 blur-sm will-change-transform">
+      <p className="section-label text-secondary-muted translate-y-4 pb-4.5 text-24 leading-[1.4] opacity-0 blur-sm will-change-transform">
         Handpicked works
       </p>
       <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-2">

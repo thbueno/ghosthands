@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={`${sfProDisplay.className} ${sfProDisplay.variable} mx-auto bg-background px-7 antialiased md:px-10 lg:px-40`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <ObserverProvider>{children}</ObserverProvider>
         </ThemeProvider>
       </body>

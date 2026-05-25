@@ -18,14 +18,14 @@ export function WorkNavbar() {
     <header
       className={`sticky left-0 right-0 top-0 z-50 -mx-7 transition-all duration-300 md:-mx-10 lg:-mx-40 ${
         scrolled
-          ? 'border-b border-border/40 bg-background/80 backdrop-blur-md'
+          ? 'bg-background/80 border-b border-border/40 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-9 py-5 sm:px-16">
         <Link
           href="/"
-          className="text-17 font-semibold text-primary-dark transition-opacity duration-150 hover:opacity-70"
+          className="text-17 text-primary-dark font-semibold transition-opacity duration-150 hover:opacity-70"
         >
           Thiago Bueno
         </Link>
@@ -33,21 +33,21 @@ export function WorkNavbar() {
         <nav className="flex items-center gap-8">
           <Link
             href="/"
-            className="text-15 text-secondary-muted transition-colors duration-150 hover:text-primary-dark"
+            className="text-15 text-secondary-muted hover:text-primary-dark transition-colors duration-150"
           >
             Home
           </Link>
           <Link
             href="/works"
-            className="text-15 text-secondary-muted transition-colors duration-150 hover:text-primary-dark"
+            className="text-15 text-secondary-muted hover:text-primary-dark transition-colors duration-150"
           >
             Works
           </Link>
         </nav>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle variant="light" />
-          <LetsTalkButton className="text-sm px-5 py-2" />
+          <ThemeToggle variant="light" className="px-3 py-3" iconSize={20} />
+          <LetsTalkButton className="px-5 py-3 text-sm" />
         </div>
       </div>
     </header>

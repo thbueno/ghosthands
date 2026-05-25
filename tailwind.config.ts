@@ -32,7 +32,10 @@ const config: Config = {
         '17': ['17px', { lineHeight: '1.5' }],
         '19': ['19px', { lineHeight: '1.4' }],
         '22': ['22px', { lineHeight: '1.4' }],
+        '24': ['24px', { lineHeight: '1.4' }],
         '25': ['25px', { lineHeight: '1.3' }],
+        '28': ['28px', { lineHeight: '1.2' }],
+        '30': ['30px', { lineHeight: '1.2' }],
       },
       spacing: {
         '4.5': '18px',

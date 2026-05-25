@@ -16,13 +16,13 @@
 
 .dark {
   --title: #f0ede5;
-  --background: #0b1015;
+  --background: #000000;
   --primary: #d80e00;
   --secondary: #229eff;
   --text: #bebebe;
-  --surface-dark: #090d11;
+  --surface-dark: #000000;
   --foreground-rgb: 240, 237, 229;
-  --background-rgb: 17, 18, 16;
+  --background-rgb: 0, 0, 0;
 }
 
 body {
@@ -37,6 +37,22 @@ body {
   scroll-behavior: smooth;
 }
 
+:root {
+  --color-card-light: #f2f2f2;
+  --color-card-hover: #e8e8e8;
+  --color-tag: hsl(0, 0%, 92%);
+  --color-primary-dark: #111111;
+  --color-secondary-muted: #888888;
+}
+
+.dark {
+  --color-card-light: hsl(0, 0%, 8%);
+  --color-card-hover: hsl(0, 0%, 12%);
+  --color-tag: #252525;
+  --color-primary-dark: #f0ede5;
+  --color-secondary-muted: #888888;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -44,36 +60,20 @@ body {
 
   /* new-layout card system */
   .bg-card-light {
-    background-color: #f2f2f2;
+    background-color: var(--color-card-light);
   }
   .bg-card-hover {
-    background-color: #e8e8e8;
+    background-color: var(--color-card-hover);
   }
   .bg-tag {
-    background-color: #f5f5f5;
+    background-color: var(--color-tag);
   }
   .text-primary-dark {
-    color: #111111;
+    color: var(--color-primary-dark);
   }
   .text-secondary-muted {
-    color: #888888;
+    color: var(--color-secondary-muted);
   }
-}
-
-.dark .bg-card-light {
-  background-color: #1a1a1a;
-}
-.dark .bg-card-hover {
-  background-color: #222222;
-}
-.dark .bg-tag {
-  background-color: #252525;
-}
-.dark .text-primary-dark {
-  color: #f0ede5;
-}
-.dark .text-secondary-muted {
-  color: #888888;
 }
 
 @layer base {
@@ -113,7 +113,7 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 0 0% 7%;
+    --background: 0 0% 0%;
     --foreground: 35 20% 93%;
     --card: 0 0% 9%;
     --card-foreground: 35 20% 93%;
