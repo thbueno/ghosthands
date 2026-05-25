@@ -33,7 +33,7 @@ body {
 }
 
 body {
-  font-family: var(--font-general-sans);
+  font-family: var(--font-sf-pro-display);
   scroll-behavior: smooth;
 }
 
@@ -152,7 +152,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-general-sans);
+    font-family: var(--font-sf-pro-display);
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
   }
@@ -163,7 +163,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply font-general-sans;
+    @apply font-sf-pro-display;
   }
 
   h1 {
@@ -179,7 +179,7 @@ body {
   }
 
   p {
-    @apply font-dm-mono text-base uppercase text-[color:var(--text)];
+    @apply font-sf-pro-display text-base text-[color:var(--text)];
   }
 
   span {

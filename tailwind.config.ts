@@ -87,10 +87,11 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'general-sans': ['var(--font-general-sans)'],
-        sans: ['var(--font-general-sans)', 'system-ui', 'sans-serif'],
-        'dm-mono': ['var(--font-dm-mono)', 'monospace'],
-        'sf-mono': ['var(--font-sf-mono)', 'monospace'],
+        'sf-pro-display': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        'general-sans': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        'dm-mono': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        'sf-mono': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

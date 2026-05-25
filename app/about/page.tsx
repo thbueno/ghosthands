@@ -15,7 +15,7 @@ export default async function AboutPage() {
           <h1 className="mb-8">
             <span className="text-secondary">About me:</span>
           </h1>
-          <div className="mx-auto max-w-4xl space-y-6 font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)] md:mx-0 md:text-xl">
+          <div className="mx-auto max-w-4xl space-y-6 font-sf-pro-display text-base normal-case tracking-normal text-[color:var(--text)] md:mx-0 md:text-xl">
             {aboutContent?.content}
           </div>
         </div>

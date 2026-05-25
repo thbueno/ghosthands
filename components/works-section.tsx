@@ -54,8 +54,8 @@ function ProjectCard({ project }: { project: Project }) {
       className="product-card group relative block overflow-hidden rounded-2xl bg-card-light opacity-0 translate-y-4 blur-[4px] will-change-transform transition-colors duration-200 ease-out hover:bg-card-hover"
     >
       {/* Hover link label */}
-      <div className="absolute right-4 top-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
-        <span className="text-[11px] tracking-[0.02em] text-white drop-shadow">
+      <div className="absolute right-[22px] top-[22px] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
+        <span className="text-[15px] tracking-[0.02em] text-white drop-shadow">
           {project.linkLabel} →
         </span>
       </div>
@@ -72,11 +72,11 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* Text below image */}
-      <div className="p-4">
-        <h3 className="text-[15px] font-semibold leading-[1.3] tracking-[-0.01em] text-primary-dark">
+      <div className="p-[22px]">
+        <h3 className="text-[22px] font-semibold leading-[1.3] tracking-[-0.01em] text-primary-dark">
           {project.category}
         </h3>
-        <p className="mt-0.5 text-[13px] leading-[1.4] text-secondary-muted">
+        <p className="mt-1 text-[19px] leading-[1.4] text-secondary-muted">
           {project.title}
         </p>
       </div>
@@ -87,10 +87,10 @@ function ProjectCard({ project }: { project: Project }) {
 export function WorksSection() {
   return (
     <div>
-      <p className="section-label pb-3 text-[13px] leading-[1.4] text-secondary-muted opacity-0 translate-y-4 blur-[4px] will-change-transform">
+      <p className="section-label pb-[18px] text-[19px] leading-[1.4] text-secondary-muted opacity-0 translate-y-4 blur-[4px] will-change-transform">
         Handpicked works
       </p>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

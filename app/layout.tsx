@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import type React from 'react'
 import { ThemeProvider } from 'next-themes'
-import { dmMono, myLocalFont, sfMono } from './fonts'
+import { sfProDisplay } from './fonts'
 import './globals.css'
 import ObserverProvider from '@/components/ObserverProvider'
 
@@ -12,8 +11,6 @@ export const metadata: Metadata = {
     'Portfolio of a software engineer with passion to create great applications',
 }
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${myLocalFont.className} ${myLocalFont.variable} ${dmMono.variable} ${sfMono.variable} mx-auto bg-background px-7 antialiased md:px-10 lg:px-40`}
+        className={`${sfProDisplay.className} ${sfProDisplay.variable} mx-auto bg-background px-7 antialiased md:px-10 lg:px-40`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <ObserverProvider>{children}</ObserverProvider>

@@ -100,15 +100,15 @@ export default function Home() {
       <TrailCanvas />
 
       <div className="relative z-[1]">
-        <main className="mx-auto flex max-w-[640px] flex-col gap-12 px-6 pb-12 pt-10 sm:px-10">
+        <main className="mx-auto flex max-w-[915px] flex-col gap-[70px] px-9 pb-[70px] pt-16 sm:px-16">
           <ProfileHeader />
           <WorksSection />
           <SkillsSection />
         </main>
 
-        <footer className="footer bg-card-light py-12 opacity-0 translate-y-4 blur-[4px] will-change-transform">
-          <div className="mx-auto max-w-[640px] px-6 sm:px-10">
-            <p className="text-[14px] leading-[1.6] text-secondary-muted">
+        <footer className="footer bg-card-light py-[70px] opacity-0 translate-y-4 blur-[4px] will-change-transform">
+          <div className="mx-auto max-w-[915px] px-9 sm:px-16">
+            <p className="text-[20px] leading-[1.6] text-secondary-muted">
               I&apos;m most reachable by{' '}
               <Link
                 href="mailto:thinobueno@proton.me"

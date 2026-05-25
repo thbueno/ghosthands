@@ -69,7 +69,7 @@ export default async function ProjectDetail({
           </ProjectSidebar>
 
           {/* Main Content — rendered from MDX */}
-          <div className="space-y-12 px-12 font-sf-mono md:col-span-4">{content}</div>
+          <div className="space-y-12 px-12 font-sf-pro-display md:col-span-4">{content}</div>
         </div>
       </div>
     </div>
