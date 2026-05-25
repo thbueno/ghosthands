@@ -41,6 +41,33 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* new-layout card system */
+  .bg-card-light {
+    background-color: #f2f2f2;
+  }
+  .bg-card-hover {
+    background-color: #e8e8e8;
+  }
+  .text-primary-dark {
+    color: #111111;
+  }
+  .text-secondary-muted {
+    color: #888888;
+  }
+}
+
+.dark .bg-card-light {
+  background-color: #1a1a1a;
+}
+.dark .bg-card-hover {
+  background-color: #222222;
+}
+.dark .text-primary-dark {
+  color: #f0ede5;
+}
+.dark .text-secondary-muted {
+  color: #888888;
 }
 
 @layer base {

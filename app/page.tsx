@@ -1,106 +1,153 @@
 'use client'
 
-import { AboutSection } from '@/components/about-section'
-import { AwardsSection } from '@/components/awards-section'
-import BlurText from '@/components/blur-text'
-import { CTASection } from '@/components/cta-section'
-import { FooterSection } from '@/components/footer-section'
-import { LetsTalkButton } from '@/components/lets-talk-button'
-import { NavBar } from '@/components/navbar'
-import SkillsSection from '@/components/skills-section'
-import { SocialLinks } from '@/components/social-links'
+import { useEffect, useRef } from 'react'
+import Lenis from 'lenis'
+import gsap from 'gsap'
+import dynamic from 'next/dynamic'
+import { ProfileHeader } from '@/components/profile-header'
 import { WorksSection } from '@/components/works-section'
-import Image from 'next/image'
+import SkillsSection from '@/components/skills-section'
+import Link from 'next/link'
+
+const TrailCanvas = dynamic(() => import('@/components/trail-canvas'), {
+  ssr: false,
+})
 
 export default function Home() {
+  const lenisRef = useRef<Lenis | null>(null)
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
+    const lenis = new Lenis({ lerp: 0.08 })
+    lenisRef.current = lenis
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+      lenisRef.current = null
+    }
+  }, [])
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) {
+      gsap.set('.profile-header, .section-label, .product-card, .footer', {
+        opacity: 1,
+        y: 0,
+        filter: 'blur(0px)',
+      })
+      return
+    }
+
+    const tl = gsap.timeline({ delay: 0.2 })
+
+    tl.to('.profile-header', {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      duration: 0.5,
+      ease: 'power2.out',
+    })
+      .to(
+        '.section-label',
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: 0.4,
+          ease: 'power2.out',
+        },
+        '+=0.1',
+      )
+      .to(
+        '.product-card',
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: 0.5,
+          stagger: 0.08,
+          ease: 'power2.out',
+        },
+        '+=0.05',
+      )
+      .to(
+        '.footer',
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: 0.5,
+          ease: 'power2.out',
+        },
+        '+=0.1',
+      )
+
+    return () => {
+      tl.kill()
+    }
+  }, [])
+
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <NavBar />
-      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-7 md:px-8 lg:px-16">
-        <div className="container">
-          {/* Hero Section */}
-          <div className="mb-12 mt-6 grid grid-cols-1 gap-12 md:mt-4 lg:grid-cols-1">
-            <div className="duration-1500 col-span-1 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth">
-              {/* Intro Section */}
-              <div className="flex flex-row items-center gap-3 text-left">
-                {/* Hi, I'm */}
-                <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
+    <>
+      <TrailCanvas />
 
-                {/* Image */}
-                <Image
-                  src="/images/profile-photo-light.png"
-                  alt="Designer portrait"
-                  width={180}
-                  height={180}
-                  className="h-auto w-20 rounded-3xl object-contain"
-                />
+      <div className="relative z-[1]">
+        <main className="mx-auto flex max-w-[640px] flex-col gap-12 px-6 pb-12 pt-10 sm:px-10">
+          <ProfileHeader />
+          <WorksSection />
+          <SkillsSection />
+        </main>
 
-                {/* Thiago Bueno */}
-                {/* <BlurText
-                  text="Thiago Bueno"
-                  delay={250}
-                  animateBy="words"
-                  direction="top"
-                  className="hidden leading-[1.3] md:block"
-                /> */}
-                <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1>
-
-                {/* Mobile stacked text */}
-                <div className="flex flex-col md:hidden">
-                  <h1 className="leading-[1.3]">Hi, I'm</h1>
-                  <h1 className="leading-[1.3]">Thiago Bueno</h1>
-                </div>
-              </div>
-
-              {/* Tagline */}
-              <h2 className="break-words leading-[1.3] lg:pr-48">
-                ten years building systems <br /> and products{' '}
-                <span className="break-words">with code</span>
-              </h2>
-            </div>
-
-            <div className="duration-1500 col-span-1 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth lg:col-span-2">
-              <div className="grid grid-cols-1 gap-10 motion-delay-200 lg:grid-cols-2">
-                <div className="flex items-center">
-                  <div className="h-[1px] w-full bg-border dark:bg-text"></div>
-                </div>
-                <div className="flex items-center lg:col-start-2">
-                  <p className="text-base md:text-base">
-                    Virtual greetings, this is my work space on the Internet.
-                    Here you can browse through my current projects, my past
-                    works and learn more about me. Don&apos;t hesitate to reach
-                    out! if you have any questions or just want to say hi.
-                  </p>
-                </div>
-              </div>
-            </div>
+        <footer className="footer bg-card-light py-12 opacity-0 translate-y-4 blur-[4px] will-change-transform">
+          <div className="mx-auto max-w-[640px] px-6 sm:px-10">
+            <p className="text-[14px] leading-[1.6] text-secondary-muted">
+              I&apos;m most reachable by{' '}
+              <Link
+                href="mailto:thinobueno@proton.me"
+                className="text-primary-dark underline underline-offset-2 decoration-transparent hover:decoration-primary-dark transition-colors duration-150"
+              >
+                email
+              </Link>{' '}
+              and on{' '}
+              <Link
+                href="https://www.linkedin.com/in/thiago-bueno-dos-santos-28714924/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-dark underline underline-offset-2 decoration-transparent hover:decoration-primary-dark transition-colors duration-150"
+              >
+                LinkedIn
+              </Link>
+              . You can also find me on{' '}
+              <Link
+                href="https://github.com/thbueno"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-dark underline underline-offset-2 decoration-transparent hover:decoration-primary-dark transition-colors duration-150"
+              >
+                GitHub
+              </Link>{' '}
+              or reach me on{' '}
+              <Link
+                href="https://wa.me/84784551070"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-dark underline underline-offset-2 decoration-transparent hover:decoration-primary-dark transition-colors duration-150"
+              >
+                WhatsApp
+              </Link>
+              .
+            </p>
           </div>
-
-          {/* Hero Footer */}
-          <div className="duration-1500 flex flex-col items-center justify-between gap-14 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-delay-300 motion-ease-spring-smooth md:flex-row md:items-center">
-            <SocialLinks />
-            <LetsTalkButton variant="red" text="About me" href="/about" />
-          </div>
-        </div>
+        </footer>
       </div>
-
-      {/* About Section */}
-      {/* <AboutSection /> */}
-
-      {/* Works Section */}
-      <WorksSection />
-
-      <SkillsSection />
-
-      {/* CTA Section */}
-      <CTASection />
-
-      {/* Awards Section */}
-      <AwardsSection />
-
-      {/* Footer Section */}
-      <FooterSection />
-    </div>
+    </>
   )
 }
