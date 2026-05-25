@@ -49,6 +49,9 @@ body {
   .bg-card-hover {
     background-color: #e8e8e8;
   }
+  .bg-tag {
+    background-color: #f5f5f5;
+  }
   .text-primary-dark {
     color: #111111;
   }
@@ -62,6 +65,9 @@ body {
 }
 .dark .bg-card-hover {
   background-color: #222222;
+}
+.dark .bg-tag {
+  background-color: #252525;
 }
 .dark .text-primary-dark {
   color: #f0ede5;

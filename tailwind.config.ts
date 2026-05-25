@@ -26,6 +26,20 @@ const config: Config = {
       // => @media (min-width: 1152px) { ... }
     },
     extend: {
+      fontSize: {
+        '2xs': ['13px', { lineHeight: '1.4' }],
+        '15': ['15px', { lineHeight: '1.4' }],
+        '17': ['17px', { lineHeight: '1.5' }],
+        '19': ['19px', { lineHeight: '1.4' }],
+        '22': ['22px', { lineHeight: '1.4' }],
+        '25': ['25px', { lineHeight: '1.3' }],
+      },
+      spacing: {
+        '4.5': '18px',
+        '5.5': '22px',
+        '17.5': '70px',
+        '26': '104px',
+      },
       grayscale: {
         25: '50%',
       },

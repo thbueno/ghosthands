@@ -1,0 +1,55 @@
+'use client'
+
+import Link from 'next/link'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { LetsTalkButton } from '@/components/lets-talk-button'
+import { useEffect, useState } from 'react'
+
+export function WorkNavbar() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <header
+      className={`sticky left-0 right-0 top-0 z-50 -mx-7 transition-all duration-300 md:-mx-10 lg:-mx-40 ${
+        scrolled
+          ? 'border-b border-border/40 bg-background/80 backdrop-blur-md'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-9 py-5 sm:px-16">
+        <Link
+          href="/"
+          className="text-17 font-semibold text-primary-dark transition-opacity duration-150 hover:opacity-70"
+        >
+          Thiago Bueno
+        </Link>
+
+        <nav className="flex items-center gap-8">
+          <Link
+            href="/"
+            className="text-15 text-secondary-muted transition-colors duration-150 hover:text-primary-dark"
+          >
+            Home
+          </Link>
+          <Link
+            href="/works"
+            className="text-15 text-secondary-muted transition-colors duration-150 hover:text-primary-dark"
+          >
+            Works
+          </Link>
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <ThemeToggle variant="light" />
+          <LetsTalkButton className="text-sm px-5 py-2" />
+        </div>
+      </div>
+    </header>
+  )
+}
