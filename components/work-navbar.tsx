@@ -50,7 +50,7 @@ export function WorkNavbar() {
             Home
           </Link>
           <Link
-            href="/works"
+            href="/#works"
             className="text-secondary-muted hover:text-primary-dark text-15 transition-colors duration-150"
           >
             Works

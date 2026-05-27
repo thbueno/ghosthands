@@ -47,7 +47,7 @@ export default function Home() {
 
         <main className="mx-auto flex max-w-[980px] flex-col gap-24 px-9 pb-24 pt-16 sm:px-16 md:pb-40 md:pt-24">
           <ProfileHeader />
-          <WorksSection />
+          <WorksSection id="works" />
           <AboutBlock />
           <SkillsSection />
         </main>

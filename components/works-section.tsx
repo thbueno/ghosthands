@@ -81,15 +81,19 @@ function ProjectCard({ project }: { project: Project }) {
   )
 }
 
-export function WorksSection() {
+interface WorksSectionProps {
+  id?: string
+}
+
+export function WorksSection({ id }: WorksSectionProps) {
   return (
-    <div>
+    <div id={id}>
       <AnimateOnScroll threshold={0.2}>
         <h2 className="pb-4.5">
           Handpicked works
         </h2>
       </AnimateOnScroll>
-      <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4.5 md:grid-cols-2">
         {projects.map((project, index) => (
           <AnimateOnScroll key={project.id} delay={index * 100} threshold={0.2}>
             <ProjectCard project={project} />
