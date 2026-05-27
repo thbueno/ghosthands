@@ -36,8 +36,8 @@ export default async function ProjectDetail({
       <div className="mx-auto max-w-[1100px] px-9 py-12 sm:px-16">
         {/* Project Header */}
         <div className="mb-12">
-          <p className="mb-3 text-15 text-secondary-muted">{frontmatter.category}</p>
-          <h1 className="mb-8 text-4xl font-bold leading-tight tracking-[-0.02em] text-primary-dark md:text-5xl">
+          <p className="mb-3 text-15">{frontmatter.category}</p>
+          <h1 className="mb-8 text-4xl font-semibold leading-tight tracking-[-0.02em] md:text-5xl">
             {frontmatter.headline ?? frontmatter.title}
           </h1>
           <ProjectGallery
@@ -90,7 +90,7 @@ export default async function ProjectDetail({
       {/* Footer */}
       <footer className="-mx-7 mt-16 bg-card-light px-7 py-10 md:-mx-10 md:px-10 md:py-17.5 lg:-mx-40 lg:px-40">
         <div className="mx-auto max-w-[1100px] px-9 sm:px-16">
-          <p className="text-xl leading-[1.6] text-secondary-muted">
+          <p className="text-xl leading-[1.6]">
             I&apos;m most reachable by{' '}
             <Link
               href="mailto:thinobueno@proton.me"

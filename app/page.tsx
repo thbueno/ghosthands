@@ -2,11 +2,12 @@
 
 import { useEffect, useRef } from 'react'
 import Lenis from 'lenis'
-import gsap from 'gsap'
 import dynamic from 'next/dynamic'
 import { ProfileHeader } from '@/components/profile-header'
 import { WorksSection } from '@/components/works-section'
 import SkillsSection from '@/components/skills-section'
+import { HomeNavbar } from '@/components/home-navbar'
+import { AnimateOnScroll } from '@/components/animate-on-scroll'
 import Link from 'next/link'
 
 const TrailCanvas = dynamic(() => import('@/components/trail-canvas'), {
@@ -37,84 +38,26 @@ export default function Home() {
     }
   }, [])
 
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches
-    if (prefersReducedMotion) {
-      gsap.set('.profile-header, .section-label, .product-card, .footer', {
-        opacity: 1,
-        y: 0,
-        filter: 'blur(0px)',
-      })
-      return
-    }
-
-    const from = { opacity: 0, y: 16, filter: 'blur(4px)' }
-    const tl = gsap.timeline({ delay: 0.2 })
-
-    tl.fromTo('.profile-header', from, {
-      opacity: 1,
-      y: 0,
-      filter: 'blur(0px)',
-      duration: 0.5,
-      ease: 'power2.out',
-    })
-      .fromTo(
-        '.section-label',
-        from,
-        {
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-          duration: 0.4,
-          ease: 'power2.out',
-        },
-        '+=0.1',
-      )
-      .fromTo(
-        '.product-card',
-        from,
-        {
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-          duration: 0.5,
-          stagger: 0.08,
-          ease: 'power2.out',
-        },
-        '+=0.05',
-      )
-      .fromTo(
-        '.footer',
-        from,
-        {
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-          duration: 0.5,
-          ease: 'power2.out',
-        },
-        '+=0.1',
-      )
-
-    return () => {
-      tl.kill()
-    }
-  }, [])
-
   return (
     <>
       <TrailCanvas />
 
       <div className="relative z-[1]">
-        <main className="mx-auto flex max-w-[980px] flex-col gap-24 px-9 pb-24 pt-24 sm:px-16 md:pb-40 md:pt-40">
+        <HomeNavbar />
+
+        <main className="mx-auto flex max-w-[980px] flex-col gap-24 px-9 pb-24 pt-16 sm:px-16 md:pb-40 md:pt-24">
           <ProfileHeader />
           <WorksSection />
+          <AboutBlock />
           <SkillsSection />
         </main>
 
-        <footer className="footer bg-card-light md:py-17.5 -mx-7 translate-y-4 px-7 py-10 opacity-0 blur-sm will-change-transform md:-mx-10 md:px-10 lg:-mx-40 lg:px-40">
+        <AnimateOnScroll
+          as="footer"
+          className="footer bg-card-light -mx-7 px-7 py-10 md:-mx-10 md:px-10 md:py-17.5 lg:-mx-40 lg:px-40"
+          delay={100}
+          threshold={0.2}
+        >
           <div className="mx-auto max-w-[915px] px-9 sm:px-16">
             <p className="text-secondary-muted text-xl leading-[1.6]">
               I&apos;m most reachable by{' '}
@@ -154,8 +97,25 @@ export default function Home() {
               .
             </p>
           </div>
-        </footer>
+        </AnimateOnScroll>
       </div>
     </>
+  )
+}
+
+function AboutBlock() {
+  return (
+    <AnimateOnScroll threshold={0.2}>
+      <h2 className="text-secondary-muted pb-4.5 text-lg font-medium uppercase tracking-widest">
+        About
+      </h2>
+      <p className="text-primary-dark max-w-[680px] text-xl leading-[1.7]">
+        I&apos;ve spent the last ten years at the intersection of engineering
+        and product — writing backend systems, shipping interfaces, and lately
+        building AI-powered applications. I care deeply about the quality of
+        what I make: from architecture decisions to pixel-level details.
+        Currently leading product and engineering at Esthalo.
+      </p>
+    </AnimateOnScroll>
   )
 }

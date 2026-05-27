@@ -43,6 +43,12 @@ export function WorkNavbar() {
           >
             Works
           </Link>
+          <Link
+            href="/blog"
+            className="text-15 text-secondary-muted hover:text-primary-dark transition-colors duration-150"
+          >
+            Writing
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">

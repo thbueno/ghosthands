@@ -25,17 +25,6 @@
   --background-rgb: 0, 0, 0;
 }
 
-body {
-  scroll-behavior: smooth;
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  /* overflow-x: hidden; */
-}
-
-body {
-  font-family: var(--font-sf-pro-display);
-  scroll-behavior: smooth;
-}
 
 :root {
   --color-card-light: #f2f2f2;
@@ -163,33 +152,30 @@ body {
     scroll-behavior: smooth;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-sf-pro-display;
-  }
+  /* ─── Global font settings ─────────────────────────────────────────────────
+     Edit here to change typography site-wide. Components only override when
+     they genuinely deviate from these defaults (size, weight, leading, color).
+     Mobile-first: base = mobile, md: = desktop.
+  ─────────────────────────────────────────────────────────────────────────── */
 
   h1 {
-    @apply text-3xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-2xl font-semibold tracking-[-0.01em] leading-[1.3] text-primary-dark
+           md:text-3xl;
   }
 
   h2 {
-    @apply text-3xl font-bold tracking-tight text-[color:var(--title)] sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-xl font-normal leading-[1.4] text-secondary-muted
+           md:text-2xl;
   }
 
   h3 {
-    @apply text-2xl font-semibold tracking-tight text-[color:var(--title)] md:text-3xl lg:text-3xl;
+    @apply text-xl font-semibold tracking-[-0.01em] leading-[1.3] text-primary-dark
+           md:text-2xl;
   }
 
   p {
-    @apply font-sf-pro-display text-base text-[color:var(--text)];
-  }
-
-  span {
-    @apply text-3xl font-bold tracking-tight text-[color:var(--secondary)] sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-base leading-[1.5] text-secondary-muted
+           md:text-lg;
   }
 }
 
