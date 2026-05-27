@@ -8,9 +8,14 @@ import { twMerge } from 'tailwind-merge'
 interface ThemeToggleProps {
   className?: string
   variant?: 'light' | 'dark'
+  iconSize?: number
 }
 
-export function ThemeToggle({ className, variant = 'light' }: ThemeToggleProps) {
+export function ThemeToggle({
+  className,
+  variant = 'light',
+  iconSize = 24,
+}: ThemeToggleProps) {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -20,12 +25,12 @@ export function ThemeToggle({ className, variant = 'light' }: ThemeToggleProps) 
     return (
       <div
         className={twMerge(
-          'rounded-full border p-3',
-          variant === 'dark' ? 'border-[--on-surface-dark]' : 'border-title',
+          'rounded-full p-3',
+          variant === 'dark' ? 'bg-[#1a1a1a]' : 'bg-card-light',
           className,
         )}
       >
-        <div className="h-6 w-6" />
+        <div style={{ width: iconSize, height: iconSize }} />
       </div>
     )
   }
@@ -37,10 +42,10 @@ export function ThemeToggle({ className, variant = 'light' }: ThemeToggleProps) 
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       className={twMerge(
-        'group rounded-full border p-3 transition-all duration-300',
+        'group rounded-full p-3 transition-all duration-200',
         variant === 'dark'
-          ? 'border-background hover:border-secondary hover:bg-secondary'
-          : 'border-title hover:border-secondary hover:bg-secondary',
+          ? 'bg-[#1a1a1a] hover:bg-secondary'
+          : 'bg-card-light hover:bg-secondary',
         className,
       )}
     >
@@ -48,7 +53,15 @@ export function ThemeToggle({ className, variant = 'light' }: ThemeToggleProps) 
         className="block transition-transform duration-300 ease-out"
         style={{ transform: isDark ? 'rotate(0deg)' : 'rotate(180deg)' }}
       >
-        {isDark ? <Sun size={24} className="text-white" /> : <Moon size={24} strokeWidth={1.5} className="text-black transition-colors duration-300 group-hover:text-white" />}
+        {isDark ? (
+          <Sun size={iconSize} className="text-white group-hover:text-white" />
+        ) : (
+          <Moon
+            size={iconSize}
+            strokeWidth={1.5}
+            className="text-black group-hover:text-white"
+          />
+        )}
       </span>
     </button>
   )

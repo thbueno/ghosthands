@@ -28,7 +28,7 @@ export function ProjectImage({
         />
       </div>
       {caption && (
-        <figcaption className="mt-3 text-center font-dm-mono text-sm font-normal normal-case tracking-normal text-[color:var(--text)]">
+        <figcaption className="mt-3 text-center font-sf-pro-display text-sm font-normal normal-case tracking-normal text-[color:var(--text)]">
           {caption}
         </figcaption>
       )}
@@ -53,13 +53,13 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
   ),
   // Paragraphs — override the global uppercase mono style for content text
   p: ({ children }: { children?: ReactNode }) => (
-    <p className="mb-4 font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
+    <p className="mb-4 font-sf-pro-display text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </p>
   ),
   // Spans — override the global large bold style
   span: ({ children }: { children?: ReactNode }) => (
-    <span className="font-sf-mono text-base font-normal normal-case tracking-normal">
+    <span className="font-sf-pro-display text-base font-normal normal-case tracking-normal">
       {children}
     </span>
   ),
@@ -82,17 +82,17 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
   ),
   // Lists
   ul: ({ children }: { children?: ReactNode }) => (
-    <ul className="mb-4 ml-6 list-disc space-y-2 font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
+    <ul className="mb-4 ml-6 list-disc space-y-2 font-sf-pro-display text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </ul>
   ),
   ol: ({ children }: { children?: ReactNode }) => (
-    <ol className="mb-4 ml-6 list-decimal space-y-2 font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
+    <ol className="mb-4 ml-6 list-decimal space-y-2 font-sf-pro-display text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </ol>
   ),
   li: ({ children }: { children?: ReactNode }) => (
-    <li className="font-sf-mono text-base normal-case tracking-normal text-[color:var(--text)]">
+    <li className="font-sf-pro-display text-base normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </li>
   ),
@@ -112,12 +112,12 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
     <tr className="transition-colors hover:bg-gray-50/50">{children}</tr>
   ),
   th: ({ children }: { children?: ReactNode }) => (
-    <th className="px-4 py-3 text-left font-sf-mono text-sm font-semibold normal-case tracking-normal text-[color:var(--title)]">
+    <th className="px-4 py-3 text-left font-sf-pro-display text-sm font-semibold normal-case tracking-normal text-[color:var(--title)]">
       {children}
     </th>
   ),
   td: ({ children }: { children?: ReactNode }) => (
-    <td className="px-4 py-3 font-sf-mono text-sm normal-case tracking-normal text-[color:var(--text)]">
+    <td className="px-4 py-3 font-sf-pro-display text-sm normal-case tracking-normal text-[color:var(--text)]">
       {children}
     </td>
   ),
@@ -134,7 +134,7 @@ export const mdxComponents: Record<string, React.ComponentType<any>> = {
     </pre>
   ),
   code: ({ children }: { children?: ReactNode }) => (
-    <code className="rounded bg-gray-100 px-1.5 py-0.5 font-dm-mono text-sm text-[color:var(--title)]">
+    <code className="rounded bg-gray-100 px-1.5 py-0.5 font-sf-pro-display text-sm text-[color:var(--title)]">
       {children}
     </code>
   ),

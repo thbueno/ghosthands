@@ -1,17 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLinkButton } from './arrow-link-button'
-import { AnimateOnScroll } from './animate-on-scroll'
+import { AnimateOnScroll } from '@/components/animate-on-scroll'
 
-// Project listing data for the homepage section
-// This is a lightweight mirror of the content/works/ MDX frontmatter.
-// For the full project details, see the individual .mdx files in content/works/.
 interface Project {
   id: string
   title: string
   category: string
   image: string
-  size?: 'small' | 'large'
+  linkLabel?: string
 }
 
 const projects: Project[] = [
@@ -20,91 +16,90 @@ const projects: Project[] = [
     title: 'Esthalo Agency',
     category: 'Redesigning a Landing Page',
     image: '/images/Esthalo-cat.png',
-    size: 'small',
+    linkLabel: 'View project',
   },
   {
     id: 'gov-br',
-    title: 'GOVBR - Brazil Governance',
+    title: 'GOVBR - Governance Brazil',
     category: 'Government Management System',
     image: '/images/govbr_dash3.png',
-    size: 'small',
+    linkLabel: 'View project',
   },
   {
     id: 'capsule',
     title: 'Capsule app',
     category: 'Building a Messaging App',
     image: '/images/Capsule_Friends_Mock.png',
-    size: 'large',
+    linkLabel: 'View project',
   },
   {
     id: 'friends-travel',
     title: 'Friends Travel',
     category: 'Group Travel System',
     image: '/images/FriendsTravel_screen1.png',
-    size: 'small',
+    linkLabel: 'View project',
   },
-  {
-    id: 'sw-clean-energy',
-    title: 'SW Clean Energy',
-    category: 'Full Stack',
-    image: '/images/SW-Hero.png',
-    size: 'small',
-  },
+  // {
+  //   id: 'sw-clean-energy',
+  //   title: 'SW Clean Energy',
+  //   category: 'Full Stack',
+  //   image: '/images/SW-Hero.png',
+  //   linkLabel: 'View project',
+  // },
 ]
 
-// Project Card Component
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
-    <AnimateOnScroll
-      className={`group/card flex flex-col ${
-        project.size === 'large' ? 'col-span-1 md:col-span-2' : 'col-span-1'
-      }`}
-      delay={index * 100}
-      threshold={0.2}
+    <Link
+      href={`/works/${project.id}`}
+      className="product-card bg-card-light hover:bg-card-hover group block overflow-hidden rounded-2xl transition-colors duration-200 ease-out"
     >
-      <div className="group/image mb-5 overflow-hidden rounded-3xl bg-muted [transform:translateZ(0)]">
-        <Link href={`/works/${project.id}`}>
-          <Image
-            src={project.image || '/placeholder.svg'}
-            alt={project.title}
-            width={project.size === 'large' ? 1200 : 600}
-            height={project.size === 'large' ? 800 : 400}
-            className="h-auto w-full transform-gpu object-cover transition-transform duration-500 ease-in-out group-hover/image:scale-110"
-          />
-        </Link>
-      </div>
-      <div className="flex items-center justify-between">
-        <Link href={`/works/${project.id}`}>
-          <h3 className="text-2xl group-hover/card:text-secondary">
-            {project.category}
-          </h3>
-          <p className="text-md group-hover/card:text-secondary">
-            {project.title}
-          </p>
-        </Link>
-        <ArrowLinkButton
-          href={`/works/${project.id}`}
-          className="group-hover/card:border-secondary group-hover/card:text-secondary"
+      {/* Full image with hover zoom */}
+      <div className="aspect-[4/3] overflow-hidden [transform:translateZ(0)]">
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={600}
+          height={450}
+          className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
         />
       </div>
-    </AnimateOnScroll>
+
+      {/* Text below image */}
+      <div className="p-4 sm:p-5.5">
+        <h3>
+          {project.category}
+        </h3>
+        <p className="mt-1 text-xl leading-[1.4]">
+          {project.title}
+        </p>
+        <p className="mt-3.5 text-lg opacity-0 transition-opacity duration-150 ease-in-out group-hover:opacity-100">
+          {project.linkLabel} →
+        </p>
+      </div>
+    </Link>
   )
 }
 
-export function WorksSection() {
-  return (
-    <section id="works" className="py-24 md:py-32">
-      <div className="container mx-auto md:px-8 lg:px-12">
-        <AnimateOnScroll threshold={0.3}>
-          <h2 className="mb-12">Handpicked Works</h2>
-        </AnimateOnScroll>
+interface WorksSectionProps {
+  id?: string
+}
 
-        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
+export function WorksSection({ id }: WorksSectionProps) {
+  return (
+    <div id={id}>
+      <AnimateOnScroll threshold={0.2}>
+        <h2 className="pb-4.5">
+          Handpicked works
+        </h2>
+      </AnimateOnScroll>
+      <div className="grid grid-cols-1 gap-4.5 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <AnimateOnScroll key={project.id} delay={index * 100} threshold={0.2}>
+            <ProjectCard project={project} />
+          </AnimateOnScroll>
+        ))}
       </div>
-    </section>
+    </div>
   )
 }

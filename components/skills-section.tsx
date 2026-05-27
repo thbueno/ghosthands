@@ -1,57 +1,36 @@
 'use client'
 import React from 'react'
-import TechTag, { FRONTEND_TAGS, BACKEND_TAGS } from '@/components/tech-tag'
+import TechTag, { FRONTEND_TAGS, BACKEND_TAGS, CLOUD_TAGS, AI_TAGS } from '@/components/tech-tag'
 import { AnimateOnScroll } from '@/components/animate-on-scroll'
+
+const TAG_CLASS = 'text-xl px-4.5 py-2.5 rounded-full bg-tag text-primary-dark hover:bg-secondary hover:text-background'
+
+const CATEGORIES = [
+  { label: 'Frontend', tags: FRONTEND_TAGS, delay: 0 },
+  { label: 'Backend', tags: BACKEND_TAGS, delay: 50 },
+  { label: 'Cloud & Infra', tags: CLOUD_TAGS, delay: 100 },
+  { label: 'AI / ML', tags: AI_TAGS, delay: 150 },
+]
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-24 md:py-32">
-      <div className="container mx-auto md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          <AnimateOnScroll className="md:col-span-1" threshold={0.2}>
-            <h2>Skills</h2>
-            <p className="mt-4">
-              These are the tools I've picked up along my journey as a
-              developer, not just through courses or tutorials, but by applying
-              them in real, production level projects.
-            </p>
+    <div>
+      <h2 className="pb-4.5">
+        Skills & stack
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-9">
+        {CATEGORIES.map(({ label, tags, delay }) => (
+          <AnimateOnScroll
+            key={label}
+            className="rounded-3xl bg-card-light p-8 flex flex-col gap-5.5"
+            threshold={0.15}
+            delay={delay}
+          >
+            <h3>{label}</h3>
+            <TechTag tags={tags} tagClassName={TAG_CLASS} />
           </AnimateOnScroll>
-
-          <div className="md:col-span-2">
-            <div className="flex flex-col gap-12">
-              {/* Frontend Section */}
-              <AnimateOnScroll
-                className="flex flex-col gap-8"
-                delay={200}
-                threshold={0.2}
-              >
-                <h3>Frontend</h3>
-                <TechTag tags={FRONTEND_TAGS} />
-
-                {/* Divider */}
-                <div className="flex items-center">
-                  <div className="h-[1px] w-full bg-stone-400"></div>
-                </div>
-              </AnimateOnScroll>
-
-              {/* Backend Section */}
-              <AnimateOnScroll
-                className="flex flex-col gap-8"
-                delay={300}
-                threshold={0.2}
-              >
-                <h3>Backend</h3>
-                <TechTag tags={BACKEND_TAGS} />
-
-                {/* Divider */}
-                <div className="flex items-center">
-                  <div className="h-[1px] w-full bg-stone-400"></div>
-                </div>
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   )
 }

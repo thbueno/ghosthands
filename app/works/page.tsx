@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getAllProjects } from '@/lib/mdx-listing'
 import { ScrollToTop } from '@/components/scroll-to-top'
+import { WorkNavbar } from '@/components/work-navbar'
 
 export default function WorksPage() {
   const projects = getAllProjects()
@@ -10,6 +11,7 @@ export default function WorksPage() {
   return (
     <div className="min-h-screen bg-background">
       <ScrollToTop />
+      <WorkNavbar />
       <div className="container mx-auto px-4 py-12 md:px-8 lg:px-24">
         <h1 className="mb-12 text-4xl font-bold md:text-5xl">My Works</h1>
 

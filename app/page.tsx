@@ -1,106 +1,83 @@
 'use client'
 
-import { AboutSection } from '@/components/about-section'
-import { AwardsSection } from '@/components/awards-section'
-import BlurText from '@/components/blur-text'
-import { CTASection } from '@/components/cta-section'
-import { FooterSection } from '@/components/footer-section'
-import { LetsTalkButton } from '@/components/lets-talk-button'
-import { NavBar } from '@/components/navbar'
-import SkillsSection from '@/components/skills-section'
-import { SocialLinks } from '@/components/social-links'
+import { useEffect, useRef } from 'react'
+import Lenis from 'lenis'
+import dynamic from 'next/dynamic'
+import { ProfileHeader } from '@/components/profile-header'
 import { WorksSection } from '@/components/works-section'
-import Image from 'next/image'
+import SkillsSection from '@/components/skills-section'
+import { HomeNavbar } from '@/components/home-navbar'
+import { SiteFooter } from '@/components/site-footer'
+import { AnimateOnScroll } from '@/components/animate-on-scroll'
+
+const TrailCanvas = dynamic(() => import('@/components/trail-canvas'), {
+  ssr: false,
+})
 
 export default function Home() {
+  const lenisRef = useRef<Lenis | null>(null)
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+    if (prefersReducedMotion) return
+
+    const lenis = new Lenis({ lerp: 0.08 })
+    lenisRef.current = lenis
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+      lenisRef.current = null
+    }
+  }, [])
+
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <NavBar />
-      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-7 md:px-8 lg:px-16">
-        <div className="container">
-          {/* Hero Section */}
-          <div className="mb-12 mt-6 grid grid-cols-1 gap-12 md:mt-4 lg:grid-cols-1">
-            <div className="duration-1500 col-span-1 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth">
-              {/* Intro Section */}
-              <div className="flex flex-row items-center gap-3 text-left">
-                {/* Hi, I'm */}
-                <h1 className="hidden leading-[1.3] md:block">Hi, I'm</h1>
+    <>
+      <TrailCanvas />
 
-                {/* Image */}
-                <Image
-                  src="/images/profile-photo-light.png"
-                  alt="Designer portrait"
-                  width={180}
-                  height={180}
-                  className="h-auto w-20 rounded-3xl object-contain"
-                />
+      <div className="relative z-[1]">
+        <HomeNavbar />
 
-                {/* Thiago Bueno */}
-                {/* <BlurText
-                  text="Thiago Bueno"
-                  delay={250}
-                  animateBy="words"
-                  direction="top"
-                  className="hidden leading-[1.3] md:block"
-                /> */}
-                <h1 className="hidden leading-[1.3] md:block">Thiago Bueno</h1>
+        <main className="mx-auto flex max-w-[980px] flex-col gap-24 px-9 pb-24 pt-16 sm:px-16 md:pb-40 md:pt-24">
+          <ProfileHeader />
+          <WorksSection id="works" />
+          <AboutBlock />
+          <SkillsSection />
+        </main>
 
-                {/* Mobile stacked text */}
-                <div className="flex flex-col md:hidden">
-                  <h1 className="leading-[1.3]">Hi, I'm</h1>
-                  <h1 className="leading-[1.3]">Thiago Bueno</h1>
-                </div>
-              </div>
-
-              {/* Tagline */}
-              <h2 className="break-words leading-[1.3] lg:pr-48">
-                ten years building systems <br /> and products{' '}
-                <span className="break-words">with code</span>
-              </h2>
-            </div>
-
-            <div className="duration-1500 col-span-1 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth lg:col-span-2">
-              <div className="grid grid-cols-1 gap-10 motion-delay-200 lg:grid-cols-2">
-                <div className="flex items-center">
-                  <div className="h-[1px] w-full bg-border dark:bg-text"></div>
-                </div>
-                <div className="flex items-center lg:col-start-2">
-                  <p className="text-base md:text-base">
-                    Virtual greetings, this is my work space on the Internet.
-                    Here you can browse through my current projects, my past
-                    works and learn more about me. Don&apos;t hesitate to reach
-                    out! if you have any questions or just want to say hi.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Footer */}
-          <div className="duration-1500 flex flex-col items-center justify-between gap-14 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-delay-300 motion-ease-spring-smooth md:flex-row md:items-center">
-            <SocialLinks />
-            <LetsTalkButton variant="red" text="About me" href="/about" />
-          </div>
-        </div>
+        <SiteFooter />
       </div>
+    </>
+  )
+}
 
-      {/* About Section */}
-      {/* <AboutSection /> */}
-
-      {/* Works Section */}
-      <WorksSection />
-
-      <SkillsSection />
-
-      {/* CTA Section */}
-      <CTASection />
-
-      {/* Awards Section */}
-      <AwardsSection />
-
-      {/* Footer Section */}
-      <FooterSection />
-    </div>
+function AboutBlock() {
+  return (
+    <AnimateOnScroll threshold={0.2}>
+      <h2>About Me</h2>
+      <p className="text-primary-dark mx-auto mt-3 pl-16 pr-16 text-xl leading-[1.7]">
+        I got into software because I watched <em>The Matrix</em> too many times
+        as a kid. When I was thirteen, I disassembled my family&apos;s only
+        computer to see how it worked. It was a glorious mess of circuit boards.
+        When I put it back together and it actually booted, my dad looked at me
+        with a mix of terror and relief. He said: &quot;You&apos;d better figure
+        out how to make money off this.&quot;
+        <br />
+        <br /> So I did. Ten years later, I build systems and products with
+        code. I&apos;ve shipped code to 50+ companies and built government
+        systems running in 1,000+ city halls. Lately, I&apos;ve been building
+        applied ML pipelines and RAG systems. My take on AI is simple: prompting
+        isn&apos;t the skill, structuring inputs is. The model handles
+        ambiguity, but you need human discipline to keep the code from turning
+        into slop.
+      </p>
+    </AnimateOnScroll>
   )
 }

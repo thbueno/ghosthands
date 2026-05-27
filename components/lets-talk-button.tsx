@@ -16,14 +16,14 @@ export function LetsTalkButton({
   href = 'https://wa.me/84784551070',
 }: LetsTalkButtonProps) {
   const baseClasses =
-    'group flex items-center gap-2 px-7 py-3 rounded-full transition-all text-base font-medium cursor-pointer'
+    'group flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200 text-base font-medium cursor-pointer'
 
   const variants = {
     light:
-      'border border-title text-title transition-all duration-300 hover:border-secondary hover:bg-secondary hover:text-background',
-    dark: 'border border-background text-background hover:border-secondary hover:text-secondary',
-    'surface-dark': 'border border-[--on-surface-dark] text-[--on-surface-dark] hover:border-secondary hover:text-secondary',
-    red: 'bg-secondary text-background border border-background transition-all duration-300 hover:bg-background hover:border hover:border-secondary hover:text-secondary',
+      'bg-card-light text-primary-dark hover:bg-secondary hover:text-background',
+    dark: 'bg-[#1a1a1a] text-[#f0ede5] hover:bg-secondary hover:text-background',
+    'surface-dark': 'bg-[#1a1a1a] text-[--on-surface-dark] hover:bg-secondary hover:text-background',
+    red: 'bg-secondary text-background hover:bg-primary hover:text-background',
   }
 
   return (

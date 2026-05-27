@@ -26,6 +26,21 @@ const config: Config = {
       // => @media (min-width: 1152px) { ... }
     },
     extend: {
+      fontSize: {
+        '2xs': ['13px', { lineHeight: '1.4' }],
+        '15': ['15px', { lineHeight: '1.4' }],
+        '17': ['17px', { lineHeight: '1.5' }],
+        '19': ['19px', { lineHeight: '1.4' }],
+        '22': ['22px', { lineHeight: '1.4' }],
+        '25': ['25px', { lineHeight: '1.3' }],
+        '28': ['28px', { lineHeight: '1.2' }],
+      },
+      spacing: {
+        '4.5': '18px',
+        '5.5': '22px',
+        '17.5': '70px',
+        '26': '104px',
+      },
       grayscale: {
         25: '50%',
       },
@@ -87,10 +102,11 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'general-sans': ['var(--font-general-sans)'],
-        sans: ['var(--font-general-sans)', 'system-ui', 'sans-serif'],
-        'dm-mono': ['var(--font-dm-mono)', 'monospace'],
-        'sf-mono': ['var(--font-sf-mono)', 'monospace'],
+        'sf-pro-display': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        'general-sans': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        'dm-mono': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
+        'sf-mono': ['var(--font-sf-pro-display)', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
