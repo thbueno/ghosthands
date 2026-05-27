@@ -19,19 +19,27 @@ export function WorkNavbar() {
     <header
       className={`sticky left-0 right-0 top-0 z-50 -mx-7 transition-all duration-300 md:-mx-10 lg:-mx-40 ${
         scrolled
-          ? 'bg-background/80 border-b border-border/40 backdrop-blur-md'
+          ? 'bg-background/80 border-b border-border/20 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-[1100px] items-center justify-between px-9 py-5 sm:px-16">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/images/ghost-hands.svg"
-            alt="Ghosthands"
-            width={44}
-            height={44}
-            className="h-11 w-11 object-contain"
-          />
+        <Link
+          href="/"
+          className={`flex items-center gap-2.5 transition-all duration-300 ease-in-out`}
+        >
+          <div className="relative h-11 w-11 flex-shrink-0">
+            <Image
+              src="/images/profile-photo.JPEG"
+              alt="Thiago Bueno"
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-full border border-border/40 object-cover"
+            />
+          </div>
+          <span className="text-sm font-semibold lowercase tracking-tight text-foreground">
+            thiago bueno
+          </span>
         </Link>
 
         <nav className="flex items-center gap-8">
@@ -47,12 +55,12 @@ export function WorkNavbar() {
           >
             Works
           </Link>
-          <Link
+          {/* <Link
             href="/blog"
             className="text-secondary-muted hover:text-primary-dark text-15 transition-colors duration-150"
           >
             Writing
-          </Link>
+          </Link> */}
         </nav>
 
         <div className="flex items-center gap-3">

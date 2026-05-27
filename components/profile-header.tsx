@@ -67,7 +67,7 @@ const socialLinks = [
 
 export function ProfileHeader() {
   return (
-    <div className="profile-header md:pr-60">
+    <div className="profile-header md:pr-56">
       <div className="motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-duration-700 motion-delay-200 motion-ease-spring-smooth">
         <Image
           src="/images/profile-photo.JPEG"
@@ -81,8 +81,9 @@ export function ProfileHeader() {
         I&apos;m Thiago Bueno, <br /> engineer and AI solutions Architect
       </h1>
       <h2 className="mt-2 leading-[1.5] motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-duration-700 motion-delay-[400ms] motion-ease-spring-smooth">
-        Ten years building systems and products with code. Currently crafting
-        digital experiences at Esthalo.
+        More than a decade designing systems and products with code for
+        organizations of every size, from early-stage startups to large
+        enterprises.
       </h2>
       <div className="mt-5.5 flex gap-3 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-duration-700 motion-delay-500 motion-ease-spring-smooth">
         {socialLinks.map((link) => (
