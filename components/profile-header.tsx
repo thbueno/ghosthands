@@ -2,9 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Linkedin, Mail } from 'lucide-react'
+import LinkedInIcon from '@/public/images/social-icons/linkedin'
+import GitHubIcon from '@/public/images/social-icons/github'
 
-function WhatsAppIcon({ size = 20 }: { size?: number }) {
+function WhatsAppIcon({ size = 28 }: { size?: number }) {
   return (
     <svg
       width={size}
@@ -18,11 +19,36 @@ function WhatsAppIcon({ size = 20 }: { size?: number }) {
   )
 }
 
+function MailIcon({ size = 28 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  )
+}
+
 const socialLinks = [
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/thiago-bueno-dos-santos-28714924/',
-    icon: <Linkedin size={20} strokeWidth={1.5} />,
+    icon: <LinkedInIcon size={28} />,
+    external: true,
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/thbueno',
+    icon: <GitHubIcon size={28} />,
     external: true,
   },
   {
@@ -31,18 +57,18 @@ const socialLinks = [
     icon: <WhatsAppIcon size={20} />,
     external: true,
   },
-  {
-    label: 'Email',
-    href: 'mailto:thinobueno@proton.me',
-    icon: <Mail size={20} strokeWidth={1.5} />,
-    external: false,
-  },
+  // {
+  //   label: 'Email',
+  //   href: 'mailto:thinobueno@proton.me',
+  //   icon: <MailIcon size={20} />,
+  //   external: false,
+  // },
 ]
 
 export function ProfileHeader() {
   return (
     <div className="profile-header md:pr-60">
-      <div className="motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth motion-duration-700 motion-delay-200">
+      <div className="motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-duration-700 motion-delay-200 motion-ease-spring-smooth">
         <Image
           src="/images/profile-photo.JPEG"
           alt="Thiago Bueno"
@@ -51,14 +77,14 @@ export function ProfileHeader() {
           className="mb-5.5 h-32 w-32 rounded-full object-cover"
         />
       </div>
-      <h1 className="motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth motion-duration-700 motion-delay-300">
+      <h1 className="motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-duration-700 motion-delay-300 motion-ease-spring-smooth">
         I&apos;m Thiago Bueno, <br /> engineer and AI solutions Architect
       </h1>
-      <h2 className="mt-2 leading-[1.5] motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth motion-duration-700 motion-delay-[400ms]">
+      <h2 className="mt-2 leading-[1.5] motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-duration-700 motion-delay-[400ms] motion-ease-spring-smooth">
         Ten years building systems and products with code. Currently crafting
         digital experiences at Esthalo.
       </h2>
-      <div className="mt-5.5 flex gap-3 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-ease-spring-smooth motion-duration-700 motion-delay-500">
+      <div className="mt-5.5 flex gap-3 motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0 motion-duration-700 motion-delay-500 motion-ease-spring-smooth">
         {socialLinks.map((link) => (
           <Link
             key={link.label}
@@ -66,7 +92,7 @@ export function ProfileHeader() {
             aria-label={link.label}
             target={link.external ? '_blank' : undefined}
             rel={link.external ? 'noopener noreferrer' : undefined}
-            className="group flex items-center justify-center rounded-full bg-card-light p-3 text-primary-dark transition-all duration-200 hover:bg-secondary hover:text-white"
+            className="text-primary-dark group flex items-center justify-center transition-all duration-200 hover:text-secondary"
           >
             <span className="transition-transform duration-200 ease-out group-hover:scale-110">
               {link.icon}

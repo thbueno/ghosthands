@@ -7,8 +7,8 @@ import { ProfileHeader } from '@/components/profile-header'
 import { WorksSection } from '@/components/works-section'
 import SkillsSection from '@/components/skills-section'
 import { HomeNavbar } from '@/components/home-navbar'
+import { SiteFooter } from '@/components/site-footer'
 import { AnimateOnScroll } from '@/components/animate-on-scroll'
-import Link from 'next/link'
 
 const TrailCanvas = dynamic(() => import('@/components/trail-canvas'), {
   ssr: false,
@@ -52,52 +52,7 @@ export default function Home() {
           <SkillsSection />
         </main>
 
-        <AnimateOnScroll
-          as="footer"
-          className="footer bg-card-light -mx-7 px-7 py-10 md:-mx-10 md:px-10 md:py-17.5 lg:-mx-40 lg:px-40"
-          delay={100}
-          threshold={0.2}
-        >
-          <div className="mx-auto max-w-[915px] px-9 sm:px-16">
-            <p className="text-secondary-muted text-xl leading-[1.6]">
-              I&apos;m most reachable by{' '}
-              <Link
-                href="mailto:thinobueno@proton.me"
-                className="text-primary-dark hover:decoration-primary-dark underline decoration-transparent underline-offset-2 transition-colors duration-150"
-              >
-                email
-              </Link>{' '}
-              and on{' '}
-              <Link
-                href="https://www.linkedin.com/in/thiago-bueno-dos-santos-28714924/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-dark hover:decoration-primary-dark underline decoration-transparent underline-offset-2 transition-colors duration-150"
-              >
-                LinkedIn
-              </Link>
-              . You can also find me on{' '}
-              <Link
-                href="https://github.com/thbueno"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-dark hover:decoration-primary-dark underline decoration-transparent underline-offset-2 transition-colors duration-150"
-              >
-                GitHub
-              </Link>{' '}
-              or reach me on{' '}
-              <Link
-                href="https://wa.me/84784551070"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-dark hover:decoration-primary-dark underline decoration-transparent underline-offset-2 transition-colors duration-150"
-              >
-                WhatsApp
-              </Link>
-              .
-            </p>
-          </div>
-        </AnimateOnScroll>
+        <SiteFooter />
       </div>
     </>
   )
@@ -106,15 +61,22 @@ export default function Home() {
 function AboutBlock() {
   return (
     <AnimateOnScroll threshold={0.2}>
-      <h2 className="text-secondary-muted pb-4.5 text-lg font-medium uppercase tracking-widest">
-        About
-      </h2>
-      <p className="text-primary-dark max-w-[680px] text-xl leading-[1.7]">
-        I&apos;ve spent the last ten years at the intersection of engineering
-        and product — writing backend systems, shipping interfaces, and lately
-        building AI-powered applications. I care deeply about the quality of
-        what I make: from architecture decisions to pixel-level details.
-        Currently leading product and engineering at Esthalo.
+      <h2>About Me</h2>
+      <p className="text-primary-dark mx-auto mt-3 pl-16 pr-16 text-xl leading-[1.7]">
+        I got into software because I watched <em>The Matrix</em> too many times
+        as a kid. When I was thirteen, I disassembled my family&apos;s only
+        computer to see how it worked. It was a glorious mess of circuit boards.
+        When I put it back together and it actually booted, my dad looked at me
+        with a mix of terror and relief. He said: &quot;You&apos;d better figure
+        out how to make money off this.&quot;
+        <br />
+        <br /> So I did. Ten years later, I build systems and products with
+        code. I&apos;ve shipped code to 50+ companies and built government
+        systems running in 1,000+ city halls. Lately, I&apos;ve been building
+        applied ML pipelines and RAG systems. My take on AI is simple: prompting
+        isn&apos;t the skill, structuring inputs is. The model handles
+        ambiguity, but you need human discipline to keep the code from turning
+        into slop.
       </p>
     </AnimateOnScroll>
   )

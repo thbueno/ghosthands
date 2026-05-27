@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { LetsTalkButton } from '@/components/lets-talk-button'
 import { useEffect, useState } from 'react'
@@ -22,30 +23,33 @@ export function WorkNavbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-9 py-5 sm:px-16">
-        <Link
-          href="/"
-          className="text-17 text-primary-dark font-semibold transition-opacity duration-150 hover:opacity-70"
-        >
-          Thiago Bueno
+      <div className="mx-auto flex max-w-[1100px] items-center justify-between px-9 py-5 sm:px-16">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/ghost-hands.svg"
+            alt="Ghosthands"
+            width={44}
+            height={44}
+            className="h-11 w-11 object-contain"
+          />
         </Link>
 
         <nav className="flex items-center gap-8">
           <Link
             href="/"
-            className="text-15 text-secondary-muted hover:text-primary-dark transition-colors duration-150"
+            className="text-secondary-muted hover:text-primary-dark text-15 transition-colors duration-150"
           >
             Home
           </Link>
           <Link
             href="/works"
-            className="text-15 text-secondary-muted hover:text-primary-dark transition-colors duration-150"
+            className="text-secondary-muted hover:text-primary-dark text-15 transition-colors duration-150"
           >
             Works
           </Link>
           <Link
             href="/blog"
-            className="text-15 text-secondary-muted hover:text-primary-dark transition-colors duration-150"
+            className="text-secondary-muted hover:text-primary-dark text-15 transition-colors duration-150"
           >
             Writing
           </Link>
