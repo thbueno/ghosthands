@@ -45,7 +45,7 @@ export default function Home() {
       <div className="relative z-[1]">
         <HomeNavbar />
 
-        <main className="mx-auto flex max-w-[980px] flex-col gap-16 px-5 pb-16 pt-12 sm:px-9 md:gap-24 md:pb-40 md:pt-24 lg:px-16">
+        <main className="mx-auto flex max-w-[980px] flex-col gap-16 px-3 pb-16 pt-12 sm:px-9 md:gap-24 md:pb-40 md:pt-24 lg:px-16">
           <ProfileHeader />
           <WorksSection id="works" />
           <AboutBlock />

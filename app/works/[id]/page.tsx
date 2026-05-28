@@ -34,7 +34,7 @@ export default async function ProjectDetail({
       <ScrollToTop id={id} />
       <WorkNavbar />
 
-      <div className="mx-auto max-w-[1100px] px-5 py-8 sm:px-9 sm:py-12 md:px-16">
+      <div className="mx-auto max-w-[1100px] px-3 py-8 sm:px-9 sm:py-12 md:px-16">
         {/* Project Header */}
         <div className="mb-12">
           <p className="mb-2 text-sm sm:mb-3">{frontmatter.category}</p>

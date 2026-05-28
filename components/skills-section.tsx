@@ -20,7 +20,7 @@ export default function SkillsSection() {
         {CATEGORIES.map(({ label, tags, delay }) => (
           <AnimateOnScroll
             key={label}
-            className="rounded-3xl bg-card-light p-8 flex flex-col gap-5.5"
+            className="rounded-3xl bg-card-light p-5 flex flex-col gap-4 sm:p-8 sm:gap-5.5"
             threshold={0.15}
             delay={delay}
           >
