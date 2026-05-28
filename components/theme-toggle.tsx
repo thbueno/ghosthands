@@ -16,7 +16,7 @@ export function ThemeToggle({
   variant = 'light',
   iconSize = 24,
 }: ThemeToggleProps) {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])
@@ -35,7 +35,7 @@ export function ThemeToggle({
     )
   }
 
-  const isDark = theme === 'dark'
+  const isDark = resolvedTheme === 'dark'
 
   return (
     <button
