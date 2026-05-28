@@ -1,142 +1,108 @@
-# Ghosthands Handoff — 2026-05-27
+# Ghosthands Handoff — 2026-05-28
 
 ## Project
 
-Portfolio site for Thiago Bueno (thbueno).  
-Repo: `/home/bueno/builds/ghosthands` | pkg manager: `pnpm`  
+Portfolio site for Thiago Bueno (thbueno).
+Repo: `/home/bueno/builds/ghosthands` | pkg manager: `pnpm`
 Full project context: `/home/bueno/builds/ghosthands/CLAUDE.md` (authoritative)
 
 ---
 
-## What was done this session
+## What was done this session — Mobile Layout Pass
 
-### 1. HomeNavbar (`components/home-navbar.tsx`) — NEW
+Complete mobile layout fix pass based on real device screenshots. All changes are mobile-only (responsive prefixes), desktop unchanged unless noted.
 
-Simplified navbar for the homepage only. No hamburger, no nav links.
+### 1. Both Navbars (`home-navbar.tsx`, `work-navbar.tsx`)
 
-- Ghost-hands logo (SVG) on left
-- `ThemeToggle` + `LetsTalkButton` on right
-- Scroll-aware blur/border (`bg-background/80 backdrop-blur-md`) via `scrollY > 10`
-- Same `-mx-7 md:-mx-10 lg:-mx-40` full-width breakout as other navbars
+- Avatar image: `hidden sm:block` — hidden on mobile, shown on sm+
+- Nav links (work-navbar): `hidden sm:flex` — hidden on mobile to prevent wrap/collapse
+- ThemeToggle: `p-2 sm:p-3`, `iconSize={16}` — matches LetsTalkButton height on mobile
+- LetsTalkButton: `px-4 py-2 text-xs sm:px-5 sm:py-3 sm:text-sm`
 
-Added to `app/page.tsx` above `<main>` inside the `relative z-[1]` wrapper.
+### 2. ThemeToggle (`components/theme-toggle.tsx`)
 
-### 2. Social icons in ProfileHeader (`components/profile-header.tsx`)
+**Bug fixed**: `theme` → `resolvedTheme` from `useTheme()`. When system is dark mode, `theme` returns `'system'` not `'dark'`, causing wrong icon. `resolvedTheme` always returns the actual resolved value.
 
-- Icon-only pill buttons: LinkedIn (`lucide-react`), WhatsApp (custom inline SVG), Email (`lucide-react`)
-- Style: `bg-card-light p-3 rounded-full` → `hover:bg-secondary hover:text-white`
-- Icon scales `group-hover:scale-110` (minimalist interaction animation)
-- Links: LinkedIn → linkedin.com/in/thiago-bueno-dos-santos-28714924/, WhatsApp → wa.me/84784551070, Email → mailto:thinobueno@proton.me
+### 3. LetsTalkButton (`components/lets-talk-button.tsx`)
 
-### 3. Per-element GSAP cascade (`app/page.tsx`)
+Added `whitespace-nowrap` to base classes — prevents "Let's Talk" wrapping to two lines on narrow screens.
 
-**Pattern**: `.profile-header > *` targets ALL direct children with stagger — no individual class names needed.
+### 4. Homepage (`app/page.tsx`)
 
-GSAP timeline sequence (delay: 0.2s):
+- `<main>`: `px-3 sm:px-9 lg:px-16`, `gap-16 md:gap-24`, `pt-12 pb-16 md:pt-24 md:pb-40`
+- `AboutBlock <p>`: removed `pl-16 pr-16` (was causing word-per-line wrapping on mobile), now `text-base sm:text-lg md:text-xl`
+- User updated AboutBlock copy (new bio text, added "My take on AI" section)
 
-1. `.profile-header > *` — stagger 0.1s each (avatar → name → bio → social icons), duration 0.45s
-2. `.section-label` — `+=0.1` offset
-3. `.product-card` — `+=0.05` offset, stagger 0.08s
-4. `.about-block` — `+=0.05` offset
-5. `.footer` — `+=0.1` offset
+### 5. Works Detail (`app/works/[id]/page.tsx`)
 
-**Critical rules** (do NOT break):
+- Content wrapper: `px-3 sm:px-9 md:px-16`
+- `<h1>`: `text-2xl sm:text-3xl md:text-5xl`
+- `<p>` category: `text-sm`
+- MDX body: `[&_p]:text-base [&_p]:sm:text-lg [&_p]:md:text-xl`
+- Sidebar: `order-2 md:order-none` — moves below MDX content on mobile
+- MDX div: `order-1 md:order-none` — content appears first on mobile
 
-- Use `fromTo()` NOT `to()` — Tailwind's `translate-y-4` uses CSS custom property transforms that conflict with GSAP's matrix transform. `fromTo` explicitly sets both states, avoiding the conflict.
-- Do NOT call `gsap.set()` upfront to hide elements — React Strict Mode double-mounts effects; `set()` hides everything via inline style, and if the timeline gets killed on first mount, elements stay permanently hidden.
-- Rely on Tailwind `opacity-0 translate-y-4 blur-sm will-change-transform` classes on elements for SSR initial state.
-- All timeline offsets are POSITIVE `+=` values — negative `-=` offsets caused bugs.
+### 6. ProjectSidebar (`components/project-sidebar.tsx`)
 
-ProfileHeader children have the initial state classes directly:
+Added `className?: string` prop + `cn()` merge so `order-*` classes can be passed from parent.
 
-```tsx
-<div className="translate-y-4 opacity-0 blur-sm will-change-transform">  {/* avatar */}
-<h1  className="translate-y-4 opacity-0 blur-sm will-change-transform">
-<h2  className="mt-2 translate-y-4 leading-[1.5] opacity-0 blur-sm will-change-transform">
-<div className="mt-5.5 flex translate-y-4 gap-3 opacity-0 blur-sm will-change-transform">  {/* social */}
-```
+### 7. Works Section (`components/works-section.tsx`)
 
-### 4. AboutBlock (`app/page.tsx`)
+- Card image: `aspect-[4/3]` (all breakpoints)
+- Grid gap: `gap-6 sm:gap-4.5`
+- Card `<h3>` (category): `text-base sm:text-lg`
+- Card `<p>` (title): `text-sm sm:text-xl`
 
-Inline `AboutBlock` component (not a separate file). Lives between `<WorksSection />` and `<SkillsSection />` in the main content flow.
+### 8. SkillsSection (`components/skills-section.tsx`)
 
-- No background, not full-width, same `max-w-[980px]` as main
-- Has `about-block translate-y-4 opacity-0 blur-sm will-change-transform` for GSAP
-- Placeholder copy — user should edit the paragraph text to their preference
+- Removed `TAG_CLASS` override that was forcing `text-xl` (breaking mobile sizing)
+- Card padding: `p-5 sm:p-8`, gap: `gap-4 sm:gap-5.5`
 
-### 5. Blog infrastructure — NEW (hidden until published)
+### 9. TechTag (`components/tech-tag.tsx`)
 
-New files:
+- Layout: `flex flex-wrap gap-2 sm:gap-3` (removed `grid-cols-2` attempt that caused overflow)
+- Tag base (mobile): `px-2.5 py-1 text-2xs gap-1.5`
+- Tag base (sm+): `sm:px-4.5 sm:py-2.5 sm:text-sm sm:gap-2`
+- Icon: `h-4 w-4 sm:h-6 sm:w-6`
 
-- `lib/blog.ts` — `getAllPosts()`, `getLatestPosts()`, `getPostBySlug()`, `getAllPostSlugs()`
-- `content/blog/my-first-post.mdx` — sample post with `draft: true`
-- `app/blog/layout.tsx` — passthrough (same pattern as works)
-- `app/blog/page.tsx` — listing page (renders WorkNavbar; shows "No posts yet" if all draft)
-- `app/blog/[slug]/page.tsx` — detail page
+### 10. ProjectGallery (`components/project-gallery.tsx`)
 
-Gate: `draft: true` in frontmatter = hidden. Set `draft: false` to publish. `/blog` listing and homepage preview only show published posts.
-
-**Note**: Homepage blog preview section (`BlogSection`) was discussed but NOT implemented yet. When ready: create `components/blog-section.tsx`, add `<BlogSection />` to `app/page.tsx` after `<AboutBlock />`, add it to GSAP cascade.
-
-WorkNavbar (`components/work-navbar.tsx`) now has "Writing" link pointing to `/blog`.
-
-### 6. SkillsSection redesign — 4-category 2×2 grid
-
-Expanded from 2 cards (Frontend, Backend) to 4-card 2×2 responsive grid.
-
-**New structure** (`components/skills-section.tsx`):
-
-- `grid-cols-1 md:grid-cols-2 gap-9` layout
-- 4 categories with staggered animation (0 / 50 / 100 / 150ms delays)
-- Same `rounded-3xl bg-card-light p-8` card style as before
-
-**Tag lists** (`components/tech-tag.tsx`) — 8 tags each:
-| Category | Tags |
-|----------|------|
-| Frontend | React · Next.js · TypeScript · Tailwind · Figma · React Native · Motion · Expo |
-| Backend | Node.js · PostgreSQL · GraphQL · Supabase · Redis · Python · MongoDB · Express |
-| Cloud & Infra | AWS · Kubernetes · Docker · Terraform · GitHub Actions · Vercel · Git · Jira |
-| AI / ML | OpenAI · Anthropic · LangChain · LlamaIndex · pgvector · Pinecone · PyTorch · HuggingFace |
-
-**Dark mode logo inversion** — selective per-tag `darkInvert` flag:
-
-- `Tag` interface has optional `darkInvert?: boolean`
-- Black/no-fill logos get `darkInvert: true` → `dark:brightness-0 dark:invert` applied
-- Colored logos (React blue, TS blue, GraphQL pink, Supabase green, Docker blue, LlamaIndex purple gradient, pgvector/PostgreSQL blue, etc.) keep brand colors in both modes
-
-**New SVG logos** added to `public/images/stack/`:
-
-- 12 real logos from Simple Icons via jsdelivr CDN
-- `llamaindex-logo.svg` — real path with purple gradient (#9B59F5 → #5B21B6)
-- `pinecone-logo.svg` — real path with `#1C1C1C` fill (darkInvert: true)
-- `pgvector-logo.svg` — copies PostgreSQL logo as fallback
+Full rewrite:
+- **Lightbox**: clicking any image opens full-screen modal overlay. Keyboard: ←/→ navigate, Esc closes. Dot indicators. Close button top-right. Click backdrop to close.
+- **Aspect ratio**: all images (main carousel + thumbnails + fallback) use `aspect-[4/3]` wrapper + `object-cover` — no more empty space/letterboxing
+- **Thumbnail ring**: `ring-foreground` instead of `ring-white` — visible in light mode
+- `bg-background` removed from carousel container — no more background bleed
 
 ---
 
 ## Current file states (key changes)
 
-| File                             | Key state                                                                                                                         |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `app/page.tsx`                   | HomeNavbar + ProfileHeader + WorksSection + AboutBlock + SkillsSection + footer. GSAP targets `.profile-header > *` with stagger. |
-| `components/home-navbar.tsx`     | NEW — logo + toggle + CTA, no nav links                                                                                           |
-| `components/profile-header.tsx`  | Icon-only social pills (LinkedIn, WhatsApp, Email). Children have individual GSAP initial-state classes.                          |
-| `components/work-navbar.tsx`     | Added "Writing" nav link → `/blog`                                                                                                |
-| `components/skills-section.tsx`  | 2×2 grid, 4 categories, staggered AnimateOnScroll                                                                                 |
-| `components/tech-tag.tsx`        | 4 tag arrays (FRONTEND/BACKEND/CLOUD/AI), `darkInvert` field on Tag interface, conditional `dark:brightness-0 dark:invert` on img |
-| `public/images/stack/`           | 15 new SVG logos for Cloud/Infra + AI/ML categories                                                                               |
-| `lib/blog.ts`                    | NEW — MDX blog listing + detail helpers, draft gate                                                                               |
-| `app/blog/`                      | NEW — listing + detail pages                                                                                                      |
-| `content/blog/my-first-post.mdx` | NEW — sample draft post                                                                                                           |
+| File | Key state |
+|------|-----------|
+| `components/home-navbar.tsx` | Avatar hidden mobile, buttons smaller, iconSize 16 |
+| `components/work-navbar.tsx` | Nav links hidden mobile, avatar hidden mobile, buttons smaller |
+| `components/theme-toggle.tsx` | `resolvedTheme` fix for system dark mode |
+| `components/lets-talk-button.tsx` | `whitespace-nowrap` in base classes |
+| `app/page.tsx` | `px-3` mobile padding, AboutBlock copy updated |
+| `app/works/[id]/page.tsx` | `px-3` mobile, h1 responsive, sidebar order-2 mobile |
+| `components/project-sidebar.tsx` | Added `className` prop |
+| `components/works-section.tsx` | `aspect-[4/3]`, `gap-6` mobile, smaller card text |
+| `components/skills-section.tsx` | `p-5 sm:p-8` cards, no TAG_CLASS override |
+| `components/tech-tag.tsx` | `text-2xs px-2.5 py-1` mobile, `h-4 w-4` icon mobile |
+| `components/project-gallery.tsx` | Lightbox, `aspect-[4/3]` + `object-cover`, ring-foreground |
 
 ---
 
 ## Known outstanding / unresolved
 
-- **GSAP animation on profile header not confirmed working** — user reported it still wasn't animating at end of prior session. Needs browser verification.
-- **AboutBlock copy** is placeholder — user needs to edit the paragraph in `app/page.tsx:AboutBlock()`
-- **Blog homepage preview section** not yet built — see note in section 5 above
 - `sw-clean-energy.mdx` stub still commented out in `works-section.tsx`
-- `app/works/page.tsx` (works listing) may need visual review / font alignment
+- Blog homepage preview section (`BlogSection`) not yet built
+- `app/works/page.tsx` (works listing page) not reviewed for mobile
+- Footer mobile layout not reviewed
+- ProfileHeader entrance animation not verified on mobile
+- Full light/dark mobile visual pass not done end-to-end
+
+---
 
 ## Dev server
 
@@ -150,6 +116,6 @@ If new Tailwind arbitrary values don't compile: delete `.next/` and restart.
 
 ## Suggested skills
 
-- `/verify` — run app and confirm skills grid renders correctly in both light and dark mode; check logo inversion works
-- `/impeccable` — visual audit of homepage with new 4-category skills grid
-- `/caveman:caveman-review` — quick diff review before committing
+- `/verify` — run app at 375px viewport and confirm all mobile fixes render correctly
+- `/impeccable` — visual polish pass on works listing page + footer mobile
+- `/code-review` — review ProjectGallery lightbox for edge cases

@@ -162,11 +162,17 @@ Three.js WebGL mouse trail. `dynamic(() => import(...), { ssr: false })` in `app
 
 ## Mobile-First Spacing
 Always start from mobile and scale up. Key rules:
-- Vertical section padding: `pt-16 pb-16 md:pt-28 md:pb-32` (not flat desktop value)
-- Section gaps: `gap-10 md:gap-16` (not flat 70px)
+- Homepage main: `px-3 sm:px-9 lg:px-16` horizontal, `gap-16 md:gap-24` vertical
+- Works/[id] content wrapper: `px-3 sm:px-9 md:px-16`
 - Footer vertical: `py-10 md:py-17.5`
 - Card body: `p-4 sm:p-5.5`
-- Horizontal padding base `px-9` is fine for mobile (36px each side)
+- Skills cards: `p-5 sm:p-8` (reduced from flat p-8)
+- Do NOT use `px-9` as base for mobile — use `px-3` on mobile
+
+## Mobile Navbar Rules
+- Both navbars: avatar `hidden sm:block`, nav links `hidden sm:flex`
+- ThemeToggle: `p-2 sm:p-3`, `iconSize={16}` to match button height
+- LetsTalkButton: `px-4 py-2 text-xs sm:px-5 sm:py-3 sm:text-sm`, always `whitespace-nowrap`
 
 ## Skills Section
 
@@ -200,3 +206,9 @@ Frontmatter fields: `title`, `headline`, `image`, `galleryImages`, `category`, `
 - Blog posts: `draft: true` in frontmatter = hidden from listing and any future homepage preview
 - `BlogSection` (homepage blog preview) not yet built — when ready: `components/blog-section.tsx` + add to `app/page.tsx` after `<AboutBlock />` + wrap with `AnimateOnScroll`
 - SkillsSection tech tags: `darkInvert: true` flag on Tag = `dark:brightness-0 dark:invert` applied (for black/no-fill logos); colored brand logos omit flag to preserve colors in both modes
+- `ThemeToggle` uses `resolvedTheme` (not `theme`) to correctly detect system dark mode — `theme` returns `'system'` not `'dark'`
+- `ProjectSidebar` accepts optional `className` prop (uses `cn()`) — on works/[id] mobile: `order-2 md:order-none` moves it below content
+- `ProjectGallery` has built-in lightbox: click any image → full-screen modal, keyboard nav (←/→/Esc), dot indicators
+- Gallery images use `aspect-[4/3]` + `object-cover` for both main carousel and thumbnails — no letterboxing
+- Works section cards: `aspect-[4/3]` image, `gap-6 sm:gap-4.5` between cards
+- TechTag: mobile uses `flex flex-wrap gap-2`, tags `px-2.5 py-1 text-2xs`, icon `h-4 w-4`; sm+ reverts to full size
