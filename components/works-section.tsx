@@ -67,10 +67,10 @@ function ProjectCard({ project }: { project: Project }) {
 
       {/* Text below image */}
       <div className="p-4 sm:p-5.5">
-        <h3>
+        <h3 className="text-base sm:text-lg">
           {project.category}
         </h3>
-        <p className="mt-1 text-xl leading-[1.4]">
+        <p className="mt-1 text-sm leading-[1.4] sm:text-xl">
           {project.title}
         </p>
         <p className="mt-3.5 text-lg opacity-0 transition-opacity duration-150 ease-in-out group-hover:opacity-100">
@@ -93,7 +93,7 @@ export function WorksSection({ id }: WorksSectionProps) {
           Handpicked works
         </h2>
       </AnimateOnScroll>
-      <div className="grid grid-cols-1 gap-3 sm:gap-4.5 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:gap-4.5 md:grid-cols-2">
         {projects.map((project, index) => (
           <AnimateOnScroll key={project.id} delay={index * 100} threshold={0.2}>
             <ProjectCard project={project} />
