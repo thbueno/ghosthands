@@ -62,7 +62,7 @@ function AboutBlock() {
   return (
     <AnimateOnScroll threshold={0.2}>
       <h2>About Me</h2>
-      <p className="text-primary-dark mx-auto mt-3 text-base leading-[1.7] sm:text-lg md:text-xl">
+      <p className="text-primary-dark mx-auto mt-3 text-base leading-[1.7] sm:text-lg md:pl-16 md:pr-16 md:text-xl">
         When I was thirteen, I disassembled my family&apos;s only computer to
         see how it worked. It was a glorious mess of circuit boards. When I put
         it back together and it actually booted, my dad looked at me with a mix
@@ -75,12 +75,15 @@ function AboutBlock() {
         halls, international startups, e-commerces, healthcare platforms,
         LLM-powered tools, and more. Lately, I&apos;ve been building applied ML
         pipelines and RAG systems.
-        <br />
-        <br />
-        <h3>My take on AI</h3>
+      </p>
+      <br />
+      <br />
+      <h2>My take on AI</h2>
+      <p className="text-primary-dark mx-auto mt-3 text-base leading-[1.7] sm:text-lg md:pl-16 md:pr-16 md:text-xl">
         AI tools are part of my daily workflow and I strongly believe that
         agentic engineering is about preserving the professional quality bar
         that existed before LLMs.
+        <br />
         <br />
         PR hundreds of thousands of lines of code doesn't say much about the
         quality and effectiveness of your work. What really matters is how many
