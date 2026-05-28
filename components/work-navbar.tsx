@@ -28,7 +28,7 @@ export function WorkNavbar() {
           href="/"
           className={`flex items-center gap-2.5 transition-all duration-300 ease-in-out`}
         >
-          <div className="relative h-11 w-11 flex-shrink-0">
+          <div className="relative hidden h-11 w-11 flex-shrink-0 sm:block">
             <Image
               src="/images/profile-photo.JPEG"
               alt="Thiago Bueno"

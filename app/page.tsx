@@ -63,20 +63,31 @@ function AboutBlock() {
     <AnimateOnScroll threshold={0.2}>
       <h2>About Me</h2>
       <p className="text-primary-dark mx-auto mt-3 text-base leading-[1.7] sm:text-lg md:text-xl">
-        I got into software because I watched <em>The Matrix</em> too many times
-        as a kid. When I was thirteen, I disassembled my family&apos;s only
-        computer to see how it worked. It was a glorious mess of circuit boards.
-        When I put it back together and it actually booted, my dad looked at me
-        with a mix of terror and relief. He said: &quot;You&apos;d better figure
-        out how to make money off this.&quot;
+        When I was thirteen, I disassembled my family&apos;s only computer to
+        see how it worked. It was a glorious mess of circuit boards. When I put
+        it back together and it actually booted, my dad looked at me with a mix
+        of terror and relief. He said: &quot;You&apos;d better figure out how to
+        make money off this.&quot;
         <br />
-        <br /> So I did. Ten years later, I build systems and products with
-        code. I&apos;ve shipped code to 50+ companies and built government
-        systems running in 1,000+ city halls. Lately, I&apos;ve been building
-        applied ML pipelines and RAG systems. My take on AI is simple: prompting
-        isn&apos;t the skill, structuring inputs is. The model handles
-        ambiguity, but you need human discipline to keep the code from turning
-        into slop.
+        <br />
+        So I did. More than ten years later, I&apos;ve shipped code to 50+
+        companies and helped build government systems running in 1,000+ city
+        halls, international startups, e-commerces, healthcare platforms,
+        LLM-powered tools, and more. Lately, I&apos;ve been building applied ML
+        pipelines and RAG systems.
+        <br />
+        <br />
+        <h3>My take on AI</h3>
+        AI tools are part of my daily workflow and I strongly believe that
+        agentic engineering is about preserving the professional quality bar
+        that existed before LLMs.
+        <br />
+        PR hundreds of thousands of lines of code doesn't say much about the
+        quality and effectiveness of your work. What really matters is how many
+        features and products you are shipping to production, and how many users
+        are relying on your builds every day. That is what really matters.
+        Shipping is testing, deploying, monitoring, maintaining, and improving
+        over time.
       </p>
     </AnimateOnScroll>
   )

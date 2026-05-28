@@ -48,7 +48,7 @@ export function HomeNavbar() {
               : 'pointer-events-none scale-95 opacity-0'
           }`}
         >
-          <div className="relative h-11 w-11 flex-shrink-0">
+          <div className="relative hidden h-11 w-11 flex-shrink-0 sm:block">
             <Image
               src="/images/profile-photo.JPEG"
               alt="Thiago Bueno"
