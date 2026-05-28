@@ -65,16 +65,18 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
     return (
       <>
         <div
-          className="mb-8 min-h-[220px] cursor-zoom-in overflow-hidden rounded-3xl bg-background sm:mb-12 sm:min-h-0"
+          className="mb-8 cursor-zoom-in overflow-hidden rounded-3xl sm:mb-12"
           onClick={() => openLightbox(0)}
         >
-          <Image
-            src={images?.[0] || '/placeholder.svg'}
-            alt={alt}
-            width={1200}
-            height={800}
-            className="h-auto w-full object-contain"
-          />
+          <div className="aspect-[16/10] overflow-hidden">
+            <Image
+              src={images?.[0] || '/placeholder.svg'}
+              alt={alt}
+              width={1200}
+              height={800}
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
 
         <Lightbox
@@ -95,7 +97,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
         {/* Main image viewport */}
         <div
           ref={emblaRef}
-          className="min-h-[220px] cursor-zoom-in overflow-hidden rounded-3xl bg-background sm:min-h-0 min-[1366px]:flex-1"
+          className="cursor-zoom-in overflow-hidden rounded-3xl min-[1366px]:flex-1"
         >
           <div className="flex">
             {images.map((src, index) => (
@@ -104,41 +106,43 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
                 className="min-w-0 shrink-0 grow-0 basis-full"
                 onClick={() => openLightbox(index)}
               >
-                <Image
-                  src={src}
-                  alt={`${alt} — ${index + 1}`}
-                  width={1200}
-                  height={800}
-                  className="h-auto w-full object-contain"
-                />
+                <div className="aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={src}
+                    alt={`${alt} — ${index + 1}`}
+                    width={1200}
+                    height={800}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Thumbnail strip */}
-        <div className="mt-3 flex w-full items-center gap-2 sm:mt-4 min-[1366px]:mt-0 min-[1366px]:w-40 min-[1366px]:flex-col min-[1366px]:gap-2">
+        <div className="mt-2 flex w-full items-center gap-2 min-[1366px]:mt-0 min-[1366px]:w-40 min-[1366px]:flex-col min-[1366px]:gap-2">
           {images.map((src, index) => (
             <button
               key={index}
               onClick={() => scrollTo(index)}
               className={cn(
-                'relative overflow-hidden rounded-xl transition-all duration-200',
-                'aspect-video min-w-0 flex-1',
-                'min-[1366px]:aspect-auto min-[1366px]:w-full min-[1366px]:flex-none',
+                'relative min-w-0 flex-1 overflow-hidden rounded-lg transition-all duration-200 min-[1366px]:w-full min-[1366px]:flex-none min-[1366px]:rounded-xl',
                 selectedIndex === index
-                  ? 'ring-1 ring-white ring-offset-2 ring-offset-background'
-                  : 'opacity-50 hover:opacity-100',
+                  ? 'ring-2 ring-foreground ring-offset-1 ring-offset-background'
+                  : 'opacity-40 hover:opacity-80',
               )}
               aria-label={`View image ${index + 1}`}
             >
-              <Image
-                src={src}
-                alt={`${alt} thumbnail ${index + 1}`}
-                width={192}
-                height={108}
-                className="h-auto w-full object-contain"
-              />
+              <div className="aspect-[16/10] overflow-hidden">
+                <Image
+                  src={src}
+                  alt={`${alt} thumbnail ${index + 1}`}
+                  width={192}
+                  height={108}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </button>
           ))}
         </div>
