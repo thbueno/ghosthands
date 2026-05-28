@@ -42,7 +42,7 @@ export function WorkNavbar() {
           </span>
         </Link>
 
-        <nav className="flex items-center gap-8">
+        <nav className="hidden items-center gap-8 sm:flex">
           <Link
             href="/"
             className="text-secondary-muted hover:text-primary-dark text-15 transition-colors duration-150"
@@ -55,17 +55,11 @@ export function WorkNavbar() {
           >
             Works
           </Link>
-          {/* <Link
-            href="/blog"
-            className="text-secondary-muted hover:text-primary-dark text-15 transition-colors duration-150"
-          >
-            Writing
-          </Link> */}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <ThemeToggle variant="light" className="px-3 py-3" iconSize={20} />
-          <LetsTalkButton className="px-5 py-3 text-sm" />
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle variant="light" className="p-2 sm:p-3" iconSize={18} />
+          <LetsTalkButton className="px-4 py-2 text-xs sm:px-5 sm:py-3 sm:text-sm" />
         </div>
       </div>
     </header>

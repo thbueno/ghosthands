@@ -45,7 +45,7 @@ export default function Home() {
       <div className="relative z-[1]">
         <HomeNavbar />
 
-        <main className="mx-auto flex max-w-[980px] flex-col gap-24 px-9 pb-24 pt-16 sm:px-16 md:pb-40 md:pt-24">
+        <main className="mx-auto flex max-w-[980px] flex-col gap-16 px-5 pb-16 pt-12 sm:px-9 md:gap-24 md:pb-40 md:pt-24 lg:px-16">
           <ProfileHeader />
           <WorksSection id="works" />
           <AboutBlock />
@@ -62,7 +62,7 @@ function AboutBlock() {
   return (
     <AnimateOnScroll threshold={0.2}>
       <h2>About Me</h2>
-      <p className="text-primary-dark mx-auto mt-3 pl-16 pr-16 text-xl leading-[1.7]">
+      <p className="text-primary-dark mx-auto mt-3 text-base leading-[1.7] sm:text-lg md:text-xl">
         I got into software because I watched <em>The Matrix</em> too many times
         as a kid. When I was thirteen, I disassembled my family&apos;s only
         computer to see how it worked. It was a glorious mess of circuit boards.

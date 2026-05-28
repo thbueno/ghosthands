@@ -1,12 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { cn } from '@/lib/utils'
 
 interface ProjectSidebarProps {
   children: React.ReactNode
+  className?: string
 }
 
-export function ProjectSidebar({ children }: ProjectSidebarProps) {
+export function ProjectSidebar({ children, className }: ProjectSidebarProps) {
   const [opacity, setOpacity] = useState(1)
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export function ProjectSidebar({ children }: ProjectSidebarProps) {
 
   return (
     <div
-      className="space-y-8 md:col-span-1 md:sticky md:top-24 md:self-start"
+      className={cn('space-y-8 md:col-span-1 md:sticky md:top-24 md:self-start', className)}
       style={{
         opacity,
         transition: 'opacity 0.15s ease-out',

@@ -16,7 +16,7 @@ export function LetsTalkButton({
   href = 'https://wa.me/84784551070',
 }: LetsTalkButtonProps) {
   const baseClasses =
-    'group flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200 text-base font-medium cursor-pointer'
+    'group flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200 text-base font-medium cursor-pointer whitespace-nowrap'
 
   const variants = {
     light:

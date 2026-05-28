@@ -68,12 +68,12 @@ export default function TechTag({
   showLogo = true,
 }: TechTagProps) {
   return (
-    <div className={cn('flex flex-wrap gap-4', className)}>
+    <div className={cn('flex flex-wrap gap-2 sm:gap-3', className)}>
       {tags.map((tag) => (
         <div
           key={tag.name}
           className={cn(
-            'flex cursor-default items-center gap-2 rounded-full bg-tag px-4.5 py-2.5 text-xs font-medium text-primary-dark transition-all duration-200 ease-in-out hover:bg-secondary hover:text-background',
+            'flex cursor-default items-center gap-1.5 rounded-full bg-tag px-2.5 py-1 text-2xs font-medium text-primary-dark transition-all duration-200 ease-in-out hover:bg-secondary hover:text-background sm:gap-2 sm:px-4.5 sm:py-2.5 sm:text-sm',
             tagClassName,
           )}
         >
@@ -81,7 +81,7 @@ export default function TechTag({
             <img
               src={tag.logo}
               alt={tag.name}
-              className={cn('h-6 w-6', tag.darkInvert && 'dark:brightness-0 dark:invert')}
+              className={cn('h-4 w-4 sm:h-6 sm:w-6', tag.darkInvert && 'dark:brightness-0 dark:invert')}
             />
           )}
           {tag.name}

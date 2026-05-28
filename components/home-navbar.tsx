@@ -62,9 +62,9 @@ export function HomeNavbar() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-3">
-          <ThemeToggle variant="light" className="p-3" iconSize={20} />
-          <LetsTalkButton className="px-5 py-3 text-sm" />
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle variant="light" className="p-2 sm:p-3" iconSize={18} />
+          <LetsTalkButton className="px-4 py-2 text-xs sm:px-5 sm:py-3 sm:text-sm" />
         </div>
       </div>
     </header>

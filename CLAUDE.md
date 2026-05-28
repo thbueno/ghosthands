@@ -7,7 +7,7 @@ Repo: `thbueno/ghosthands` | pkg manager: pnpm 10.8.0
 ## Stack
 - Next.js 15.2.8, React 19, TypeScript (strict)
 - Tailwind CSS 3.4.17 + shadcn/ui + Radix UI primitives
-- GSAP (cascade entrance animations) + Lenis (smooth scroll) + Three.js (TrailCanvas)
+- `tailwindcss-motion` (Rombo) + `motion/react` (Framer Motion) + Lenis (smooth scroll) + Three.js (TrailCanvas)
 - MDX via `next-mdx-remote` 6 + `gray-matter` for content
 - Embla Carousel for galleries
 - `next-themes` dark mode
@@ -23,7 +23,7 @@ pnpm format   # prettier --write .
 ## Structure
 ```
 app/
-  page.tsx              # Homepage: ProfileHeader → WorksSection → SkillsSection → Footer
+  page.tsx              # Homepage: HomeNavbar → ProfileHeader → WorksSection → AboutBlock → SkillsSection → Footer
   layout.tsx            # Root layout (no navbar — pages render their own chrome)
   globals.css           # CSS vars, animations, custom utilities
   works/
@@ -31,30 +31,41 @@ app/
     page.tsx            # Works listing (reads MDX frontmatter) — renders WorkNavbar inline
     [id]/
       page.tsx          # Project detail (MDX) — renders WorkNavbar + footer inline
+  blog/
+    layout.tsx          # Passthrough only (same pattern as works)
+    page.tsx            # Blog listing — shows published posts only (draft gate)
+    [slug]/
+      page.tsx          # Blog post detail (MDX)
 components/
   ui/                   # shadcn base components (DO NOT hand-edit)
-  profile-header.tsx    # Avatar + name + bio + social links
+  home-navbar.tsx       # Homepage-only navbar: logo + ThemeToggle + LetsTalkButton, no nav links
+  profile-header.tsx    # Avatar + name + bio + social icons (LinkedIn, WhatsApp, Email)
   works-section.tsx     # Homepage 2×2 card grid (hardcoded project list)
-  skills-section.tsx    # Frontend + Backend tech tag cards
-  tech-tag.tsx          # Pill tag component + FRONTEND_TAGS / BACKEND_TAGS exports
-  work-navbar.tsx       # Apple Newsroom-style sticky navbar for /works/* pages
+  skills-section.tsx    # 4-category 2×2 grid (Frontend, Backend, Cloud & Infra, AI/ML)
+  tech-tag.tsx          # Pill tag component + FRONTEND/BACKEND/CLOUD/AI tag arrays + darkInvert flag
+  work-navbar.tsx       # Apple Newsroom-style sticky navbar for /works/* + /blog/* — has "Writing" link
   trail-canvas.tsx      # Three.js WebGL mouse trail (client-only, dynamic import)
   animate-on-scroll.tsx # IntersectionObserver wrapper (variants: fade, slide-up, rotate-3d)
   project-sidebar.tsx   # Sticky sidebar on /works/[id] with fade-out on scroll
   mdx-components.tsx    # Custom MDX renderers (ProjectImage, gallery, etc.)
   lets-talk-button.tsx  # Filled pill button (variants: light, dark, surface-dark, red)
   project-gallery.tsx   # Embla carousel for project images
-content/works/          # MDX project files (frontmatter-driven)
-  capsule.mdx
-  esthalo.mdx
-  gov-br.mdx
-  friends-travel.mdx
-  sw-clean-energy.mdx   # stub — needs content, commented out in works-section.tsx
+content/
+  works/                # MDX project files (frontmatter-driven)
+    capsule.mdx
+    esthalo.mdx
+    gov-br.mdx
+    friends-travel.mdx
+    sw-clean-energy.mdx # stub — needs content, commented out in works-section.tsx
+  blog/                 # MDX blog posts — draft: true hides from listing
+    my-first-post.mdx   # sample draft post
 lib/
   mdx.ts                # Full MDX compiler (for [id] pages)
-  mdx-listing.ts        # Lightweight frontmatter-only (for listings)
+  mdx-listing.ts        # Lightweight frontmatter-only (for works listings)
+  blog.ts               # Blog helpers: getAllPosts, getLatestPosts, getPostBySlug, getAllPostSlugs
   utils.ts              # cn() helper
 public/images/          # 30+ portfolio images/mockups
+  stack/                # Tech logo SVGs (15 new added for Cloud/Infra + AI/ML categories)
 ```
 
 ## Theme & Design System
@@ -87,17 +98,29 @@ Spacing (use as any spacing utility: `p-`, `gap-`, `h-`, `w-`, etc.):
 
 ## Animation System
 
-### Homepage (GSAP cascade — `app/page.tsx`)
-- Elements start with `opacity-0 translate-y-4 blur-sm will-change-transform` (Tailwind classes)
-- GSAP `fromTo()` — NOT `to()` — animates them in with explicit from-state to avoid Tailwind transform conflicts
-- GSAP targets CSS class names: `.profile-header`, `.section-label`, `.product-card`, `.footer`
-- Lenis smooth scroll: `lerp: 0.08`, initialized in `useEffect`, destroyed on unmount
-- TrailCanvas: Three.js WebGL mouse trail, loaded via `dynamic(() => import(...), { ssr: false })`
-- **Do NOT add AnimateOnScroll or tailwindcss-motion to homepage** — GSAP is the system here
+No GSAP. Three animation layers:
 
-### Works/Skills sections (scroll-triggered)
-- `<AnimateOnScroll>` wrapper with IntersectionObserver (`animate-on-scroll` CSS class)
-- Skills cards use `threshold={0.15}` and `delay={100}` for stagger
+### 1. `tailwindcss-motion` (Rombo) — ProfileHeader entrance
+CSS utility classes, no JS. Applied directly on ProfileHeader children:
+```
+motion-translate-y-in-100 motion-blur-in-md motion-opacity-in-0
+motion-duration-700 motion-delay-[Nms] motion-ease-spring-smooth
+```
+Stagger via incremental `motion-delay-*`: avatar 200ms → name 300ms → bio 400ms → social 500ms.
+
+### 2. `motion/react` (Framer Motion) — JS-driven animations
+Used in `blur-text.tsx` and `navbar.tsx`. Import from `'motion/react'` (not `'framer-motion'`).
+
+### 3. `AnimateOnScroll` — scroll-triggered CSS animations
+IntersectionObserver wrapper (`components/animate-on-scroll.tsx`). Variants: `default`, `slide-up`, `fade`, `rotate-3d`. Props: `threshold`, `delay`, `triggerOnce`.
+- Skills cards: `threshold={0.15}`, staggered `delay` props
+- AboutBlock: `threshold={0.2}`
+
+### Lenis — smooth scroll
+`lerp: 0.08`, initialized in `useEffect` on homepage, respects `prefers-reduced-motion`, destroyed on unmount.
+
+### TrailCanvas
+Three.js WebGL mouse trail. `dynamic(() => import(...), { ssr: false })` in `app/page.tsx`.
 
 ## Layout Patterns
 
@@ -105,9 +128,11 @@ Spacing (use as any spacing utility: `p-`, `gap-`, `h-`, `w-`, etc.):
 ```
 <TrailCanvas />  ← fixed z-0, pointer-events-none
 <div relative z-[1]>
+  <HomeNavbar />  ← logo + ThemeToggle + LetsTalkButton, scroll-aware blur/border
   <main max-w-[915px] px-9 sm:px-16 pt-16 pb-16 md:pt-28 md:pb-32 gap-10 md:gap-16>
-    <ProfileHeader />
+    <ProfileHeader />  ← children have opacity-0 translate-y-4 blur-sm for GSAP
     <WorksSection />
+    <AboutBlock />  ← inline component, about-block class for GSAP, placeholder copy
     <SkillsSection />
   </main>
   <footer -mx-7 md:-mx-10 lg:-mx-40>  ← full-width breakout via negative margin
@@ -143,6 +168,17 @@ Always start from mobile and scale up. Key rules:
 - Card body: `p-4 sm:p-5.5`
 - Horizontal padding base `px-9` is fine for mobile (36px each side)
 
+## Skills Section
+
+4-card 2×2 responsive grid (`grid-cols-1 md:grid-cols-2 gap-9`). Each card: `rounded-3xl bg-card-light p-8`. Stagger delays: 0 / 50 / 100 / 150ms via AnimateOnScroll.
+
+| Category | Tags (8 each) |
+|----------|---------------|
+| Frontend | React · Next.js · TypeScript · Tailwind · Figma · React Native · Motion · Expo |
+| Backend | Node.js · PostgreSQL · GraphQL · Supabase · Redis · Python · MongoDB · Express |
+| Cloud & Infra | AWS · Kubernetes · Docker · Terraform · GitHub Actions · Vercel · Git · Jira |
+| AI / ML | OpenAI · Anthropic · LangChain · LlamaIndex · pgvector · Pinecone · PyTorch · HuggingFace |
+
 ## Content Pattern (MDX)
 Frontmatter fields: `title`, `headline`, `image`, `galleryImages`, `category`, `services`, `year`, `slug`, `websiteUrl`
 - Listings use `mdx-listing.ts` (gray-matter only, no compile)
@@ -156,9 +192,11 @@ Frontmatter fields: `title`, `headline`, `image`, `galleryImages`, `category`, `
 - `components.json`: shadcn config pointing to `@/components/ui`
 
 ## Key Decisions
-- `'use client'` on homepage (GSAP + Lenis need browser APIs)
-- `app/works/layout.tsx` is a passthrough (`<>{children}</>`) — each works page handles its own navbar/footer to avoid layout interference
-- GSAP `fromTo()` required (not `to()`) because Tailwind's `translate-y-4` uses CSS custom property transforms that conflict with GSAP's matrix-based `y` tween
+- `'use client'` on homepage (Lenis + motion hooks need browser APIs)
+- `app/works/layout.tsx` and `app/blog/layout.tsx` are passthroughs (`<>{children}</>`) — each page handles its own navbar/footer
 - New Tailwind arbitrary values (e.g. new `pt-[Npx]`) require `.next` cache delete + server restart to compile under Turbopack
 - `sw-clean-energy.mdx` is stub — commented out in `works-section.tsx` projects array
-- `AboutSection` exists in components but not rendered anywhere
+- `AboutSection` exists in components but not rendered anywhere — `AboutBlock` is the inline version used in `app/page.tsx`
+- Blog posts: `draft: true` in frontmatter = hidden from listing and any future homepage preview
+- `BlogSection` (homepage blog preview) not yet built — when ready: `components/blog-section.tsx` + add to `app/page.tsx` after `<AboutBlock />` + wrap with `AnimateOnScroll`
+- SkillsSection tech tags: `darkInvert: true` flag on Tag = `dark:brightness-0 dark:invert` applied (for black/no-fill logos); colored brand logos omit flag to preserve colors in both modes

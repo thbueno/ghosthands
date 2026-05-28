@@ -3,8 +3,6 @@ import React from 'react'
 import TechTag, { FRONTEND_TAGS, BACKEND_TAGS, CLOUD_TAGS, AI_TAGS } from '@/components/tech-tag'
 import { AnimateOnScroll } from '@/components/animate-on-scroll'
 
-const TAG_CLASS = 'text-xl px-4.5 py-2.5 rounded-full bg-tag text-primary-dark hover:bg-secondary hover:text-background'
-
 const CATEGORIES = [
   { label: 'Frontend', tags: FRONTEND_TAGS, delay: 0 },
   { label: 'Backend', tags: BACKEND_TAGS, delay: 50 },
@@ -27,7 +25,7 @@ export default function SkillsSection() {
             delay={delay}
           >
             <h3>{label}</h3>
-            <TechTag tags={tags} tagClassName={TAG_CLASS} />
+            <TechTag tags={tags} />
           </AnimateOnScroll>
         ))}
       </div>

@@ -34,11 +34,11 @@ export default async function ProjectDetail({
       <ScrollToTop id={id} />
       <WorkNavbar />
 
-      <div className="mx-auto max-w-[1100px] px-9 py-12 sm:px-16">
+      <div className="mx-auto max-w-[1100px] px-5 py-8 sm:px-9 sm:py-12 md:px-16">
         {/* Project Header */}
         <div className="mb-12">
-          <p className="mb-3">{frontmatter.category}</p>
-          <h1 className="mb-8 text-4xl font-semibold leading-tight tracking-[-0.02em] md:text-5xl">
+          <p className="mb-2 text-sm sm:mb-3">{frontmatter.category}</p>
+          <h1 className="mb-6 text-2xl font-semibold leading-tight tracking-[-0.02em] sm:text-3xl sm:mb-8 md:text-5xl">
             {frontmatter.headline ?? frontmatter.title}
           </h1>
           <ProjectGallery
@@ -49,8 +49,8 @@ export default async function ProjectDetail({
 
         {/* Project Content */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
-          {/* Sidebar */}
-          <ProjectSidebar>
+          {/* Sidebar — below content on mobile, left column on desktop */}
+          <ProjectSidebar className="order-2 md:order-none">
             <div>
               <p className="text-secondary-muted mb-3 text-2xs font-semibold uppercase tracking-widest">
                 Stack
@@ -84,7 +84,7 @@ export default async function ProjectDetail({
           </ProjectSidebar>
 
           {/* Main Content — rendered from MDX */}
-          <div className="space-y-12 font-sf-pro-display md:col-span-4 md:pl-8 [&_p]:text-lg [&_p]:md:text-xl">
+          <div className="order-1 space-y-12 font-sf-pro-display md:order-none md:col-span-4 md:pl-8 [&_p]:text-base [&_p]:sm:text-lg [&_p]:md:text-xl">
             {content}
           </div>
         </div>
