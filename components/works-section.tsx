@@ -55,7 +55,7 @@ function ProjectCard({ project }: { project: Project }) {
       className="product-card bg-card-light hover:bg-card-hover group block overflow-hidden rounded-2xl transition-colors duration-200 ease-out"
     >
       {/* Full image with hover zoom */}
-      <div className="aspect-[3/2] overflow-hidden sm:aspect-[4/3] [transform:translateZ(0)]">
+      <div className="aspect-[4/3] overflow-hidden [transform:translateZ(0)]">
         <Image
           src={project.image}
           alt={project.title}

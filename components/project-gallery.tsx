@@ -68,7 +68,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
           className="mb-8 cursor-zoom-in overflow-hidden rounded-3xl sm:mb-12"
           onClick={() => openLightbox(0)}
         >
-          <div className="aspect-[16/10] overflow-hidden">
+          <div className="aspect-[4/3] overflow-hidden">
             <Image
               src={images?.[0] || '/placeholder.svg'}
               alt={alt}
@@ -106,7 +106,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
                 className="min-w-0 shrink-0 grow-0 basis-full"
                 onClick={() => openLightbox(index)}
               >
-                <div className="aspect-[16/10] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
                   <Image
                     src={src}
                     alt={`${alt} — ${index + 1}`}
@@ -134,7 +134,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
               )}
               aria-label={`View image ${index + 1}`}
             >
-              <div className="aspect-[16/10] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
                 <Image
                   src={src}
                   alt={`${alt} thumbnail ${index + 1}`}
